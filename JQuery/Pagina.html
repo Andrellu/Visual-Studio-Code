@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rojo{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="rojo">Titulo 1</h1>
+    <h1 id="titulo2">Titulo 2</h1>
+    <h1 class="rojo">Titulo 3</h1>
+    <button>SOY UN BOTÓN</button>
+    
+</body>
+    <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            // Necesario para que funcione.
+            $(document).ready(function(){
+                // Un simple aviso.
+                //alert("utilizando jquery!!");
+                //oculta los h1.
+                //$("h1").hide();
+                /*$("button").click(function(){
+                    $("h1").show();
+                });*/
+                /*$("button").click(function(){
+                    $(".rojo").show();
+                });*/
+                /*$("button").click(function(){
+                    // es necesaria la almuadilla para poder seleccionr un id.
+                    $("#titulo2").show();
+                });*/
+                /*$("button").click(function(){
+                    $("h1").hide();
+                });*/
+
+                /*$(".rojo").click(function(){
+                    $(this).fadeOut(5000);
+                });*/
+
+                // $("img").attr("src", "2.jpg");  //CAMBIANDO VALOR
+                // var imagen =  $("img").attr("src");  //RECUPERAMOS VALOR src
+
+
+
+
+            });
+    </script>
+</html>
