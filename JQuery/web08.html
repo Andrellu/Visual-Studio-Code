@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo EACH</h1>
+    <p>parrafo uno</p>
+    <p>parrafo dos</p>
+    <p>parrafo tres</p>
+    <p>parrafo cuatro</p>
+    <p>parrafo cinco</p>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                var colores = ["blue", "red", "green", "yellow", "fuchsia"];
+                // QUEREMOS QUE CAD APARRAFO TENGA UN COLOR DISTINTO 
+                // AL PUSAR.
+                // Es un bucle que recorre todos los parrafos
+                $("p").each(function(){
+                    var valor = parseInt(Math.random()*colores.length);
+                    var colorElegido = colores[valor];
+                    // CAMBIAMOS EL COLOR
+                    $(this).css("background-color" , colorElegido);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
