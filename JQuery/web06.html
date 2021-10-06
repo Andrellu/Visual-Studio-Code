@@ -13,19 +13,18 @@
     <script>
         $(document).ready(function(){
             var url = "imagenes/ImagenDos.jpg";
-                var img = $("<img>", {
-                    "src" : url
-                });
             $("#rango").change(function(){
                 //clear
                 var rango = $("#rango").val();
                 $("#padre").text("");
                 for(i = 0; i < rango; i++){
                     $("#padre").append(img);
-                    img = $("<img>", {
+                    var img = $("<img>", {
                     "src" : url
                     });
                 }
+                // Actua sobre todas las imagenes
+                // El del profe solo sobre las imagenes deseadas
                 $("img").mouseover(function(){
                     $(this).attr("src","imagenes/ImagenUno.jpg");
                 });
