@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generar controles dinamicamente</h1>
+    <label>Introduzca texto</label>
+    <input type="text" id="cajaTexto"/>
+    <button id="crearTexto">Crear título</button>
+    <div id="padre"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Cambiamos el texto por el puesto en el evento de los <h1>, 
+            // Solo funciona cuando carga al iniciar no con los que se generen despues.
+            $("h1").click(function(){
+                $(this).text("Evento activado.");
+            });
+            $("#crearTexto").click(function(){
+                var texto = $("#cajaTexto").val();
+                /*
+                var h1 = $("<h1>");
+                h1.text(texto);
+                h1.css("color","red");
+                $("#padre").append(h1);
+                */
+               // Se hace con JSON
+                var h1 = $("<h1>", { 
+                    "text" : texto,
+                    "style" : "color : blue"
+                });
+                h1.appendTo($("#padre"));
+
+                h1.click(function(){
+                    var texto = $("#cajaTexto").val();
+                    alert(texto);
+                });
+                
+
+            });
+
+        });
+    </script>
+</body>
+</html>

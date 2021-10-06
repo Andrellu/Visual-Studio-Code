@@ -22,42 +22,65 @@
     </br>
     <h1 id="diaNacimineto"></h1>
 
-    <button id="calcular">¿Que día has nacido?</button>
+    <button id="calcular">¿Que día es?</button>
+
     <script src="jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function(){
-            var dia = parseInt($("#dia").val());
-            var mes = parseInt($("#mes").val());
-            var anio =parseInt( $("#year").val());
+            $("#calcular").click(function(){
 
-            if(mes == 1 || mes == 2){
-                if(mes == 1){
-                    mes == 13
-                } else {
-                    mes = 14;
+                var dia = parseInt($("#dia").val());
+                var mes = parseInt($("#mes").val());
+                var anio =parseInt($("#year").val());
+
+                // Requesitos para calcula renero y febrero
+                if(mes == 1 || mes == 2){
+                    if(mes == 1){
+                        mes = parseInt(13);
+                        anio = parseInt(anio - 1);
+                    } else {
+                        mes = parseInt(14);
+                        anio = parseInt(anio - 1);
+                    }
                 }
-            }
 
-            var calculoMes = ((mes+1)*3)/5;
-            var caculoAnioUno = anio / 4;
-            var calculoAnioDos = anio / 100;
-            var calculoAnioTres = anio / 400;
+                // Conjunto de opreciones para calcular dia
+                var calculoUno = parseInt(((mes+1)*3)/5);
+                //console.log("opp1 : " + calculoUno);
+                var caculoDos = parseInt(anio / 4);
+                //console.log("opp2 : " + caculoDos);
+                var calculoTres = parseInt(anio / 100);
+                //console.log("opp3 : " + calculoTres);
+                var calculoCuatro = parseInt(anio / 400);
+                //console.log("op4 :" + calculoCuatro);
+                var dobleMes = parseInt(mes * 2);
+                var calculoCinco = parseInt((dia + dobleMes + anio + calculoUno + caculoDos ) - ( calculoTres + (calculoCuatro + 2)));
+                //console.log("op5 :" + calculoCinco);
+                var calculoSeis = parseInt(calculoCinco / 7);
+                //console.log("op6 :" + calculoSeis);
+                var pasosiete = parseInt(calculoCinco - (calculoSeis * 7));
+                //console.log("resultado :" + pasosiete);
 
-            var operacionCombinada = (dia + (mes*2) + anio + calculoMes + caculoAnioUno ) - ( calculoAnioDos+ calculoAnioTres +2);
+                // Asignamos el dia segun el resultado entre numeros del 0 al 6
+                if(pasosiete == 0){
+                    resultado = "sabado";
+                } else if(pasosiete == 1){
+                    resultado = "domingo";
+                }else if(pasosiete == 2){
+                    resultado = "lunes";
+                }else if(pasosiete == 3){
+                    resultado = "martes";
+                } else if(pasosiete == 4){
+                    resultado = "miercoles";
+                } else if(pasosiete == 5){
+                    resultado = "jueves";
+                } else if(pasosiete == 6){
+                    resultado = "viernes";
+                }
 
-            var pasoseis = operacionCombinada / 7;
-            var pasosiete = operacionCombinada - (pasoseis * 7);
-            var resultado = "";
-
-            if(pasosiete == 0){
-                resultado = "sabado";
-            } else if(pasosiete == 1){
-                resultado = "sabado";
-            }else if(pasosiete == 2){
-
-            }else if(pasosiete == 3){
-
-            }
+                // Pasamos el día al <h1>
+                $("#diaNacimineto").text(resultado);
+            });
         });
     </script>
 </body>

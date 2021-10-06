@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="padre"></div>
+    <input type="range" min="1" max="10" value="1" id="rango">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var url = "imagenes/ImagenDos.jpg";
+                var img = $("<img>", {
+                    "src" : url
+                });
+            $("#rango").change(function(){
+                //clear
+                var rango = $("#rango").val();
+                $("#padre").text("");
+                for(i = 0; i < rango; i++){
+                    $("#padre").append(img);
+                    img = $("<img>", {
+                    "src" : url
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
