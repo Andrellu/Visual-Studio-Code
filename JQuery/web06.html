@@ -26,6 +26,13 @@
                     "src" : url
                     });
                 }
+                $("img").mouseover(function(){
+                    $(this).attr("src","imagenes/ImagenUno.jpg");
+                });
+
+                $("img").mouseout(function(){
+                $(this).attr("src","imagenes/ImagenDOS.jpg");
+            });
             });
         });
     </script>
