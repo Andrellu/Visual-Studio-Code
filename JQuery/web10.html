@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="range" min="1" max="10" value="1" id="scroll">
+    <div id="btn"></div>
+    <div id="img"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var url = "imagenes/ImagenDos.jpg";
+            $("#scroll").change(function(){
+                var valor = $("#scroll").val();
+                $("#btn").text("");
+                $("#img").text("");
+                for(var i = 0; i < valor; i++){
+                    //var cont = i;
+                    var boton = $("<button>", {
+                        "text" : i,
+                        "data-num" : i
+                        });
+                    var img = $("<img>", {
+                        "src" : url,
+                        "data-num" : i
+                    });
+                    $("#btn").append(boton);
+                    $("#img").append(img);
+
+                    boton.click(function(){
+                        var poscionBTN = $(this).data("num");
+                        $("img[data-num="+ poscionBTN + "]").attr("src", "imagenes/ImagenUno.jpg");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

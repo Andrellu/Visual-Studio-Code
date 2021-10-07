@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Practica each checkbox</h1>
+
+    <button type="button" id="btnGenerar">Generar numeros</button>
+    <button type="button" id="btnSumar">Sumar chequeados</button>
+    <hr/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+    <input type="checkbox"/>
+
+    <h1 id="resultado"></h1>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        // Queremos sumar
+        $(document).ready(function(){
+            $("#btnGenerar").click(function(){
+                $("input[type=checkbox]").each(function(){
+                    var numAleatorio = parseInt((Math.random()*100) + 1);
+                    //console.log(numAleatorio);
+                    $(this).val(numAleatorio);
+                    //$(this).next().text(numAleatorio);
+                });
+            });
+            $("#btnSumar").click(function(){
+                var suma = 0;
+                $("input[type=checkbox]").each(function(){
+                    //console.log($(this).val());
+                    if($(this).is(":checked")){
+                        console.log($(this).val());
+                        var num = parseInt($(this).val());
+                        suma += num;
+                        $("#resultado").text(suma);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
