@@ -21,7 +21,22 @@
     <script>
         $(document).ready(function(){
             $("#btnApellido").click(function(){
+                var apellido = $("#cajapellido").val();
+                
+                $.get("documentos/XML/empleados.xml",function(data){
+                    // Cuidado con los filtros la etiqueta tiene que ser
+                    // exactamente igual.
+                    var filtro = "APELLIDO:contains(" + apellido + ")";
+                    console.log(filtro);
+                    var html = "";
 
+                    $(data).find(filtro).each(function(){
+                        //console.log("aqui");
+                        var ape = $(this).text();
+                        html += "<h1>" + ape + "</h1>"
+                    });
+                    $("#contenido").html(html);
+                });
             });
 
             $("#btnHospital").click(function(){
