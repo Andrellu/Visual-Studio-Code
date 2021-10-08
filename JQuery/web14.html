@@ -9,6 +9,7 @@
 <body>
     <h1>Busqueda XML</h1>
     <label>Apellido : </label>
+    <input type="text" id="cajapellido">
     <button type="button" id="btnApellido">Buscar apellido</button>
     <hr/>
     <label>Codigo postal</label>
@@ -29,6 +30,7 @@
                     var filtro = "HOSPITAL[HOSPITAL_COD=" + codHospital + "]";
                     var nodohospital = $(data).find(filtro).first();
                     var nombre = nodohospital.attr("NOMBRE");
+                    $("#contenido").html("<h1>Resultado : " + nombre + "</h1>");
                 });
             });
         });
