@@ -29,12 +29,16 @@
                     var filtro = "APELLIDO:contains(" + apellido + ")";
                     console.log(filtro);
                     var html = "";
-
-                    $(data).find(filtro).each(function(){
-                        //console.log("aqui");
-                        var ape = $(this).text();
-                        html += "<h1>" + ape + "</h1>"
-                    });
+                    if($(data).find(filtro).length == 0){
+                        html = "<h1 style='color:red'>" + " Resultado : Apellido no encontrado."
+                    } else {
+                        
+                        $(data).find(filtro).each(function(){
+                            //console.log("aqui");
+                            var ape = $(this).text();
+                            html += "<h1>" + ape + "</h1>"
+                        });
+                    }
                     $("#contenido").html(html);
                 });
             });

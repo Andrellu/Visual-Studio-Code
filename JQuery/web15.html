@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="dibujarBotones">Mostrar Botones</button>
+    <div id="contenedor"></div>
+    <div id="contenedorDetalles"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#dibujarBotones").click(function(){
+                $.get("documentos/XML/departamentosetiquetas.xml", function(data){
+                    $(data).find("DEPARTAMENTO").each(function(){
+                        //console.log("aqui");
+                        var numDepartamento = $(this).find("NUMERO").text();
+                        //console.log(numDepartamento);
+                        
+                        var boton = $("<button>" , {
+                            "text": "Detalles " + numDepartamento,
+                            "value" : numDepartamento
+                        });
+                        $("#contenedor").append(boton);
+                        boton.click(function(){
+                            var html_2 = "";
+                            var num_dep_rec = $(this).val();
+                            $.get("documentos/XML/departamentosetiquetas.xml", function(){
+                                $(data).find("DEPARTAMENTO").each(function(){
+                                var numDepartamento_2 = $(this).find("NUMERO").text();
+                                    if(numDepartamento_2 == num_dep_rec){
+                                        var nombre = $(this).find("NOMBRE").text();
+                                        var localidad = $(this).find("LOCALIDAD").text();
+                                        html_2 += "<h1>" + nombre + " ,"  + localidad + "</h1>";
+                                    }
+                                });
+                                $("#contenedorDetalles").html(html_2);
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
