@@ -25,10 +25,11 @@
                             "value" : numDepartamento
                         });
                         $("#contenedor").append(boton);
+                        
                         boton.click(function(){
-                            var html_2 = "";
                             var num_dep_rec = $(this).val();
                             $.get("documentos/XML/departamentosetiquetas.xml", function(){
+                                var html_2 = "";
                                 $(data).find("DEPARTAMENTO").each(function(){
                                     var numDepartamento_2 = $(this).find("NUMERO").text();
                                     if(numDepartamento_2 == num_dep_rec){
