@@ -20,7 +20,6 @@
                         //console.log("aqui");
                         var numDepartamento = $(this).find("NUMERO").text();
                         //console.log(numDepartamento);
-                        
                         var boton = $("<button>" , {
                             "text": "Detalles " + numDepartamento,
                             "value" : numDepartamento
@@ -31,7 +30,7 @@
                             var num_dep_rec = $(this).val();
                             $.get("documentos/XML/departamentosetiquetas.xml", function(){
                                 $(data).find("DEPARTAMENTO").each(function(){
-                                var numDepartamento_2 = $(this).find("NUMERO").text();
+                                    var numDepartamento_2 = $(this).find("NUMERO").text();
                                     if(numDepartamento_2 == num_dep_rec){
                                         var nombre = $(this).find("NOMBRE").text();
                                         var localidad = $(this).find("LOCALIDAD").text();
