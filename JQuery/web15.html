@@ -14,6 +14,7 @@
     <script>
         $(document).ready(function(){
             $("#dibujarBotones").click(function(){
+                $("#contenedor").text("");
                 $.get("documentos/XML/departamentosetiquetas.xml", function(data){
                     $(data).find("DEPARTAMENTO").each(function(){
                         //console.log("aqui");
@@ -34,7 +35,7 @@
                                     if(numDepartamento_2 == num_dep_rec){
                                         var nombre = $(this).find("NOMBRE").text();
                                         var localidad = $(this).find("LOCALIDAD").text();
-                                        html_2 += "<h1>" + nombre + " ,"  + localidad + "</h1>";
+                                        html_2 += "<h1>" + "Nombre: " +nombre + ", Localidad: " + localidad + "</h1>";
                                     }
                                 });
                                 $("#contenedorDetalles").html(html_2);
