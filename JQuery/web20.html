@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="contenedor"></select>
+    <div id="padre"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                "url": "documentos/JSON/jugadores.json"
+                ,"method": "GET"
+                ,"dataType": "json"
+                ,success: function(data) {
+                    $.each(data.jugadores, function(index, jugador) {
+                        var nombre = jugador.nombre;
+                        //console.log("este es el indice" + index);
+                        var html = $("<option>", { "text" : nombre, "value" : index }, "</option>");
+                        $("#contenedor").append(html);
+
+                        $("#contenedor").change(function(){
+                            var id = $(this).val();
+                            //console.log(nombre_change);
+                            $.ajax({
+                                "url": "documentos/JSON/jugadores.json"
+                                ,"method": "GET"
+                                ,"dataType": "json"
+                                ,success: function(data){
+                                    var html = "";
+                                    $.each(data.jugadores, function(index, jugador){
+                                        if(index == id){
+                                            var nombre = jugador.nombre;
+                                            var imagen = jugador.imagen;
+
+                                            html += "<p>" + nombre + "</p>" + "<img src='"+imagen+"'>" + "</img>";
+                                        }
+                                        $("#padre").html(html);
+                                    });
+                                }, error: function(){
+                                    $("#contenido").text("Error del servicio.");
+                                }
+                            });
+                        });
+                    });
+                
+                }, error: function(){
+                    $("#contenido").text("Error del servicio.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
