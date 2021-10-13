@@ -35,11 +35,19 @@
                                     $.each(data.jugadores, function(index, jugador){
                                         if(index == id){
                                             var nombre = jugador.nombre;
+                                            var numero = jugador.numero;
+                                            var edad = jugador.edad;
+                                            var posicion = jugador.posicion;
                                             var imagen = jugador.imagen;
 
-                                            html += "<p>" + nombre + "</p>" + "<img src='"+imagen+"'>" + "</img>";
+                                            html += "<p> Nombre : " + nombre + "</p>" 
+                                                 + "<p> Posición : "  + posicion + "</p>"
+                                                 + "<p> Numero : "  + numero + "</p>" 
+                                                 + "<p> Edad : " + edad + "</p>" 
+                                                 +  "<img src='"+imagen+"'>" + "</img>";
                                         }
-                                        $("#padre").html(html);
+                                        $("#padre").empty();
+                                        $("#padre").append(html);
                                     });
                                 }, error: function(){
                                     $("#contenido").text("Error del servicio.");
