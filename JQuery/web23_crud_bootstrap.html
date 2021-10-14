@@ -10,6 +10,7 @@
 <body>
     <label>Buscar salario</label>
     <input type="text" id="cajaSalario"/>
+    <button type="button" id="buscarSalario">Buscar</button>
     <table class="table" border="1" id="tblEmpleados">
         <thead>
             <tr>
@@ -31,6 +32,7 @@
 
         $(document).ready(function(){
             cargarEmpleados();
+
         });
 
         function cargarEmpleados(){
@@ -89,6 +91,10 @@
             });
             $("#contenedor").empty();
             $("#contenedor").append(h1);
+        }
+
+        function buscarSalario(){
+
         }
     </script>
 </body>
