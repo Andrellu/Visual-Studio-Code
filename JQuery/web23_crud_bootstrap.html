@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <a href="">hola</a>
+    <label>Buscar salario</label>
+    <input type="text" id="cajaSalario"/>
     <table class="table" border="1" id="tblEmpleados">
         <thead>
             <tr>
@@ -54,6 +55,7 @@
                         tr.append(tdBtn);
                         var tdBtnApe = $("<button>", {
                             "text" : emple.apellido,
+                            "type" : "button",
                             "class" : "btn btn-warning",
                             "value" : emple.idEmpleado
                         });
