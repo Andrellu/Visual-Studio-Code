@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <label>Buscar salario</label>
-    <input type="text" id="cajaSalario"/>
-    <button type="button" id="buscarSalario">Buscar</button>
+    
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Buscar Salario</label>
+        <div class="input-group mb-3">
+            <button type="button" class="btn btn-dark" id="buscarSalario">Buscar</button>
+            <input type="text" id="cajaSalario" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">    
+        </div>
+        <div id="emailHelp" class="form-text">Necesitas un números entre 0 y 6000.</div>
+    </div>
+    </br>
     <table class="table" border="1" id="tblEmpleados">
         <thead>
             <tr>
@@ -31,12 +38,14 @@
         var urlApiEmpleados = "https://apiempleadosspgs.azurewebsites.net/";
 
         $(document).ready(function(){
-            cargarEmpleados();
-
+            $("#buscarSalario").click(function(){
+                var salario = $("#cajaSalario").val();
+                cargarEmpleados(salario);
+            });
         });
 
-        function cargarEmpleados(){
-            var request_emple = "/api/empleados";
+        function cargarEmpleados(numero){
+            var request_emple = "api/empleados/empleadossalario/" + numero;
             $.ajax({
                     "url" : urlApiEmpleados+request_emple,
                     "type" : "GET",
@@ -53,30 +62,30 @@
                         */
                         var tr = $("<tr>");
                         $("#tblEmpleados").append(tr);
-                        var tdBtn = $("<td>");
-                        tr.append(tdBtn);
-                        var tdBtnApe = $("<button>", {
+                        tdApell = $("<td>",{
                             "text" : emple.apellido,
-                            "type" : "button",
-                            "class" : "btn btn-warning",
-                            "value" : emple.idEmpleado
+                            "data-num" : emple.idEmpleado
                         });
-                        tdBtn.append(tdBtnApe);
+
+                        tr.append(tdApell);
                         var tdOfi = $("<td>", {
-                            "text" : emple.oficio
+                            "text" : emple.oficio,
+                            "data-num" : emple.idEmpleado
                         });
                         tr.append(tdOfi);
                         var tdSalary = $("<td>",{
-                            "text" : emple.oficio
+                            "text" : emple.salario,
+                            "data-num" : emple.idEmpleado
                         });
                         tr.append(tdSalary);
                         var tdDep = $("<td>",{
-                            "text": emple.departamento
+                            "text": emple.departamento,
+                            "data-num" : emple.idEmpleado
                         });
                         tr.append(tdDep);
 
-                        tdBtnApe.click(function(){
-                            var id = $(this).val();
+                        $("td").click(function(){
+                            var id = $(this).data("num");
                             cargarIDEmpleado(id);
                         });
                     });
@@ -91,10 +100,6 @@
             });
             $("#contenedor").empty();
             $("#contenedor").append(h1);
-        }
-
-        function buscarSalario(){
-
         }
     </script>
 </body>
