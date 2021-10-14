@@ -40,7 +40,11 @@
         $(document).ready(function(){
             $("#buscarSalario").click(function(){
                 var salario = $("#cajaSalario").val();
-                cargarEmpleados(salario);
+                if(salario > 6000 || salario < 0){
+                    alert("Salario no existente.");
+                } else {
+                    cargarEmpleados(salario);
+                }
             });
         });
 
@@ -51,6 +55,7 @@
                     "type" : "GET",
                     success : function(data){
                     var html_emple = "";
+                    $("#tblEmpleados tbody").empty();
                     $.each(data, function(index, emple){
                         /*
                         html_emple += "<tr>";
@@ -61,6 +66,7 @@
                         html_emple += "</tr>";
                         */
                         var tr = $("<tr>");
+                        
                         $("#tblEmpleados").append(tr);
                         tdApell = $("<td>",{
                             "text" : emple.apellido,
@@ -72,6 +78,7 @@
                             "text" : emple.oficio,
                             "data-num" : emple.idEmpleado
                         });
+                        
                         tr.append(tdOfi);
                         var tdSalary = $("<td>",{
                             "text" : emple.salario,
