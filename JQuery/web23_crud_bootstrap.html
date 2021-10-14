@@ -96,8 +96,9 @@
 
         function cargarIDEmpleado(id){
             var h1 = $("<h1>",{
-                "text" : "El ID  es : " + id
+                "text" : "El ID  es : " + id,
             });
+            h1.css("text-align", "center");
             $("#contenedor").empty();
             $("#contenedor").append(h1);
         }
