@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de CRUD</h1>
+
+    </br>
+    </br>
+
+    <label>Número :</label>
+    <input type="text" id="cajaNumero">
+    </br>
+    <label>Nombre :</label>
+    <input type="text" id="cajaNombre">
+    </br>
+    <label>Localidad :</label>
+    <input type="text" id="cajaLocalidad">
+    
+    </br>
+    </br>
+
+    <button type="button" id="btnInsertar">Insertar</button>
+    <button type="button" id="btnModificar">Modificar</button>
+    <button type="button" id="btnEliminar">Eliminar</button>
+
+    </br>
+    </br>
+
+    <table border="1" id="tblDepartamentos">
+        <thead>
+            <tr>
+                <td>Número</td>
+                <td>Nombre</td>
+                <td>Localidad</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var urlApi = "https://apicruddepartamentoscore.azurewebsites.net";
+        $(document).ready(function(){
+            cargarDepartamentos();
+            // Cada 1000 ms recarga la pagina
+            // setInterval(cargarDepartamentos,1000);
+            
+            $("#btnInsertar").click(function(){
+                var numero = $("#cajaNumero").val();
+                var nombre = $("#cajaNombre").val();
+                var localidad = $("#cajaLocalidad").val();
+                insertarDepartamento(numero, nombre, localidad);
+                cargarDepartamentos();
+            });
+
+            $("#btnModificar").click(function(){
+                var numero = $("#cajaNumero").val();
+                var nombre = $("#cajaNombre").val();
+                var localidad = $("#cajaLocalidad").val();
+                modificarDepartamento(numero, nombre, localidad);
+                cargarDepartamentos();
+            });
+
+            $("#btnEliminar").click(function(){
+                var numero = $("#cajaNumero").val();
+                eliminarDepartamento(numero);
+                cargarDepartamentos();
+            });
+        });
+
+        function cargarDepartamentos(){
+            var request = "/api/departamentos";
+            $.ajax({
+                "url" : urlApi + request,
+                "type" : "GET",
+                success : function(data){
+                    var html = "";
+                    $.each(data, function(index, dept){
+                        html += "<tr>";
+                        html += "<td>" + dept.numero + "</td>";
+                        html += "<td>" + dept.nombre + "</td>";
+                        html += "<td>" + dept.localidad + "</td>";
+                        html += "</tr>";
+                    });
+                    $("#tblDepartamentos tbody").html(html);
+                }
+            });
+        }
+
+        function insertarDepartamento(num, nom, local){
+            var request = "/api/departamentos";
+            //Creamos el objeto
+            var dep = new Object();
+            dep.numero = parseInt(num);
+            dep.nombre = nom;
+            dep.localidad = local;
+            //Lo transformamos a JSON
+            var json = JSON.stringify(dep);
+            //console.log(json);
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "POST",
+                "data" : json,
+                "contentType" : "application/json",
+                success : function(){
+                    console.log("INSERTADO!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+
+        function modificarDepartamento(num, nom, local){
+            var request = "/api/departamentos";
+
+            var dep = new Object();
+            dep.numero = parseInt(num);
+            dep.nombre = nom;
+            dep.localidad = local;
+
+            var json = JSON.stringify(dep);
+            console.log(json);
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "PUT",
+                "data" : json,
+                "contentType" : "application/json",
+                success : function(){
+                    console.log("MODIFICADO!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+
+        function eliminarDepartamento(num){
+            var request = "/api/departamentos/" + num;
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "DELETE",
+                success : function(){
+                    console.log("ELIMINADO!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
