@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+    <a href="">hola</a>
     <table class="table" border="1" id="tblEmpleados">
         <thead>
             <tr>
@@ -53,6 +54,7 @@
                         tr.append(tdBtn);
                         var tdBtnApe = $("<button>", {
                             "text" : emple.apellido,
+                            "class" : "btn btn-warning",
                             "value" : emple.idEmpleado
                         });
                         tdBtn.append(tdBtnApe);
