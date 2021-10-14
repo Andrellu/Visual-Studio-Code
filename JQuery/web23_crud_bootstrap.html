@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <table class="table" border="1" id="tblEmpleados">
+        <thead>
+            <tr>
+                <td>Apellido</td>
+                <td>Oficio</td>
+                <td>Salario</td>
+                <td>Departamento</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="contenedor"></div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var urlApiEmpleados = "https://apiempleadosspgs.azurewebsites.net/";
+
+        $(document).ready(function(){
+            cargarEmpleados();
+        });
+
+        function cargarEmpleados(){
+            var request_emple = "/api/empleados";
+            $.ajax({
+                    "url" : urlApiEmpleados+request_emple,
+                    "type" : "GET",
+                    success : function(data){
+                    var html_emple = "";
+                    $.each(data, function(index, emple){
+                        /*
+                        html_emple += "<tr>";
+                        html_emple += "<td>" + emple.apellido + "</td>";
+                        html_emple += "<td>" + emple.oficio + "</td>";
+                        html_emple += "<td>" + emple.salario + "</td>";
+                        html_emple += "<td>" + emple.departamento + "</td>"
+                        html_emple += "</tr>";
+                        */
+                        var tr = $("<tr>");
+                        $("#tblEmpleados").append(tr);
+                        var tdBtn = $("<td>");
+                        tr.append(tdBtn);
+                        var tdBtnApe = $("<button>", {
+                            "text" : emple.apellido,
+                            "value" : emple.idEmpleado
+                        });
+                        tdBtn.append(tdBtnApe);
+                        var tdOfi = $("<td>", {
+                            "text" : emple.oficio
+                        });
+                        tr.append(tdOfi);
+                        var tdSalary = $("<td>",{
+                            "text" : emple.oficio
+                        });
+                        tr.append(tdSalary);
+                        var tdDep = $("<td>",{
+                            "text": emple.departamento
+                        });
+                        tr.append(tdDep);
+
+                        tdBtnApe.click(function(){
+                            var id = $(this).val();
+                            cargarIDEmpleado(id);
+                        });
+                    });
+                    //$("#tblEmpleados tbody").html(html_emple);
+                }
+            });
+        }
+
+        function cargarIDEmpleado(id){
+            var h1 = $("<h1>",{
+                "text" : "El ID  es : " + id
+            });
+            $("#contenedor").empty();
+            $("#contenedor").append(h1);
+        }
+    </script>
+</body>
+</html>

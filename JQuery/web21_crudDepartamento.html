@@ -103,6 +103,9 @@
             //Lo transformamos a JSON
             var json = JSON.stringify(dep);
             //console.log(json);
+            
+            // Al insertar necesitamos hacer el
+            // data y contentType
             $.ajax({
                 "url" : urlApi+request,
                 "type" : "POST",
