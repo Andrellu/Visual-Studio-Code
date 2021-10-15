@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de CRUD</h1>
+
+    </br>
+    </br>
+
+    <label>Número :</label>
+    <input type="text" id="cajaNumero">
+    </br>
+    <label>Nombre :</label>
+    <input type="text" id="cajaNombre">
+    </br>
+    <label>Localidad :</label>
+    <input type="text" id="cajaLocalidad">
+    
+    </br>
+    </br>
+
+    <button type="button" id="btnInsertar">Insertar</button>
+    <button type="button" id="btnModificar">Modificar</button>
+    <button type="button" id="btnEliminar">Eliminar</button>
+
+    </br>
+    </br>
+
+    <table border="1" id="tblDepartamentos">
+        <thead>
+            <tr>
+                <td>Número</td>
+                <td>Nombre</td>
+                <td>Localidad</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var urlApi = "https://apicruddepartamentosxml.azurewebsites.net/";
+        $(document).ready(function(){
+            // cargarDepartamentos();
+            // Cada 1000 ms recarga la pagina
+            setInterval(cargarDepartamentos,1000);
+            
+            $("#btnInsertar").click(function(){
+                var dep = getDepartamentoXML();
+                insertarDepartamento(dep);
+                cargarDepartamentos();
+            });
+
+            $("#btnModificar").click(function(){
+                var dep = getDepartamentoXML();
+                modificarDepartamento(dep);
+                cargarDepartamentos();
+            });
+
+            $("#btnEliminar").click(function(){
+                var numero = $("#cajaNumero").val();
+                eliminarDepartamento(numero);
+                cargarDepartamentos();
+            });
+        });
+
+        function getDepartamentoXML(){
+            var numero = $("#cajaNumero").val();
+            var nombre = $("#cajaNombre").val();
+            var localidad = $("#cajaLocalidad").val();
+            var dept = "<Departamento>" +
+                "<IdDepartamento>" + numero + "</IdDepartamento>" +
+                "<Nombre>" + nombre + "</Nombre>" +
+                "<Localidad>" + localidad + "</Localidad>" +
+                "</Departamento>";
+            return dept;
+        }
+
+        function cargarDepartamentos(){
+            var request = "api/departamentos";
+            $.get(urlApi+request, function(data){
+                //console.log(data);
+                var dep = $(data).find("Departamento");
+                var html = "";
+                $(dep).each(function(){
+                    var num = $(this).find("IdDepartamento").text();
+                    var nom = $(this).find("Nombre").text();
+                    var local = $(this).find("Localidad").text();
+                    html += "<tr>";
+                        html += "<td>" + num + "</td>";
+                        html += "<td>" + nom + "</td>";
+                        html += "<td>" + local + "</td>";
+                    html += "</tr>";
+                });
+                $("#tblDepartamentos tbody").html(html);
+
+            });
+        }
+
+        function insertarDepartamento(departamento){
+            var request = "api/departamentos";
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "POST",
+                "data" : departamento,
+                "contentType" : "application/xml",
+                success : function(){
+                    console.log("Insertado!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+
+        function modificarDepartamento(departamento){
+            var request = "api/departamentos";
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "PUT",
+                "data" : departamento,
+                "contentType" : "application/xml",
+                success : function(){
+                    console.log("Modificado!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+
+        function eliminarDepartamento(num){
+            var request = "api/departamentos/" + num;
+            $.ajax({
+                "url" : urlApi+request,
+                "type" : "DELETE",
+                success : function(){
+                    console.log("Eliminado!!");
+                    cargarDepartamentos();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
