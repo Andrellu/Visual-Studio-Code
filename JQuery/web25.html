@@ -23,7 +23,7 @@
     <div class="input-group mb-3">
         <button type="button" class="btn btn-primary btn-lg" id="btnAnadir">Añadir</button>
         <button type="button" class="btn btn-secondary btn-lg" id="btnEliminar">Eliminar</button>
-        <button type="button" class="btn btn-primary btn-lg" id="btnModificar">Modificar</button>
+        <button type="button" class="btn btn-secondary btn-lg" id="btnModificar">Modificar</button>
     </div>
     <div class="input-group mb-3">
         <table class="table" border="1" id="tblHospital">
@@ -110,7 +110,9 @@
                                 "data-nombre" : hospital.nombre,
                                 "data-direccion" : hospital.direccion,
                                 "data-tlf" : hospital.telefono,
-                                "data-camas" : hospital.camas
+                                "data-camas" : hospital.camas,
+                                "type" : "button",
+                                "class" : "btn btn-secondary btn-lg",
                             });
                             tdBtn.append(boton);
 
@@ -118,6 +120,8 @@
                             tr.append(tdBtnBorrar);
 
                             var botonBorrar = $("<button>",{
+                                "type" : "button",
+                                "class" : "btn btn-primary btn-lg",
                                 "text" : "Borrar",
                                 "data-id" : hospital.idhospital,
                                 "data-bs-toggle" : "modal",
