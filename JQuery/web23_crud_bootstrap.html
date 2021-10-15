@@ -58,6 +58,7 @@
                     $("#tblEmpleados tbody").empty();
                     $.each(data, function(index, emple){
                         var tr = $("<tr>");
+                        
                         $("#tblEmpleados").append(tr);
                         tdApell = $("<td>",{
                             "text" : emple.apellido,
