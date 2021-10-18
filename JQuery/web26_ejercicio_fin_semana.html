@@ -94,6 +94,7 @@
                         var tdSal = $("<td>", {
                             "text" : empleado.salario,
                             "value" : empleado.salario,
+                            "style" : "color:red",
                             "data-oficio" : empleado.oficio
                         });
                         tr.append(tdSal);
@@ -158,6 +159,7 @@
                         var tdSal = $("<td>", {
                             "text" : empleado.salario,
                             "value" : empleado.salario,
+                            "style" : "color:red",
                             "data-oficio" : empleado.oficio
                         });
                         tr.append(tdSal);
@@ -217,7 +219,7 @@
         function incrementarSalarioOficio(oficio, incremento){
             var request = "/incrementarsalariooficios/" + oficio + "/" + incremento;
             var requestOficio = "/getempleadosoficio/empleadosoficio/" + oficio;
-
+            
             var empleado = new Object();
             empleado.salario = parseInt(empleado.salario) + parseInt(incremento);
 
