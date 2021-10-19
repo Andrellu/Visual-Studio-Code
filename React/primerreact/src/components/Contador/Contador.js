@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 //import { useState } from "react";
-function Contador() {
+function Contador(props) {
 
+    const {Inicio} = props;
     // Creamos la variable con su [GET, SET]
     //  Asignamos el valor con useState(Valor)
-    const [Numero, setNumero] = useState(0);
+    const [Numero, setNumero] = useState(parseInt(Inicio));
 
     const sumarContador = () => {
         // Cambiamos el valor del contador
         setNumero(Numero + 1);
     }
-
 
     return (
         <div>

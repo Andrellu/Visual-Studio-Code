@@ -8,11 +8,16 @@ import reportWebVitals from './reportWebVitals';
 import Ejemplo from './components/Ejemplo/Ejemplo';
 import Padre from './components/Padre/Padre';
 import Contador from './components/Contador/Contador';
+import PadreDibujo from './components/Padre/PadreDibujo';
 
 ReactDOM.render(
   <div className="App">
       {/* <Padre/> */}
-      <Contador/>
+      {/* <Contador Inicio="0"/>
+      <Contador Inicio="5"/>
+      <Contador Inicio="10"/>
+      <Contador Inicio="50"/> */}
+      <PadreDibujo/>
   </div>,
   document.getElementById('root')
 );
