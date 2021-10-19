@@ -22,7 +22,7 @@ function Ejemplo(props){
     };
 
     return (
-        <div>
+        <div className="App">
              <hr/>
             <h1> 1 + 2 </h1>
             <button onClick={() => sumar(1,2)}>Sumar</button>
