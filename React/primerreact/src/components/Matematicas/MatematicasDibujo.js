@@ -17,7 +17,7 @@ function MatematicasDibujo (props) {
             <hr/>
             <h1>Los numeros son {NumeroUno} y {NumeroDos}</h1>
             <h2 style={{color:"Blue"}}>La suma es {Total}</h2>
-            <button onClick={sumarNumeros}>Pulsa para sumar</button>
+            <button onClick={() =>sumarNumeros()}>Pulsa para sumar</button>
             <button onClick={() =>metodoPadre(Numerouno, Numerodos)}>Pulsa para multiplicar</button>
         </div>
     );
