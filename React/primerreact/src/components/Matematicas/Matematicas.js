@@ -9,9 +9,9 @@ function Matematicas(props){
     }
     return (
         <div className="App">
-            <h1>Soy el numero {Valor}</h1>
-            <button onClick={() => metodoPadreMates(Valor)}>Triplicar</button>
-            <button onClick={() => duplicarNumero(Valor) }>Duplicar</button>
+            <h1>Soy el numero {Valor} en matematicas</h1>
+            <button onClick={() => metodoPadreMates(Valor)}>Triplicar con el Padre</button>
+            <button onClick={() => duplicarNumero(Valor) }>Duplicar con el Hijo</button>
         </div>
     );
 }
