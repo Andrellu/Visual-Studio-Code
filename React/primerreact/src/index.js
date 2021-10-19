@@ -7,10 +7,12 @@ import Metodos from './components/Metodos/Metodos';
 import reportWebVitals from './reportWebVitals';
 import Ejemplo from './components/Ejemplo/Ejemplo';
 import Padre from './components/Padre/Padre';
+import Contador from './components/Contador/Contador';
 
 ReactDOM.render(
   <div className="App">
-      <Padre/>
+      {/* <Padre/> */}
+      <Contador/>
   </div>,
   document.getElementById('root')
 );
