@@ -1,4 +1,4 @@
-import foto from './assets/images/ImagenDos.jpg';
+import foto from './../../assets/images/ImagenDos.jpg';
 function Ejemplo(){
     var numUno = 1;
     var numDos = 2;
