@@ -6,15 +6,11 @@ import Saludo from './components/Saludo/Saludo';
 import Metodos from './components/Metodos/Metodos';
 import reportWebVitals from './reportWebVitals';
 import Ejemplo from './components/Ejemplo/Ejemplo';
+import Padre from './components/Padre/Padre';
 
 ReactDOM.render(
   <div className="App">
-      <Saludo nombre="Juan" edad="15"/>
-      <Saludo nombre="Andres" edad="24"/>
-      <Metodos/>
-      <Ejemplo Numero1="5" Numero2="5"/>
-      <Ejemplo Numero1="10" Numero2="10"/>
-      <Ejemplo Numero1="20" Numero2="20"/>
+      <Padre/>
   </div>,
   document.getElementById('root')
 );
