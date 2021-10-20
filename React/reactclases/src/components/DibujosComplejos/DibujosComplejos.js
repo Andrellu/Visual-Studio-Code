@@ -38,11 +38,13 @@ class DibujosComplejos extends Component{
                 {/* Primera forma de pintar dibujos con bucles */}
                 {/* <ul> {this.dibujarNumeros()} </ul> */}
                 {/* Segunda forma de pintar dibujos con bucles */}
-                {this.state.nombres.map((name, index) => {
-                    return (
-                        <li>{name}</li>
-                    );
-                })}
+                <ul>
+                    {this.state.nombres.map((name, index) => {
+                        return (
+                            <li>{name}</li>
+                        );
+                    })}
+                </ul>
             </div>
         );
     }
