@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import Contador from './components/Contador/Contador';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <div>
-      <App/>
+      <Contador/>
   </div>,
   document.getElementById('root')
 );
