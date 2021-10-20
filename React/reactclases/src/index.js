@@ -7,7 +7,8 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <div>
-      <Contador/>
+      <Contador Inicio="5"/>
+      <Contador Inicio="50"/>
   </div>,
   document.getElementById('root')
 );
