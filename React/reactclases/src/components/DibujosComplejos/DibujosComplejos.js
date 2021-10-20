@@ -16,13 +16,33 @@ class DibujosComplejos extends Component{
         return lista;
     }
 
+    state = {
+        nombres : ["Andres", "Sara", "Alex", "Javi", "Santi"]
+    };
+
+    insertarNombre = () =>{
+        // Necesitamos cambiar el state
+        // Debemos comprobar si basta con acceder a state y utilizar push para hecer los cambios
+        this.state.nombres.push("NUEVO");
+        // Debemos reasignarlo para que lo haga.
+        this.setState({
+            nombres : this.state.nombres
+        });
+    }
+
     render (){
         return (
             <div> 
                 <h1 className="App">Dibujos con bucles</h1>
-                <ul>
-                    {this.dibujarNumeros()}
-                </ul>
+                <button onClick={() => this.insertarNombre()}>Añadir nombre</button>
+                {/* Primera forma de pintar dibujos con bucles */}
+                {/* <ul> {this.dibujarNumeros()} </ul> */}
+                {/* Segunda forma de pintar dibujos con bucles */}
+                {this.state.nombres.map((name, index) => {
+                    return (
+                        <li>{name}</li>
+                    );
+                })}
             </div>
         );
     }
