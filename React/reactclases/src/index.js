@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
 import Contador from './components/Contador/Contador';
+import DibujosComplejos from './components/DibujosComplejos/DibujosComplejos';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <div>
-      <Contador Inicio="5"/>
-      <Contador Inicio="50"/>
+      {/* <Contador Inicio="5"/>
+      <Contador Inicio="50"/> */}
+      <DibujosComplejos/>
   </div>,
   document.getElementById('root')
 );

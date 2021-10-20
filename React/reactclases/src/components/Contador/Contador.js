@@ -41,7 +41,6 @@ class Contador extends Component {
             });
         }
 
-
     // Dentro del render si puedo usar var y const
     // Fuera no podriamos.
     render() {
@@ -52,6 +51,7 @@ class Contador extends Component {
             valor += 1;
             console.log("Soy el método render :" + valor);
         }
+        
         return (
             <div className="App">
                 <h1>Primer componente JSX</h1>
