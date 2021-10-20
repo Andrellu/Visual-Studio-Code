@@ -39,6 +39,8 @@ class DibujosComplejos extends Component{
                 {/* <ul> {this.dibujarNumeros()} </ul> */}
                 {/* Segunda forma de pintar dibujos con bucles */}
                 <ul>
+                    {/* ES COMO REALIZAR UN EACH CON LOS DATOS DE LA LISTA CON UN NOMBRE
+                    Y UN INDICE DADO POR NOSOTROS */}
                     {this.state.nombres.map((name, index) => {
                         return (
                             <li>{name}</li>
