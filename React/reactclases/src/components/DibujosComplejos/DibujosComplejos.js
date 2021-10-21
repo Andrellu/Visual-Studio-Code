@@ -43,7 +43,7 @@ class DibujosComplejos extends Component{
                     Y UN INDICE DADO POR NOSOTROS */}
                     {this.state.nombres.map((name, index) => {
                         return (
-                            <li>{name}</li>
+                            <li key={index}>{name}</li>
                         );
                     })}
                 </ul>
