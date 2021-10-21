@@ -66,17 +66,53 @@ class Comics extends Component {
         });
     }
 
+    insertarComic = () =>{
+        var titulo = document.getElementById('cajaTitulo').value;
+        var image = document.getElementById('cajaImagen').value;
+        var descrip = document.getElementById('cajaDescripcion').value;
+
+        var comic = {
+            titulo : titulo,
+            imagen : image,
+            descripcion : descrip
+        };
+
+        this.state.comics.push(comic);
+        this.setState({
+            comics : this.state.comics
+        });
+    }
+
+    modificarComic = () =>{
+        var titulo = document.getElementById('cajaTitulo').value;
+        var image = document.getElementById('cajaImagen').value;
+        var descrip = document.getElementById('cajaDescripcion').value;
+    }
+
     render() {
         return (
             <div style={{backgroundColor:"#333333 "}}>
                 {/* <button onClick={this.eliminarComic}>Eliminar</button> */}
                 <h1 style={{color:"fuchsia"}}>Ejemplo comics Objetos/Colecciones</h1>
+                
                 <hr/>
-                {this.state.favorito && (
-                    <div className="App" style={{backgroundColor:"#F38630 "}}>
-                        <h1>{this.state.favorito.titulo}</h1>
-                        <img src={this.state.favorito.imagen}></img>
-                </div>)}
+                    <label>Titulo : </label>
+                    <input type="text" id="cajaTitulo"/><br/>
+                    <label>Imagen : </label>
+                    <input type="text" id="cajaImagen"/><br/>
+                    <label>Descripción : </label>
+                    <input type="text" id="cajaDescripcion"/><br/>
+
+                    <button onClick={this.insertarComic}>Insertar Comic</button>
+
+                <hr/>
+                
+                <hr/>
+                    {this.state.favorito && (
+                        <div className="App" style={{backgroundColor:"#F38630 "}}>
+                            <h1>{this.state.favorito.titulo}</h1>
+                            <img src={this.state.favorito.imagen}></img>
+                    </div>)}
                 <hr/>
                 {this.state.comics.map((comic, index) => {
                     return (<Comic comic={comic} key={index} metodoPadre={this.seleccionarFavorito} index={index} metodoEliminar={this.eliminarComic}/>);
