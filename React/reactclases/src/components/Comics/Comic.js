@@ -8,7 +8,8 @@ class Comic extends Component{
     }
 
     elimnarComic = () =>{
-        var indice = this.props.comic.indice;
+        var indice = this.props.index;
+        console.log(indice);
         this.props.metodoEliminar(indice);
     }
 

@@ -60,6 +60,7 @@ class Comics extends Component {
     // }
     eliminarComic = (index) =>{
         //     splice recibe 2 paramatero un indice y los elementos a eliminar
+        console.log(index);
         this.state.comics.splice(index,1);
         this.setState({
             comics : this.state.comics
@@ -115,7 +116,8 @@ class Comics extends Component {
                     </div>)}
                 <hr/>
                 {this.state.comics.map((comic, index) => {
-                    return (<Comic comic={comic} key={index} metodoPadre={this.seleccionarFavorito} index={index} metodoEliminar={this.eliminarComic}/>);
+                  //console.log(index);
+                  return (<Comic comic={comic} key={index} metodoPadre={this.seleccionarFavorito} index={index} metodoEliminar={this.eliminarComic}/>);
                 })}
             </div>
         );
