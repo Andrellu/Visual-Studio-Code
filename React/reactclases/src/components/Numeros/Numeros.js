@@ -19,9 +19,14 @@ class Numeros extends Component{
     };
 
     sumarNumeros = (num) => {
-        console.log()
         this.setState({
             total : this.state.total + num
+        });
+    }
+
+    restarNumeros = (num) =>{
+        this.setState({
+            total : this.state.total - num
         });
     }
 
@@ -34,7 +39,7 @@ class Numeros extends Component{
                 <button onClick={() => this.generarNumero()}>Generar Numero</button>
                 <div>
                     {this.state.numeros.map((num, index) => {
-                        return (<Numero numero={num} key={index} metodoPadre={this.sumarNumeros}/>);
+                        return (<Numero numero={num} key={index} metodoPadre={this.sumarNumeros} metodoPadreDos={this.restarNumeros}/>);
                     })}
                 </div>
             </div>

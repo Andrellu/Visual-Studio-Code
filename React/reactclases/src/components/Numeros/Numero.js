@@ -7,11 +7,17 @@ class Numero extends Component{
         this.props.metodoPadre(num);
     };
 
+    restarAleatorio = () =>{
+        var num = this.props.numero;
+        this.props.metodoPadreDos(num);
+    }
+
     render(){
         return(
             <div>
                 <h1>{this.props.numero}</h1>
                 <button onClick={this.sumarAleatorio}>Sumar</button>
+                <button onClick={this.restarAleatorio}>Restar</button>
             </div>
         );
     }
