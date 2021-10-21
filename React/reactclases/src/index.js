@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import Comics from './components/Comics/Comics';
 import Contador from './components/Contador/Contador';
 import Deportes from './components/Deportes/Deportes';
 import DibujosComplejos from './components/DibujosComplejos/DibujosComplejos';
@@ -14,7 +15,8 @@ ReactDOM.render(
       <Contador Inicio="50"/> */}
       {/* <DibujosComplejos/> */}
       {/* <Deportes/> */}
-      <Numeros/>
+      {/* <Numeros/> */}
+      <Comics/>
   </div>,
   document.getElementById('root')
 );
