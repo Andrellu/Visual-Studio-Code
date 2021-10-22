@@ -91,8 +91,7 @@ class Comics extends Component {
       var lista = this.state.comics;
       //console.log(comicRecibido.titulo);
       lista.map((comiclista, index) =>{
-        console.log(comiclista.titulo);
-
+        //console.log(comiclista.titulo);
         if(index == indice){
           comiclista.titulo = titul;
           comiclista.imagen = image;
@@ -118,7 +117,7 @@ class Comics extends Component {
                     <label>Descripción : </label>
                     <input type="text" id="cajaDescripcion"/><br/>
 
-                    <button onClick={this.insertarComic}>Insertar Comic</button>
+                    <button style={{backgroundColor:"#C7F464"}} onClick={this.insertarComic}>Insertar Comic</button>
 
                 <hr/>
                 
