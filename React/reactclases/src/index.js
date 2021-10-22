@@ -16,6 +16,7 @@ import reportWebVitals from './reportWebVitals';
 import MenuRutas from './components/Rutas/MenuRutas';
 import EjemploSimple from './components/Formularios/EjemploSimple';
 import ConjeturaCollatz from './components/Formularios/ConjeturaCollatz';
+import TablaMultiplicar from './components/Formularios/TablaMultiplicar';
 
 ReactDOM.render(
   <div className="App">
@@ -28,7 +29,8 @@ ReactDOM.render(
       {/* <MenuRutas/>
       <Router/> */}
       {/* <EjemploSimple/> */}
-      <ConjeturaCollatz/>
+      {/* <ConjeturaCollatz/> */}
+      <TablaMultiplicar/>
   </div>,
   document.getElementById('root')
 );

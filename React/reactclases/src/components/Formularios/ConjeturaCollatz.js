@@ -34,7 +34,7 @@ export default class ConjeturaCollatz extends Component {
                 <h1 style={{color:"green"}}>Práctica conjetura de Collatz</h1>
                 <ul>
                     {this.state.numeros.map((nums, index) => {
-                        return(<li>{nums}</li>);
+                        return(<li key={index}>{nums}</li>);
                     })}
                 </ul>
                 <form onSubmit={this.recibirDatos}>
