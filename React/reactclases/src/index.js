@@ -14,6 +14,8 @@ import Television from './components/Rutas/Television';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MenuRutas from './components/Rutas/MenuRutas';
+import EjemploSimple from './components/Formularios/EjemploSimple';
+import ConjeturaCollatz from './components/Formularios/ConjeturaCollatz';
 
 ReactDOM.render(
   <div className="App">
@@ -23,8 +25,10 @@ ReactDOM.render(
       {/* <Deportes/> */}
       {/* <Numeros/> */}
       {/* <Comics/> */}
-      <MenuRutas/>
-      <Router/>
+      {/* <MenuRutas/>
+      <Router/> */}
+      {/* <EjemploSimple/> */}
+      <ConjeturaCollatz/>
   </div>,
   document.getElementById('root')
 );
