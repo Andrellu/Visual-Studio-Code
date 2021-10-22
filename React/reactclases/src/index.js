@@ -17,6 +17,7 @@ import MenuRutas from './components/Rutas/MenuRutas';
 import EjemploSimple from './components/Formularios/EjemploSimple';
 import ConjeturaCollatz from './components/Formularios/ConjeturaCollatz';
 import TablaMultiplicar from './components/Formularios/TablaMultiplicar';
+import TablaMultiplicarSelect from './components/Formularios/TablaMultiplicarSelect';
 
 ReactDOM.render(
   <div className="App">
@@ -30,7 +31,8 @@ ReactDOM.render(
       <Router/> */}
       {/* <EjemploSimple/> */}
       {/* <ConjeturaCollatz/> */}
-      <TablaMultiplicar/>
+      {/* <TablaMultiplicar/> */}
+      <TablaMultiplicarSelect/>
   </div>,
   document.getElementById('root')
 );
