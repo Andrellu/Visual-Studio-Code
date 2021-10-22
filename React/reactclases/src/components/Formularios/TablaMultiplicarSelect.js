@@ -48,7 +48,9 @@ export default class TablaMultiplicarSelect extends Component {
                     </tr>
                     <tbody>
                         {this.state.tabla.map((tan, index) =>{
-                            
+                            <tr key={index}>
+                                {tan}
+                            </tr>
                         })}
                     </tbody>
                 </table>
