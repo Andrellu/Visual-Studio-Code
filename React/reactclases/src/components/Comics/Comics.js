@@ -123,7 +123,7 @@ class Comics extends Component {
                 
                 <hr/>
                     {this.state.favorito && (
-                        <div className="App" style={{backgroundColor:"#F38630 "}}>
+                        <div className="App" style={{backgroundColor:"#F8CA00"}}>
                             <h1>{this.state.favorito.titulo}</h1>
                             <img src={this.state.favorito.imagen}></img>
                     </div>)}
