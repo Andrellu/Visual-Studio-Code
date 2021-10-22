@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Router from './components/Router';
 import App from './components/App/App';
 import Comics from './components/Comics/Comics';
 import Contador from './components/Contador/Contador';
 import Deportes from './components/Deportes/Deportes';
 import DibujosComplejos from './components/DibujosComplejos/DibujosComplejos';
 import Numeros from './components/Numeros/Numeros';
+import Cine from './components/Rutas/Cine';
+import Home from './components/Rutas/Home';
+import Musica from './components/Rutas/Musica';
+import Television from './components/Rutas/Television';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import MenuRutas from './components/Rutas/MenuRutas';
 
 ReactDOM.render(
   <div className="App">
@@ -16,7 +22,9 @@ ReactDOM.render(
       {/* <DibujosComplejos/> */}
       {/* <Deportes/> */}
       {/* <Numeros/> */}
-      <Comics/>
+      {/* <Comics/> */}
+      <MenuRutas/>
+      <Router/>
   </div>,
   document.getElementById('root')
 );
