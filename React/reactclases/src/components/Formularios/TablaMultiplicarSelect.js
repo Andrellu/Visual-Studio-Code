@@ -10,7 +10,7 @@ export default class TablaMultiplicarSelect extends Component {
     // Metodo para el formulario
     mostrarTabla = (e) =>{
         e.preventDefault();
-        num = parseInt(this.optionSelecionado.current.value);
+        var num = parseInt(this.optionSelecionado.current.value);
         var datos = [];
         for(var i  = 0; i <= 10; i++){
             var multi = num * i;
