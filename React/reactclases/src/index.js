@@ -31,8 +31,8 @@ ReactDOM.render(
       <Router/> */}
       {/* <EjemploSimple/> */}
       {/* <ConjeturaCollatz/> */}
-      {/* <TablaMultiplicar/> */}
-      <TablaMultiplicarSelect/>
+      <TablaMultiplicar/>
+      {/* <TablaMultiplicarSelect/> */}
   </div>,
   document.getElementById('root')
 );
