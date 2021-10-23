@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import button from 'react-bootstrap/Button';
 
 export default class TablaMultiplicarSelect extends Component {
     
@@ -41,8 +42,8 @@ export default class TablaMultiplicarSelect extends Component {
                 <h1>Tabla de multiplicar con SELECT</h1>
                 <form onSubmit={this.mostrarTabla}>
                     <label>Seleccion un número</label>
-                    <select ref={this.optionSelecionado}>{this.cargarOption()}</select>
-                    <button>Mostrar tabla</button>
+                    <select ref={this.optionSelecionado}>{this.cargarOption()}</select> <br/><br/>
+                    <button class="btn-primary">Enviar datos</button> <br/><br/>
                 </form>
                 <table border="2">
                     <thead>

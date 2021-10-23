@@ -16,8 +16,8 @@ export default class TablaMultiplicar extends Component {
         for(var i = 0; i <= 10; i++){
             var total = num*i;
             //console.log(total);
-            // tab.push( this.numero.current.value + "x" + i + "=" + total);
-            tab.push(<li key={i}>{this.numero.current.value + "x" + i + "=" + total}</li>);
+            tab.push( this.numero.current.value + "x" + i + "=" + total);
+            // tab.push(<li key={i}>{this.numero.current.value + "x" + i + "=" + total}</li>);
             //console.log(this.numero.current.value + "x" + i + "=" + num);
         }
         this.setState({
@@ -30,10 +30,10 @@ export default class TablaMultiplicar extends Component {
             <div>
                 <h1>Las tablas de multiplicar</h1> <hr/>
                 <ul>
-                    {/* {this.state.tabla.map((tabla, index) => {
+                    {this.state.tabla.map((tabla, index) => {
                         return(<li key={index}>{tabla}</li>);
-                    })} */}
-                    {this.state.tabla}
+                    })}
+                    {/* {this.state.tabla} */}
                 </ul>
                 <hr/>
                 <form onSubmit={this.multiplicarTabla}><hr/>
