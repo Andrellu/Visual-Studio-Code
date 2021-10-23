@@ -3,7 +3,6 @@ import Numero from "./Numero";
 
 class Numeros extends Component{
     
-
     state = ({
         numeros : [4, 5],
         total : 0

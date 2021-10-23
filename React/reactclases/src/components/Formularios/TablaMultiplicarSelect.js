@@ -5,21 +5,24 @@ export default class TablaMultiplicarSelect extends Component {
     optionSelecionado = React.createRef();
 
     state = {
-        tabla : []
+        filas : []
     }
     // Metodo para el formulario
     mostrarTabla = (e) =>{
         e.preventDefault();
         var num = parseInt(this.optionSelecionado.current.value);
+
         var datos = [];
         for(var i  = 0; i <= 10; i++){
             var multi = num * i;
             datos.push(<tr key={i}>
-                <td>{ num + " * " + i }</td>
-                <td>{multi}</td>
-            </tr>);
+                    <td>{num + "x" + i}</td>
+                    <td>{multi}</td>
+                </tr>);
         }
-
+        this.setState({
+            filas : datos
+        });
     }
 
     // Metodo para cargar los datos en el select al inicio
@@ -42,16 +45,14 @@ export default class TablaMultiplicarSelect extends Component {
                     <button>Mostrar tabla</button>
                 </form>
                 <table border="2">
-                    <tr>
-                        <td>Operación</td>
-                        <td>Resultado</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <td>Operación</td>
+                            <td>Resultado</td>
+                        </tr>
+                    </thead>
                     <tbody>
-                        {this.state.tabla.map((tan, index) =>{
-                            <tr key={index}>
-                                {tan}
-                            </tr>
-                        })}
+                        {this.state.filas}
                     </tbody>
                 </table>
             </div>
