@@ -2,59 +2,49 @@ import React, { Component } from 'react'
 
 export default class EjercicioUno extends Component {
     
-    optionSelecionado = React.createRef();
+    nombreCaja = React.createRef();
+    apellidoCaja = React.createRef();
+    dniCaja = React.createRef();
 
     state = {
-        filas : []
-    }
-    // Metodo para el formulario
-    mostrarTabla = (e) =>{
-        e.preventDefault();
-        var num = parseInt(this.optionSelecionado.current.value);
+        empleados : []
+    };
 
+    guardarEmpleado = (e) => {
+        e.preventDefault();
+        var nombre = this.nombreCaja.current.value;
+        var apellido = this.apellidoCaja.current.value;
+        var dni = this.dniCaja.current.value;
+        //console.log(nombre);
+        //console.log(apellido);
+        //console.log(dni);
         var datos = [];
-        for(var i  = 0; i <= 10; i++){
-            var multi = num * i;
-            datos.push(<tr key={i}>
-                    <td>{num + "x" + i}</td>
-                    <td>{multi}</td>
-                </tr>);
-        }
+        datos.push(<li>{"Nombre : " + nombre}</li> + 
+                    <li>{"Apellido: " + apellido}</li> + 
+                    <li>{"DNI: " + dni}</li>);
+        this.state.empleados.push(datos);
         this.setState({
-            filas : datos
+            empleados : datos
         });
     }
 
-    // Metodo para cargar los datos en el select al inicio
-    cargarOption = () =>{
-        var options = [];
-        for(var i = 0; i <=5 ; i++){
-            var random = parseInt(((Math.random() *50)+1));
-            options.push(<option key={i} value={random}>{random}</option>);
-        }
-        return options;
-    }
     
     render() {
         return (
             <div>
-               <h1>Tabla de multiplicar con SELECT</h1>
-                <form onSubmit={this.mostrarTabla}>
-                    <label>Seleccion un número</label>
-                    <select ref={this.optionSelecionado}>{this.cargarOption()}</select> <br/><br/>
-                    <button className="btn-primary">Enviar datos</button> <br/><br/>
+                <h1>Soy donde dibujo</h1>
+                <form onSubmit={this.guardarEmpleado}>
+                    <label>Nombre </label>
+                    <input type="text" ref={this.nombreCaja}/> <br/>
+                    <label>Apellido </label>
+                    <input type="text" ref={this.apellidoCaja}/> <br/>
+                    <label>DNI </label>
+                    <input type="text" ref={this.dniCaja}/> <br/><br/>
+                    <button>Guardar empleado</button>
                 </form>
-                <table border="2">
-                    <thead>
-                        <tr>
-                            <td>Operación</td>
-                            <td>Resultado</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.filas}
-                    </tbody>
-                </table> 
+                <ul>
+                    {this.guardarEmpleado}
+                </ul>
             </div>
         )
     }
