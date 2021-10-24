@@ -18,6 +18,7 @@ import EjemploSimple from './components/Formularios/EjemploSimple';
 import ConjeturaCollatz from './components/Formularios/ConjeturaCollatz';
 import TablaMultiplicar from './components/Formularios/TablaMultiplicar';
 import TablaMultiplicarSelect from './components/Formularios/TablaMultiplicarSelect';
+import EjercicioUno from './components/PruebasCasa/EjercicioUno';
 
 ReactDOM.render(
   <div className="App">
@@ -33,6 +34,7 @@ ReactDOM.render(
       {/* <ConjeturaCollatz/> */}
       {/* <TablaMultiplicar/> */}
       {/* <TablaMultiplicarSelect/> */}
+      <EjercicioUno/>
   </div>,
   document.getElementById('root')
 );

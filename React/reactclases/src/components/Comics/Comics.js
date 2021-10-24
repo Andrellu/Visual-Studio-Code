@@ -59,7 +59,7 @@ class Comics extends Component {
     //     });
     // }
     eliminarComic = (index) =>{
-        //     splice recibe 2 paramatero un indice y los elementos a eliminar
+        // splice recibe 2 paramatero un indice y los elementos a eliminar
         console.log(index);
         this.state.comics.splice(index,1);
         this.setState({
