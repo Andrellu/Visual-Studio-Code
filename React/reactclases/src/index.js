@@ -21,7 +21,7 @@ import TablaMultiplicarSelect from './components/Formularios/TablaMultiplicarSel
 import EjercicioUno from './components/PruebasCasa/EjercicioUno';
 
 ReactDOM.render(
-  <div className="App">
+  <div>
       {/* <Contador Inicio="5"/>
       <Contador Inicio="50"/> */}
       {/* <DibujosComplejos/> */}
