@@ -51,17 +51,23 @@ export default class EjercicioUno extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.insertarPersonaje}>
-                    <br/><label>Id</label>{"  "}
-                    <input type="text" readOnly value={this.state.data.length+1} ref={this.id}/> <br/>
-                    <label>Nombre</label>{" "}
-                    <input type="text" ref={this.name}/> <br/>
-                    <label>Anime</label>{" "}
-                    <input type="text" ref={this.anime}/> <br/>
-                    <label>Imagen</label>{" "}
-                    <input type="text" ref={this.image}/> <br/>
-                    <br/><button onClick={this.insertarPersonaje}>Insertar Nuevo personaje</button><br/><br/>
-                </form> <br/><br/>
+                <div className="App">
+                    <form onSubmit={this.insertarPersonaje}>
+                        <h1>Datos Formulario</h1>
+                        <br/>
+                        <label>Id</label>{"  "}
+                        <input type="text" readOnly value={this.state.data.length+1} ref={this.id}/> <br/>
+                        <label>Nombre</label>{" "}
+                        <input type="text" ref={this.name}/> <br/>
+                        <label>Anime</label>{" "}
+                        <input type="text" ref={this.anime}/> <br/>
+                        <label>Imagen</label>{" "}
+                        <input type="text" ref={this.image}/> <br/>
+                        <br/><button onClick={this.insertarPersonaje}>Insertar Nuevo personaje</button><br/><br/>
+                    </form>
+                </div> <br/><br/>
+
+                <h1 className="App">Datos Tabla</h1><br/><br/>
 
                 <table className="table" border="2">
                     <thead>
