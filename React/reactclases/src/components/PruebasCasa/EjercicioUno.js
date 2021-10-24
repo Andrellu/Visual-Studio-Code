@@ -33,18 +33,18 @@ export default class EjercicioUno extends Component {
         console.log(animePj);
         console.log(imgPj);
 
-        // var datosAnime = {
-        //     id : idPj,
-        //     nombre : namePj,
-        //     anime : animePj,
-        //     imagen : imgPj
-        // };
+        var datosAnime = {
+            id : idPj,
+            personaje : namePj,
+            anime : animePj, 
+            imagen : imgPj
+        }
 
-        // this.state.data.push(datosAnime);
+        this.state.data.push(datosAnime);
 
-        // this.setState({
-        //     data : datosAnime
-        // });
+        this.setState({
+            data : this.state.data
+        });
 
     };
     
@@ -76,6 +76,7 @@ export default class EjercicioUno extends Component {
                     </thead>
                     <tbody>
                         {this.state.data.map((elemento, index)=>{
+
                             return(
                             <tr key={index}>
                                 <td>{elemento.id}</td>
