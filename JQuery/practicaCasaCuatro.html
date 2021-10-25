@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Desplaza la barra</label>
+    <input type="range" id="rangoImagenes" value="1" min="1" max="12"/>
+    <div id="contenedorImagenes">
+
+    </div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#rangoImagenes").change(function(){
+                var valorInput = $("#rangoImagenes").val();
+                console.log(valorInput);
+                $("#contenedorImagenes").empty();
+                for(var i = 0; i < valorInput; i++){
+                    var img = $("<img>", {
+                        "src" : "imagenes/ImagenDos.jpg"
+                    });
+                    $("#contenedorImagenes").append(img);
+                    $(img).mouseover(function(){
+                        $(this).attr("src", "imagenes/ImagenUno.jpg");
+                    });
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

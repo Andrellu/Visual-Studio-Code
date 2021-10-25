@@ -7,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Generar Controles</h1>
+    <h1>Generar Controles</h1>
+    <h1>Generar Controles</h1>
+    <label>Crear titulo</label>
+    <input id="titulo" type="text"/>
+    <button id="generarTitulo">Generar titulo</button>
+    <div id="padre"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("h1").click(function(){
+                $("h1").text("H1 cambiado.");
+            });
+
+            $("#generarTitulo").click(function(){
+                var titulo = $("#titulo").val();
+                //console.log(titulo);
+                var h1 = $("<h1>", {
+                    "text" : titulo,
+                    "style" : "color:blue"
+                });
+                $("#padre").append(h1);
+                //$(h1).appendTo("#padre");
+                $(h1).click(function(){
+                    var texto = $("#titulo").val();
+                    alert(texto);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

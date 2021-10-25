@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sumar Botones</h1>
+    <h2 id="suma"></h2>
+    <div id="contenedorBotones">
+    </div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            for(var i = 0; i < 10 ; i++){
+                var aleatorio = parseInt(Math.random()*100 + 1);
+                //console.log(aleatorio);
+                var boton = $("<button>", {
+                    "text" : aleatorio,
+                    "value" : aleatorio
+                });
+                $("#contenedorBotones").append(boton);
+                var total = 0;
+                $("#suma").text(total);
+                $(boton).click(function(){
+                    var valorBoton = parseInt($(this).val());
+                    console.log(valorBoton);
+                    total = total + valorBoton;
+                    $("#suma").text(total);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
