@@ -4,10 +4,12 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import ServicioCustomers from './components/ServicioCustomers/ServicioCustomers';
+import BuscadorCustomer from './components/BuscadorCustomer/BuscadorCustomer';
 
 ReactDOM.render(
-  <div>
-    <ServicioCustomers/>
+  <div className="App">
+    {/* <ServicioCustomers/> */}
+    <BuscadorCustomer/>
   </div>,
   document.getElementById('root')
 );

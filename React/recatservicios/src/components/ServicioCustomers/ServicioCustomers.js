@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import Global from '../../Global';
 
 export default class ServicioCustomers extends Component {
     // Almacenamos la url del servicio
-    urlcustomers = "https://northwind.netcore.io/customers.json";
+    urlcustomers = Global.urlnorthwind;
 
     state = {
         customers : []
     };
 
     cargarCustomers = () =>{
-        axios.get(this.urlcustomers).then(res => {
+        var request = "customers?format=json";
+        axios.get(this.urlcustomers + request).then(res => {
             console.log(res.data);
             this.setState({
                 customers : res.data.results
