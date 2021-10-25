@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio imagenes y botones</h1>
+    <input type="range" min="1" max="10" value="1" id="numImages"/>
+    <div id="contenedorBotones"></div>
+    <div id="contenedorImages"></div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#numImages").change(function(){
+                var tamanoRange = $("#numImages").val();
+                $("#contenedorBotones").empty();
+                $("#contenedorImages").empty();
+                for(var i = 0; i < tamanoRange; i++){
+                    var boton = $("<button>", {
+                        "text" : i,
+                        "data-valor" : i
+                    });
+                    $("#contenedorBotones").append(boton);
+                    var image = $("<img>", {
+                        "src" : "imagenes/ImagenDos.jpg",
+                        "data-valor" : i
+                    });
+                    $("#contenedorImages").append(image);
+                    // cambia las imagenes en funcion de la posicion
+                    $(boton).click(function(){
+                        var posicionImagen = $(this).data("valor");
+                        console.log(posicionImagen);
+                        $("img[data-valor="+ posicionImagen + "]").attr("src","imagenes/ImagenUno.jpg");
+                        
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

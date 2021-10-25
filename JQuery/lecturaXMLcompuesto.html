@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>XML Compuesto</h1>
+    <button id="leer">Leer</button><br/><br/>
+    <table border="2" id="tabla">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Localidad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            
+        </tbody>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#leer").click(function(){
+                    $.get(("documentos/XML/departamentosetiquetas.xml"), function(data){
+                        $("#tabla tbody").empty();
+                        $(data).find("DEPARTAMENTO").each(function(){
+                            var nombre = $(this).find("NOMBRE").text();
+                            var local = $(this).find("LOCALIDAD").text();
+                            console.log(nombre + ", " + local);
+                            var tr = $("<tr>");
+                            $("#tabla tbody").append(tr);
+
+                            var tdNombre = $("<td>", {
+                                "text" : nombre
+                            });
+                            var tdLocal = $("<td>", {
+                                "text" : local
+                            });
+                            
+                            $(tr).append(tdNombre);
+                            $(tr).append(tdLocal);
+                        });
+                    });
+                });
+            });
+        </script>
+    </table>
+</body>
+</html>
