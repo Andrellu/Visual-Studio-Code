@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular Dia Nacido</h1>
+
+    <label>Día</label>
+    <input id="dia" type="number"/><br/>
+    <label>Mes</label>
+    <input id="mes" type="number"/><br/>
+    <label>Año</label>
+    <input id="anio" type="number"/><br/><br/>
+    <button id="Calcular">Calcular</button><br/><br/>
+
+    <h1 id="diaNacido"></h1>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Calcular").click(function(){
+                var dia = parseInt($("#dia").val());
+                var mes = parseInt($("#mes").val());
+                var anio = parseInt($("#anio").val());
+                //console.log(dia+","+mes+","+anio);
+                if(mes == 1){
+                    mes = 13;
+                    anio = anio -1;
+                }
+                if(mes == 2){
+                    mes = 14;
+                    anio = anio - 1;
+                }
+
+                var pasoUno = parseInt(((mes + 1)*3)/5);
+                console.log(pasoUno);
+                var pasoDos = parseInt(anio / 4);
+                console.log(pasoDos);
+                var pasoTres = parseInt(anio / 100);
+                console.log(pasoTres);
+                var pasoCuatro = parseInt(anio / 400);
+                console.log(pasoCuatro);
+                var pasoCinco = parseInt((dia + (mes*2) + anio + pasoUno + pasoDos) - (pasoTres + pasoCuatro + 2));
+                console.log(pasoCinco);
+                var pasoSeis = parseInt(pasoCinco / 7);
+                console.log(pasoSeis);
+                var pasoSiete = parseInt(pasoCinco - (pasoSeis*7));
+
+                console.log(pasoSiete);
+
+                if(pasoSiete == 0){
+                    $("#diaNacido").text("Es Sábado");
+                } else if(pasoSiete == 1) {
+                    $("#diaNacido").text("Es Domingo");
+                } else if (pasoSiete == 2){
+                    $("#diaNacido").text("Es Lunes");
+                } else if (pasoSiete == 3){
+                    $("#diaNacido").text("Es Martes");
+                } else if (pasoSiete == 4) {
+                    $("#diaNacido").text("Es Miércoles");
+                } else if (pasoSiete == 5) {
+                    $("#diaNacido").text("Es Jueves");
+                } else {
+                    $("#diaNacido").text("Es Viernes");
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

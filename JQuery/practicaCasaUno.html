@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio Casa Uno</h1>
+    <label>Numero Uno</label>
+    <input id="numUno" type="number"/> <br/>
+    <label>Numero Dos</label>
+    <input id="numDos" type="number"/> <br/>
+    <label>Numero Tres</label>
+    <input id="numTres" type="number"/> <br/><br/>
+    <button id="Mostrar">Mostrar Números</button>
+
+    <h1 id="mayor">Mayor : </h1>
+    <h1 id="intermedio">Intermedio : </h1>
+    <h1 id="menor">Menor : </h1>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Mostrar").click(function(){
+                var numUno = $("#numUno").val();
+                var numDos = $("#numDos").val();
+                var numTres = $("#numTres").val();
+                //console.log(numUno+","+numDos+","+numTres);
+
+                var mayor = "";
+                var interme = "";
+                var menor = "";
+
+                if(numUno>numDos && numUno>numTres){
+                    if(numDos>numTres){
+                        mayor = numUno;
+                        interme = numDos;
+                        menor = numTres;
+                        $("#numUno").css("background-color","green");
+                        $("#numTres").css("background-color","red");
+                    }else{
+                        mayor = numUno;
+                        interme = numTres;
+                        menor = numDos;
+                        $("#numUno").css("background-color","green");
+                        $("#numDos").css("background-color","red");
+                    }
+                } else if(numDos>numUno&&numDos>numTres){
+                    if(numUno>numTres){
+                        mayor = numDos;
+                        interme = numUno;
+                        menor = numTres;
+                        $("#numDos").css("background-color","green");
+                        $("#numTres").css("background-color","red");
+                    } else{
+                        mayor = numDos;
+                        interme = numTres;
+                        menor = numUno;
+                        $("#numDos").css("background-color","green");
+                        $("#numUno").css("background-color","red");
+                    }
+                } else {
+                    if(numUno>numDos){
+                        mayor = numTres;
+                        interme = numUno;
+                        menor = numDos;
+                        $("#numTres").css("background-color","green");
+                        $("#numDos").css("background-color","red");
+                    } else{
+                        mayor = numTres;
+                        interme = numDos;
+                        menor = numUno;
+                        $("#numTres").css("background-color","green");
+                        $("#numUno").css("background-color","red");
+                    }
+                }
+                $("#mayor").text("Mayor  : " + mayor);
+                $("#intermedio").text("Intermedio : "+ interme);
+                $("#menor").text("Menor : "+ menor);
+            });
+        });
+    </script>
+</body>
+</html>
