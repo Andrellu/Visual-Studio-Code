@@ -28,6 +28,8 @@ export default class MaestroDetallesEmp extends Component {
         this.cargarEmpleados();
     }
 
+    // RECOGEMOS EL ID DEL DEPARTAMENTO Y LO COMPARAMOS CON EL DEL EVENTO ACTUAL,
+    // CON EL IF ES CMO VALIDAMOS SI HA CAMBIADO DEL DEPARTAMENTO O NO.
     componentDidUpdate = (e) =>{
         if(this.props.idDepartamento !== e.idDepartamento){
             this.cargarEmpleados();
