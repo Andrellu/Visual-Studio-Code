@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import DetalleEmpleadoRouter from './RutasEmpleadosParametros/DetalleEmpleadoRouter';
+import EmpleadosRouter from './RutasEmpleadosParametros/EmpleadosRouter';
 
 export default class Router extends Component {
    
@@ -16,6 +17,7 @@ export default class Router extends Component {
                             }
                         }/>
                     </Switch>
+                    <EmpleadosRouter/>
                 </BrowserRouter>
             </div>
         )

@@ -17,9 +17,8 @@ ReactDOM.render(
     {/* <BuscadorCustomer/> */}
     {/* <BuscadorCoches/> */}
     {/* <MaestroDetallesDepartamento/> */}
-    <MaestroDetallesDep/>
-    {/* <Router/>
-    <EmpleadosRouter/> */}
+    {/* <MaestroDetallesDep/> */}
+    <Router/>
   </div>,
   document.getElementById('root')
 );

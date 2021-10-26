@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import Global from "../../Global";
+import { NavLink } from 'react-router-dom';
 
 export default class EmpleadosRouter extends Component {
     
@@ -22,7 +23,8 @@ export default class EmpleadosRouter extends Component {
 
     componentDidMount = () =>{
         this.cargarEmpelados();
-    }
+    };
+
     
     render() {
         return (
@@ -31,7 +33,9 @@ export default class EmpleadosRouter extends Component {
                 <ul>
                     {this.state.status == true &&(
                         this.state.empleados.map((emple, index) =>{
-                            return(<li key={index}>{emple.apellido}<a href={"/detalleEmpleado/" + emple.idEmpleado}>Detalles</a></li>);
+                            return(<li key={index}>{emple.apellido}{" "}
+                            {/* <a href={"/detalleEmpleado/" + emple.idEmpleado}>Detalles</a>| */}
+                            <NavLink to={"/detalleEmpleado/" + emple.idEmpleado}>Detalles</NavLink></li>);
                         })
                     )}
                 </ul>

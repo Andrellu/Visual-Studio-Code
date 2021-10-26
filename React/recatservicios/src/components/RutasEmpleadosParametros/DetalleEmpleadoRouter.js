@@ -28,6 +28,13 @@ export default class DetalleEmpleadoRouter extends Component {
     componentDidMount = () =>{
         this.buscarEmpleado();
     }
+
+    componentDidUpdate = (props) =>{
+        if(this.props.idempleado != props.idempleado){
+            this.buscarEmpleado();
+        }
+    };
+    
     
     render() {
         return (
