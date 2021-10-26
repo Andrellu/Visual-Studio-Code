@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../../Global";
+import { Redirect } from 'react-router'
 
 export default class InsertarDepartamento extends Component {
   cajaNumero = React.createRef();
@@ -62,7 +63,7 @@ export default class InsertarDepartamento extends Component {
           <button className="btn btn-info">Insertar</button>
         </form>
         {this.state.status == true && (
-          <h2 style={{ color: "red" }}>{this.state.mensaje}</h2>
+          <Redirect to='/departamentos'/>
         )}
       </div>
     );
