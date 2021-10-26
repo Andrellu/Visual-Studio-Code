@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 import Global from '../../Global';
+import { Redirect } from 'react-router'
 
 export default class InsertarHospital extends Component {
     
@@ -90,7 +91,9 @@ export default class InsertarHospital extends Component {
                     <button className="btn btn-info">Insertar</button>
                 </form>
                 {this.state.status == true && (
-                    <h2 style={{color :"red"}}>{this.state.mensaje}</h2>
+                    <div>
+                        <Redirect to='/mostrarHospital'/>
+                    </div>
                 )}
             </div>
         )
