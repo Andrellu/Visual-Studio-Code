@@ -7,13 +7,19 @@ import ServicioCustomers from './components/ServicioCustomers/ServicioCustomers'
 import BuscadorCustomer from './components/BuscadorCustomer/BuscadorCustomer';
 import BuscadorCoches from './components/BuscadorCoches/BuscadorCoches';
 import MaestroDetallesDepartamento from './components/MaestroDetallesDepartamentos/MaestroDetallesDepartamento';
+import MaestroDetallesDep from './components/MaestroDetallesDepartamentos/MaestroDetallesDep';
+import EmpleadosRouter from './components/RutasEmpleadosParametros/EmpleadosRouter';
+import Router from "./components/Router";
 
 ReactDOM.render(
   <div className="App">
     {/* <ServicioCustomers/> */}
     {/* <BuscadorCustomer/> */}
     {/* <BuscadorCoches/> */}
-    <MaestroDetallesDepartamento/>
+    {/* <MaestroDetallesDepartamento/> */}
+    <MaestroDetallesDep/>
+    {/* <Router/>
+    <EmpleadosRouter/> */}
   </div>,
   document.getElementById('root')
 );
