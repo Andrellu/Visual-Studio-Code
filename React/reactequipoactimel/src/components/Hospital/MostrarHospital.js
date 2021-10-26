@@ -35,6 +35,7 @@ export default class MostrarHospital extends Component {
                             <th>Dirección</th>
                             <th>Teléfono</th>
                             <th>Camas</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,7 @@ export default class MostrarHospital extends Component {
                                     <td>{hospi.direccion}</td>
                                     <td>{hospi.telefono}</td>
                                     <td>{hospi.camas}</td>
+                                    <td><a href={"/modificarHospital"}>Modificar</a></td>
                                 </tr>
                             );
                         })}
