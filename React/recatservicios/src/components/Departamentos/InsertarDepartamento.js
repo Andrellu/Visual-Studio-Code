@@ -61,7 +61,9 @@ export default class InsertarDepartamento extends Component {
           </div>
           <button className="btn btn-info">Insertar</button>
         </form>
-        <h2 style={{ color: "red" }}>{this.state.mensaje}</h2>
+        {this.state.status == true && (
+          <h2 style={{ color: "red" }}>{this.state.mensaje}</h2>
+        )}
       </div>
     );
   }
