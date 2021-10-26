@@ -36,7 +36,7 @@ export default class EliminarHospital extends Component {
                         ref={this.cajaID}
                         />
                     </div>
-                    <button>Eliminar Hospital</button>
+                    <button className="btn btn-info">Eliminar Hospital</button>
                 </form>
                 {this.state.status == true && (
                     <Redirect to='/mostrarHospital'/>
