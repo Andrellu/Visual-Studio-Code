@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../../Global";
+import { NavLink } from "react-router-dom";
 
 export default class TablaDepartamentos extends Component {
   state = {
@@ -36,6 +37,7 @@ export default class TablaDepartamentos extends Component {
                 <th scope="col">NUMERO</th>
                 <th scope="col">NOMBRE</th>
                 <th scope="col">LOCALIDAD</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -45,6 +47,40 @@ export default class TablaDepartamentos extends Component {
                     <td>{dep.numero}</td>
                     <td>{dep.nombre}</td>
                     <td>{dep.localidad}</td>
+                    <td>
+                      <NavLink
+                        to={
+                          "/detallesDepartamento/" +
+                          dep.numero +
+                          "/" +
+                          dep.nombre +
+                          "/" +
+                          dep.localidad
+                        }
+                        className="btn btn-success"
+                      >
+                        Detalles
+                      </NavLink>{" "}
+                      <NavLink
+                        className="btn btn-warning"
+                        to={"/modificarDepartamento/" + dep.numero}
+                      >
+                        Modificar
+                      </NavLink>{" "}
+                      <NavLink
+                        className="btn btn-danger"
+                        to={
+                          "/deleteDepartamento/" +
+                          dep.numero +
+                          "/" +
+                          dep.nombre +
+                          "/" +
+                          dep.localidad
+                        }
+                      >
+                        Eliminar
+                      </NavLink>
+                    </td>
                   </tr>
                 );
               })}

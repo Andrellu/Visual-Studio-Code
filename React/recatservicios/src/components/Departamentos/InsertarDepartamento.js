@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../../Global";
-import { Redirect } from 'react-router'
+import { Redirect } from "react-router";
 
 export default class InsertarDepartamento extends Component {
   cajaNumero = React.createRef();
@@ -38,9 +38,16 @@ export default class InsertarDepartamento extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.insertarDepartamento}>
-          <div className="form-group row">
+      <div className="row justify-content-center">
+        <form
+          onSubmit={this.insertarDepartamento}
+          className="col-4 p-5 my-5 rounded"
+          style={{
+            backgroundColor: "lightyellow",
+            border: "3px solid darkorange",
+          }}
+        >
+          <div className="form-group row mb-3">
             <label>Numero: </label>
             <input
               type="number"
@@ -52,7 +59,7 @@ export default class InsertarDepartamento extends Component {
             <label>Nombre: </label>
             <input type="text" className="form-control" ref={this.cajaNombre} />
           </div>
-          <div className="form-group row">
+          <div className="form-group row mb-3">
             <label>Localidad: </label>
             <input
               type="text"
@@ -62,9 +69,7 @@ export default class InsertarDepartamento extends Component {
           </div>
           <button className="btn btn-info">Insertar</button>
         </form>
-        {this.state.status == true && (
-          <Redirect to='/departamentos'/>
-        )}
+        {this.state.status == true && <Redirect to="/departamentos" />}
       </div>
     );
   }
