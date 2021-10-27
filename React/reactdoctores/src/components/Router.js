@@ -4,6 +4,7 @@ import MenuDorctores from "./Doctores/MenuDorctores";
 import MostrarDoctores from "./Doctores/TablaDoctores";
 import DoctoresAnadir from "./Doctores/DoctoresAnadir";
 import DoctoresModificar from "./Doctores/DoctorModificar";
+import DoctoresEliminar from "./Doctores/DoctoresEliminar";
 
 export default class Router extends Component {
   render() {
@@ -16,8 +17,20 @@ export default class Router extends Component {
             <Route exact path="/anadirDoctores" component={DoctoresAnadir} />
             <Route
               exact
-              path="/modificarDoctores"
-              component={DoctoresModificar}
+              path="/modificarDoctores/:id"
+              render = {(props) => {
+                var numDoc = props.match.params.id;
+                return (<DoctoresModificar idDoctor={numDoc}/>);
+              }}
+            />
+            <Route
+            exact
+            path="/eliminarDoctor/:id/:apellido"
+            render = {(props) => {
+              var numDoc = props.match.params.id;
+              var ape = props.match.params.apellido;
+              return (<DoctoresEliminar idDoctor={numDoc} apellido={ape}/>);
+            }}
             />
           </Switch>
         </BrowserRouter>

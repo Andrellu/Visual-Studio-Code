@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import Global from "../../Global";
 import { Redirect } from "react-router";
+import { NavLink } from "react-router-dom";
 
 export default class DoctoresAnadir extends Component {
   cajaIdHospital = React.createRef();
@@ -92,7 +93,8 @@ export default class DoctoresAnadir extends Component {
               ref={this.cajaSalario}
             />
           </div>
-          <button className="btn btn-info">Insertar</button>
+          <button className="btn btn-info">Insertar</button>{" "}
+          <NavLink to="/mostrarDoctores" className="btn btn-info">Volver</NavLink>
         </form>
         {this.state.status == true && <Redirect to="/mostrarDoctores" />}
       </div>

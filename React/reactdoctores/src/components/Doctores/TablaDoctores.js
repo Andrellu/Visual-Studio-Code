@@ -51,11 +51,12 @@ export default class TablaDoctores extends Component {
                     <td>{doc.salario}</td>
                     <td>
                       <NavLink
-                        to={"/modificarDoctores"}
+                        to={"/modificarDoctores" + "/" + doc.idDoctor}
                         className="btn btn-success"
-                      >
-                        Modificar
-                      </NavLink>
+                      >Modificar</NavLink>{" "}
+                      <NavLink 
+                      to={"/eliminarDoctor/" + doc.idDoctor + "/" + doc.apellido} 
+                      className="btn btn-danger">Eliminar</NavLink>
                     </td>
                   </tr>
                 );

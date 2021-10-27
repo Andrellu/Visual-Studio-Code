@@ -89,7 +89,7 @@ export default class ModificarDepartamento extends Component {
             Volver
           </NavLink>
         </form>
-        {this.state.status == true && <Redirect to="/departamentos" />}
+        {this.state.status == true && <Redirect to="/mostrarDoctores" />}
       </div>
     );
   }
