@@ -39,6 +39,7 @@ export default class TablaDoctores extends Component {
                 <th scope="col">APELLIDO</th>
                 <th scope="col">ESPECIALIDAD</th>
                 <th scope="col">SALARIO</th>
+                <th scope="col">ACCIONES</th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +49,14 @@ export default class TablaDoctores extends Component {
                     <td>{doc.apellido}</td>
                     <td>{doc.especialidad}</td>
                     <td>{doc.salario}</td>
+                    <td>
+                      <NavLink
+                        to={"/modificarDoctores"}
+                        className="btn btn-success"
+                      >
+                        Modificar
+                      </NavLink>
+                    </td>
                   </tr>
                 );
               })}

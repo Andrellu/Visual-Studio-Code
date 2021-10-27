@@ -2,6 +2,10 @@ import React, { Component } from "react";
 
 export default class DoctorModificar extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <h1>Modificar</h1>
+      </div>
+    );
   }
 }
