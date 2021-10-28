@@ -1,0 +1,42 @@
+<h1>Formulario Apuesta</h1>
+        <form
+          onSubmit={this.prevenirEvento}
+          className="col-4 p-5 my-5 rounded"
+          style={{
+            backgroundColor: "lightyellow",
+            border: "3px solid darkorange",
+          }}
+        >
+          <div className="form-group row mb-3">
+            <label>Usuario: </label>
+            <input
+              type="text"
+              className="form-control"
+              ref={this.cajaUsuario}
+            />
+          </div>
+          <div className="form-group row mb-3">
+            <label>Resultado: </label>
+            <input
+              type="text"
+              className="form-control"
+              ref={this.cajaResultado}
+            />
+          </div>
+          <div className="form-group row">
+            <label>Fecha: </label>
+            <input type="text" className="form-control" ref={this.cajaFecha} />
+          </div>{" "}
+          <br />
+          <button
+            className="btn btn-info"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+          >
+            Realiza Apuesta
+          </button>{" "}
+          <NavLink to="/mostrarApuestas" className="btn btn-info">
+            Volver
+          </NavLink>
+        </form>
