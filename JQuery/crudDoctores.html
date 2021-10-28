@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+
+    <label>iD doctor</label>
+    <input type="number" id="numDoc"/><br/>
+    <label>iD hospital</label>
+    <input type="number" id="numHos"/><br/>
+    <label>Apellido</label>
+    <input type="text" id="apellido"/><br/>
+    <label>Especialidad</label>
+    <input type="text" id="espe"/><br/>
+    <label>Salario</label>
+    <input type="number" id="sala"/><br/>
+    <button id="MandarDatos">Añadir</button>
+    <button id="ModificarDatos">Modificar</button>
+
+    <table class="table" border="1" id="tblEmpleados">
+        <thead>
+            <tr>
+                <td>Id Hospital</td>
+                <td>Id Doctor</td>
+                <td>Apellido</td>
+                <td>Especialidad</td>
+                <td>Salario</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+
+        var urlGeneral = "https://apicruddoctores.azurewebsites.net";
+
+        $(document).ready(function(){
+            cargarTabla();
+            $("#MandarDatos").click(function(){
+                var idDoctor = $("#numDoc").val();
+                var idHospital = $("#numHos").val();
+                var apellido = $("#apellido").val();
+                var espe = $("#espe").val();
+                var sal = $("#sala").val();
+                //console.log(idHospital);
+                insertarDoctor(idDoctor, idHospital, apellido, espe, sal);
+            });
+            $("#ModificarDatos").click(function(){
+                modificarDoctor();
+            });
+
+        });
+
+        function cargarTabla(){
+            var request = "/api/Doctores";
+            $.ajax({
+                "url" : urlGeneral + request,
+                type : "GET",
+                success : function(data){
+                    $("#tblEmpleados tbody").empty();
+                    $.each(data, function(index, doctor){
+                        var tr = $("<tr>");
+                        $("#tblEmpleados tbody").append(tr);
+
+                        var tdIdHospital = $("<td>", {
+                            "text" : doctor.idHospital
+                        });
+                        var tdIdDoctor = $("<td>", {
+                            "text" : doctor.idDoctor
+                        });
+                        var tdApell = $("<td>", {
+                            "text" : doctor.apellido
+                        });
+                        var tdEspe = $("<td>", {
+                            "text" : doctor.especialidad
+                        });
+                        var tdSal = $("<td>", {
+                            "text" : doctor.salario
+                        });
+
+                        var tdBtn = $("<td>");
+                        
+                        var boton = $("<button>", {
+                            text: "Editar",
+                            "data-id": doctor.idDoctor,
+                            "data-idHos" : doctor.idHospital,
+                            "data-ape" : doctor.apellido,
+                            "data-espe" : doctor.especialidad,
+                            "data-sala" : doctor.salario,
+                            type : "button",
+                        });
+
+                        var botonElimi = $("<button>", {
+                            text: "Eliminar",
+                            "data-id": doctor.idDoctor,
+                            "data-idHos" : doctor.idHospital,
+                            "data-ape" : doctor.apellido,
+                            "data-espe" : doctor.especialidad,
+                            "data-sala" : doctor.salario,
+                            type : "button",
+                        });
+                        tr.append(tdIdHospital);
+                        tr.append(tdIdDoctor);
+                        tr.append(tdApell);
+                        tr.append(tdEspe);
+                        tr.append(tdSal);
+                        tr.append(tdBtn);
+                        
+                        tdBtn.append(boton);
+                        tdBtn.append(botonElimi);
+
+                        boton.click(function(){
+                            var idDoc = $(this).data("id");
+                            var idHos = $(this).data("idHos");
+                            var apelli = $(this).data("ape");
+                            var especialidad = $(this).data("espe");
+                            var salar = $(this).data("sala");
+                            $("#numDoc").val(idDoc);
+                            $("#numHos").val(idHos);
+                            $("#apellido").val(apelli);
+                            $("#espe").val(especialidad);
+                            $("#sala").val(salar);
+                            //console.log(idDoc);
+                        }); 
+                        botonElimi.click(function(){
+                            var idDoc = $(this).data("id");
+                            eliminarDoctor(idDoc);
+                        });
+                    });
+                }
+            });
+        }
+
+        function insertarDoctor (idDoc, idHos, apel, espe, sal){
+            //console.log(idDoctor);
+            var doctor = new Object();
+            doctor.idDoctor = parseInt(idDoc);
+            doctor.idHospital = parseInt(idHos);
+            doctor.apellido = apel;
+            doctor.especialidad = espe;
+            doctor.salario = parseInt(sal);
+
+            var json = JSON.stringify(doctor);
+            
+            var request = "/api/Doctores";
+
+
+            $.ajax({
+                "url" : urlGeneral + request,
+                "type" : "POST",
+                "data" : json,
+                "contentType" : "application/json",
+                success : function(data){
+                    console.log("Modificado!!");
+                    cargarTabla();
+                }
+            });
+        }
+
+        function modificarDoctor (){
+            var idDoctor = $("#numDoc").val();
+            var idHospital = $("#numHos").val();
+            var apellido = $("#apellido").val();
+            var espe = $("#espe").val();
+            var sal = $("#sala").val();
+
+            var request = "/api/Doctores";
+
+            var doctor = new Object();
+            doctor.idDoctor = parseInt(idDoctor);
+            doctor.idHospital = parseInt(idHospital);
+            doctor.apellido = apellido;
+            doctor.especialidad = espe;
+            doctor.salario = parseInt(sal);
+
+            var json = JSON.stringify(doctor);
+            var request = "/api/Doctores";
+
+            $.ajax({
+                "url": urlGeneral + request,
+                "type": "PUT",
+                "data": json,
+                contentType: "application/json",
+                success: function () {
+                    console.log("AÑADIDO!! ");
+                    cargarTabla();
+                },
+            });
+        }
+
+        function eliminarDoctor(idDoctor){
+            var request = "/api/Doctores/" + idDoctor;
+            $.ajax({
+                "url": urlGeneral + request,
+                "type": "DELETE",
+                success : function(){
+                    cargarTabla();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
