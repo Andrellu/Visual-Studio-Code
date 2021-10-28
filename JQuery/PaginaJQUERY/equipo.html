@@ -33,23 +33,25 @@
             </div>
           </nav>
     </header>
-    <main class="text-center">
-        <div id="container" ></div>
-        <button class="btn btn-outline-success" id="mostrartabla" >Ver Jugadores</button>
-    </main>
+    <br/>
+    <table class="table table-striped">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">NOMBRE</th>
+            <th scope="col">IMAGEN</th>
+            <th scope="col">DETALLES</th>
+          </tr>
+        </thead>
+        <tbody id="contenedor">
+        </tbody>
+      </table>
     <script src="./../jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            console.log("Estoy en detalles");
+        $(document).ready(function(){
             insertarEquipos();
+            cargarEquipo();
             $("body #listadoDinamico").on("click", "a", function(){
                 $(this).attr("href",window.location.replace("./detalleequipo.html?id=" + $(this).attr("id")));
-            });
-            $("#mostrartabla").click(function(){
-                var queryString = window.location.search;
-                var urlParams = new URLSearchParams(queryString);
-                var idRecogida = urlParams.get("id");
-                window.location.replace("./equipo.html?id="+idRecogida);
             });
         });
 
@@ -72,39 +74,45 @@
                     });
                 }
             });
+        }
 
+        function cargarEquipo(){
             var queryString = window.location.search;
             var urlParams = new URLSearchParams(queryString);
             var idRecogida = urlParams.get("id");
-            console.log(idRecogida);
-
-            var urlEquipos = "https://apichampions.azurewebsites.net/api/Equipos/" + idRecogida;
+            var urlJugadoresEquipo = "https://apichampions.azurewebsites.net/api/Jugadores/JugadoresEquipo/" + idRecogida;
             $.ajax({
-                "url" : urlEquipos,
+                "url" : urlJugadoresEquipo,
                 "type" : "GET",
                 success : function(data){
-                    
-                    var h1 = $("<h1>",{
-                        "text" : data.nombre
+                    $.each(data, function(index, jugador){
+                        var tr = $("<tr>");
+                        $("#contenedor").append(tr);
+                        var tdNom = $("<td>",{
+                            "text" : jugador.nombre
+                        });
+                        tr.append(tdNom);
+                        var tdImg = $("<td>");
+                        tr.append(tdImg);
+                        var img = $("<img>",{
+                            "src" : jugador.imagen,
+                            "width" : "300px"
+                        });
+                        tdImg.append(img);
+                        var tdBtn = $("<td>");
+                        tr.append(tdBtn);
+                        var btn = $("<button>",{
+                            "text" : "Detalles",
+                            "class" : "btn",
+                        });
+                        tdBtn.append(btn);
+                        btn.click(function(){
+                            window.location.href="./jugador.html?nom=" + jugador.nombre + "&&id=" + jugador.idEquipo;
+                        });
                     });
-                    $("#container").append(h1);
-                    var img = $("<img>",{
-                        "src" : data.imagen,
-                        "width" : "300px"
-                    });
-                    $("#container").append(img);
-                    var h2 = $("<h2>",{
-                        "text": data.champions
-                    });
-                    $("#container").append(h2);
-                    var p = $("<p>",{
-                        "text" : data.descripcion
-                    });
-                    $("#container").append(p);
                 }
             });
         }
-
     </script>
     <script src="./../js/bootstrap.bundle.js"></script>
 </body>
