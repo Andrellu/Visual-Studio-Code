@@ -3,7 +3,7 @@
     $(document).ready(function() {
         console.log("Estoy en detalles");
         // const urlSearchParams = new URLSearchParams(window.location.search);
-
-        // const params = Object.fromEntries(urlSearchParams.entries());
-    });
+        let searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get("id");
+        });
 </script>
