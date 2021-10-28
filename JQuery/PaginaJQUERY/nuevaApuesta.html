@@ -33,33 +33,52 @@
             </div>
           </nav>
     </header>
-    <br/>
     <main class="text-center">
-      <button id="formApuesta">Nueva Apuesta</button>
-      <br/>
-      <br/>
-      <table class="table table-striped">
-        <thead>
-          <tr class="table-dark">
-            <th scope="col">USUARIO</th>
-            <th scope="col">RESULTADO</th>
-            <th scope="col">FECHA</th>
-          </tr>
-        </thead>
-        <tbody id="contenedor">
-        </tbody>
-      </table>
+        <label>Usuario</label>
+        <input type="text" id="usuario"/><br/>
+        <label>Goles Madrid</label>
+        <input type="text" id="apuestaMad"/><br/>
+        <label>Goles Atleti</label>
+        <input type="text" id="apuestaAt"/><br/>
+        <label>Fecha</label>
+        <input type="text" id="fecha"/><br/>
+        <button id="insertar">Insertar Apuesta</button>
     </main>
     <script src="./../jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function(){
             insertarEquipos();
-            cargarApuestas();
             $("body #listadoDinamico").on("click", "a", function(){
                 $(this).attr("href",window.location.replace("./detalleequipo.html?id=" + $(this).attr("id")));
             });
-            $("#formApuesta").click(function(){
-              window.location.href = "./nuevaApuesta.html";
+            $("#insertar").click(function(){
+                var id = 0;
+                var usuario = $("#usuario").val();
+                var apuestMad = $("#apuestaMad").val();
+                var apuestaAt = $("#apuestaAt").val();
+                var fech = $("#fecha").val();
+
+                var apuesta = new Object();
+                apuesta = {
+                    idApuesta : id,
+                    usuario : usuario,
+                    resultado : apuestMad + "-" + apuestaAt,
+                    fecha : fech
+                };
+
+                var json = JSON.stringify(apuesta);
+                
+                var urlInsertar = "https://apichampions.azurewebsites.net/api/Apuestas";
+
+                $.ajax({
+                    "url" : urlInsertar,
+                    "type" : "POST",
+                    "data" : json,
+                    "contentType" : "application/json",
+                    success : function(){
+                        window.location.href = "./apuestas.html";
+                    }
+                });
             });
         });
 
@@ -82,32 +101,6 @@
                     });
                 }
             });
-        }
-
-        function cargarApuestas(){
-          var urlApuestas = "https://apichampions.azurewebsites.net/api/Apuestas";
-          $.ajax({
-            "url" : urlApuestas,
-            "type" : "GET",
-            success : function(data){
-              $.each(data, function(index, apuesta){
-                var tr = $("<tr>");
-                $("#contenedor").append(tr);
-                var tdUsu = $("<td>", {
-                  "text" : apuesta.usuario
-                });
-                tr.append(tdUsu);
-                var tdApu = $("<td>",{
-                  "text" : apuesta.resultado
-                });
-                tr.append(tdApu);
-                var tdfech = $("<td>",{
-                  "text" : apuesta.fecha
-                });
-                tr.append(tdfech);
-              });
-            }
-          });
         }
     </script>
     <script src="./../js/bootstrap.bundle.js"></script>
