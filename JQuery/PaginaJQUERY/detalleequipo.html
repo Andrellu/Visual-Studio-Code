@@ -1,9 +1,115 @@
-<h1>Detalles de equipo</h1>
-<script>
-    $(document).ready(function() {
-        console.log("Estoy en detalles");
-        // const urlSearchParams = new URLSearchParams(window.location.search);
-        let searchParams = new URLSearchParams(window.location.search);
-        return searchParams.get("id");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/bootstrap.min.css"/>
+</head>
+<body>
+    <header id="menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./Home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./apuestas.html" id="apuesta">Apuestas</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="Equipos">Equipos</a>
+                    <ul class="dropdown-menu" id="listadoDinamico">
+                    
+                    </ul>
+                  </li>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="text-center">
+        <div id="container" ></div>
+        <button class="btn btn-outline-success" id="mostrartabla" >Ver Jugadores</button>
+    </main>
+    <script src="./../jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log("Estoy en detalles");
+            insertarEquipos();
+            $("body #listadoDinamico").on("click", "a", function(){
+                $(this).attr("href",window.location.replace("./detalleequipo.html?id=" + $(this).attr("id")));
+            });
+            $("#mostrartabla").click(function(){
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var idRecogida = urlParams.get("id");
+                window.location.replace("./equipo.htm?id="+idRecogida);
+            });
         });
-</script>
+
+        function insertarEquipos(){
+            var urlInsertar = "https://apichampions.azurewebsites.net/api/Equipos";
+            $.ajax({
+                "url" : urlInsertar,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, equipo){
+                        var li = $("<li>");
+                        $("#listadoDinamico").append(li);
+                        var a = $("<a>",{
+                            "href" : "#",
+                            "text" : equipo.nombre,
+                            "id" : equipo.idEquipo,
+                        });
+                        li.append(a);
+                        //console.log($(a).attr("id"));
+                    });
+                }
+            });
+
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var idRecogida = urlParams.get("id");
+            console.log(idRecogida);
+
+            var urlEquipos = "https://apichampions.azurewebsites.net/api/Equipos/" + idRecogida;
+            $.ajax({
+                "url" : urlEquipos,
+                "type" : "GET",
+                success : function(data){
+                    
+                    var h1 = $("<h1>",{
+                        "text" : data.nombre
+                    });
+                    $("#container").append(h1);
+                    var img = $("<img>",{
+                        "src" : data.imagen,
+                        "width" : "300px"
+                    });
+                    $("#container").append(img);
+                    var h2 = $("<h2>",{
+                        "text": data.champions
+                    });
+                    $("#container").append(h2);
+                    var p = $("<p>",{
+                        "text" : data.descripcion
+                    });
+                    $("#container").append(p);
+                }
+            });
+        }
+
+        function cargarEquipos(){
+            
+        }
+
+    </script>
+    <script src="./../js/bootstrap.bundle.js"></script>
+</body>
+</html>
