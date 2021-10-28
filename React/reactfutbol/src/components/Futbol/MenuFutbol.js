@@ -31,7 +31,6 @@ export default class MenuFutbol extends Component {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img style={{ height: "50px", width: "50px" }} src={image} />
-            Champions
           </a>
           <button
             className="navbar-toggler"

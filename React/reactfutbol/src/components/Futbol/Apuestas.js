@@ -6,6 +6,7 @@ import Global from "../Global";
 export default class Apuestas extends Component {
   state = {
     apuestas: [],
+    equipos: [],
     status: false,
   };
 
@@ -21,6 +22,18 @@ export default class Apuestas extends Component {
 
   componentDidMount = () => {
     this.cargarApuestas();
+    this.cargarEquipos();
+  };
+
+  cargarEquipos = () => {
+    var request = "api/Equipos";
+    var url = Global.urlChampions + request;
+    axios.get(url).then((res) => {
+      this.setState({
+        equipos: res.data,
+        status: true,
+      });
+    });
   };
 
   render() {
@@ -28,10 +41,11 @@ export default class Apuestas extends Component {
       <div>
         <br />
         <NavLink to="/apuesta" className="btn btn-danger">
-          Nueva Apuesta
+          Realizar Apuesta
         </NavLink>
         <br />
         <br />
+
         <table className="table table-striped">
           <thead>
             <tr className="table-dark">
