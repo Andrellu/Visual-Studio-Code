@@ -3,7 +3,8 @@
         <h1>Tabla de multiplicar</h1>
         <main class="row justify-content-center">
             <label>Introduce numero : </label>
-            <input type="text"/> <hr/>
+            <input type="text" v-model="num"/> 
+            <button @click="calcularTabla">Mostrar Tabla</button><hr/>
             <table border="2">
                 <thead>
                     <th>Operación</th>
@@ -23,8 +24,21 @@
         data(){
             return{
                 operaciones : [],
-                resultados : []
+                resultados : [],
+                num : 0
             }
-        }, 
+        },methods : {
+            calcularTabla(){
+                var numero = this.num;
+                //console.log(numero);
+                var result = [];
+                for(var i = 0; i <= 10; i++){
+                    var total = parseInt(numero*i);
+                    //console.log(total);
+                    result.push(total);
+                    console.log(result[1]);
+                }
+            }
+        }
     }
 </script>
