@@ -5,6 +5,9 @@ import Home from "./components/navegacion/Home.vue";
 import Musica from "./components/navegacion/Musica.vue";
 import Cine from "./components/navegacion/Cine.vue";
 import Television from "./components/navegacion/Television.vue";
+import CicloVida from "./components/CicloVida.vue";
+import Juegos from "./components/JuegosConmutados.vue";
+import Directivas from "./components/Directivas.vue";
 
 Vue.config.productionTip = false;
 // DAMOS DE ALTA EL ROUTER
@@ -15,6 +18,9 @@ const routes = [
   { path: "/cine", component: Cine },
   { path: "/musica", component: Musica },
   { path: "/television", component: Television },
+  { path: "/ciclovida", component: CicloVida },
+  { path: "/directivas", component: Directivas },
+  { path: "/juegos", component: Juegos },
   { path: "/", component: Home },
 ];
 
