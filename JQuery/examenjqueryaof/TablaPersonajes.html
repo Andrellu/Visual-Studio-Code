@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/bootstrap.min.css"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./Home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./AñadirSerie.html" id="serieAña">Añadir Serie</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./ModificarSerie.html" id="serieMod">Modificar Serie</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="Equipos">Series</a>
+                    <ul class="dropdown-menu" id="listadoDinamico">
+                    
+                    </ul>
+                  </li>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <button id="atras">Volver</button>
+    <table class="table table-striped">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">NOMBRE</th>
+            <th scope="col">IMAGEN</th>
+          </tr>
+        </thead>
+        <tbody id="contenedor">
+        </tbody>
+      </table>
+    <script src="./../jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            insertarLista();
+            cargarPersonajesSerie();
+            $("body #listadoDinamico").on("click", "a", function(){
+                $(this).attr("href",window.location.replace("./DetalleSeries.html?id=" + $(this).attr("id")));
+            });
+            $("#atras").click(function(){
+              window.location.href = "./Home.html";
+            });
+        });
+
+        function insertarLista () {
+            var urlInsertarSeries = "https://apiseriespersonajes.azurewebsites.net/api/Series";
+            $.ajax({
+                "url" : urlInsertarSeries,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, series){
+                        var li = $("<li>");
+                        $("#listadoDinamico").append(li);
+                        var a = $("<a>",{
+                            "href" : "#",
+                            "text" : series.nombre,
+                            "id" : series.idSerie,
+                        });
+                        li.append(a);
+                    });
+                }
+            });
+        }
+
+        function cargarPersonajesSerie () {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var idRecogida = urlParams.get("id");
+            console.log(idRecogida);
+            var urlTabla = "https://apiseriespersonajes.azurewebsites.net/api/Series/PersonajesSerie/" + idRecogida;
+            console.log(urlTabla);
+            $.ajax({
+                "url" : urlTabla,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, personaje){
+                        var tr = $("<tr>");
+                        $("#contenedor").append(tr);
+                        var tdNom = $("<td>",{
+                            "text" : personaje.nombre
+                        });
+                        tr.append(tdNom);
+                        var tdImg = $("<td>");
+                        tr.append(tdImg);
+                        var img = $("<img>",{
+                            "src" : personaje.imagen,
+                            "width" : "300px"
+                        });
+                        tdImg.append(img);
+                    });
+                }
+            });
+
+        }
+    </script>
+    <script src="./../js/bootstrap.bundle.js"></script>
+</body>
+</html>

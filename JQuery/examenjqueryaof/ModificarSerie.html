@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/bootstrap.min.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./Home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./AñadirSerie.html" id="serieAña">Añadir Serie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./ModificarSerie.html" id="serieMod">Modificar Serie</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="Equipos">Series</a>
+                <ul class="dropdown-menu" id="listadoDinamico">
+                
+                </ul>
+              </li>
+          </div>
+        </div>
+      </nav>
+    <main class="text-center">
+      <h1 style="color:red">Modificar personaje</h1>
+      <label>Nombres</label>
+      <select id="contenedorPersonajes"></select><br/>
+      <label>Series</label>
+      <select id="contenedorSeries"></select><br/>
+      <button id="insertar">Nuevo Personaje</button>
+    </main>
+    <script src="./../jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            insertarLista();
+            cargarSeries();
+            cargarPersonajes();
+            $("body #listadoDinamico").on("click", "a", function(){
+                $(this).attr("href",window.location.replace("./DetalleSeries.html?id=" + $(this).attr("id")));
+            });
+            $("#insertar").click(function(){
+              modificarPersonaje();
+            });
+        });
+
+        function insertarLista () {
+            var urlInsertarSeries = "https://apiseriespersonajes.azurewebsites.net/api/Series";
+            $.ajax({
+                "url" : urlInsertarSeries,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, series){
+                        var li = $("<li>");
+                        $("#listadoDinamico").append(li);
+                        var a = $("<a>",{
+                            "href" : "#",
+                            "text" : series.nombre,
+                            "id" : series.idSerie,
+                        });
+                        li.append(a);
+                    });
+                }
+            });
+        }
+
+        function cargarSeries () {
+          var urlInsertarSeries = "https://apiseriespersonajes.azurewebsites.net/api/Series";
+            $.ajax({
+                "url" : urlInsertarSeries,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, series){
+                      var opt = $("<option>",{
+                        "text" : series.idSerie,
+                        "id" : series.idSerie,
+                      });
+                      $("#contenedorSeries").append(opt);
+                    });
+                }
+            });
+        }
+
+        function cargarPersonajes () {
+          var urlInsertarPersonajes = "https://apiseriespersonajes.azurewebsites.net/api/Personajes";
+          $.ajax({
+                "url" : urlInsertarPersonajes,
+                "type" : "GET",
+                success : function(data){
+                    $.each(data, function(index, series){
+                      var opt = $("<option>",{
+                        "text" : series.idPersonaje,
+                        "id" : series.idPersonaje,
+                      });
+                      $("#contenedorPersonajes").append(opt);
+                    });
+                }
+            });
+        }
+
+        function modificarPersonaje(){
+          var idSerie = $("#contenedorSeries").val();
+          var idPersonaje = $("#contenedorPersonajes").val();
+          var urlModificar = "https://apiseriespersonajes.azurewebsites.net/api/Personajes/"+ idPersonaje + "/" + idSerie;
+
+          var mod = new Object();
+
+          mod = {
+            idPersonaje : idPersonaje,
+            idSerie : idSerie
+          }
+          
+          var json = JSON.stringify(mod) 
+          $.ajax({
+            "url" : urlModificar,
+            "type" : "PUT",
+            "data" : json,
+            "contentType" : "application/json",
+            success : function(){
+              window.location.href = "./Home.html";
+            }
+          });
+        }
+    </script>
+    <script src="./../js/bootstrap.bundle.js"></script>
+</body>
+</html>
