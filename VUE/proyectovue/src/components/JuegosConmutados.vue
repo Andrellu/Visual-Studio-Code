@@ -2,8 +2,12 @@
     <div>
         <h1>Propiedades Conmutadas</h1>
         <ul>
-            <li v-for="j in juegosPokemon" :key="j">{{j | mayusculas}}</li>
+            <li v-for="j in juegosPokemon" :key="j">
+                {{j | mayusculas}}
+                {{j | mayusculasParametro("ES UN JUEGAZO!!!")}}
+            </li>
         </ul>
+        
         <hr/>
         <ul>
             <li v-for="j in juegosRojos" :key="j" v-html="j">{{j}}</li>
@@ -17,6 +21,9 @@ export default {
    filters : {
        mayusculas(dato){
            return dato.toUpperCase();
+       },
+       mayusculasParametro(dato, descripcion){
+           return dato.toUpperCase() + descripcion;
        }
    },
    computed : {
@@ -32,7 +39,7 @@ export default {
    },
    data(){
        return{
-           juegosPokemon : ["Edición Rojo/Amarillo/Azul", "Edición Plata/Oro", "Edición Rojo Fuego/Verde Hoja", "Edición Zafiro/Rubí/Esmeralda", "Edicion Perla/Diamante/Platino", "Edición Corazón de Oro/Alma de Plata", "Edición Negra/Blanca", "Edición Negro 2/Blanco 2", "Edición X/Y", "Edición Zafiro Alfa/Rubi Omega", "Edición Sol/Luna", "Edición Ultra Sol/Ultra Luna", "Edición Espada/Escudo", "Edición Diamante Brillante/Perla Reluciente"]
+           juegosPokemon : ["Edición Rojo/Amarillo/Azul", "Edición Plata/Oro/Cristal", "Edición Rojo Fuego/Verde Hoja", "Edición Zafiro/Rubí/Esmeralda", "Edicion Perla/Diamante/Platino", "Edición Corazón de Oro/Alma de Plata", "Edición Negra/Blanca", "Edición Negro 2/Blanco 2", "Edición X/Y", "Edición Zafiro Alfa/Rubi Omega", "Edición Sol/Luna", "Edición Ultra Sol/Ultra Luna", "Edición Espada/Escudo", "Edición Diamante Brillante/Perla Reluciente"]
        }
    }
 }
