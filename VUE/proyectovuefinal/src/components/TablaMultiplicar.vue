@@ -31,12 +31,12 @@
             calcularTabla(){
                 var numero = this.num;
                 //console.log(numero);
-                var result = [];
+                //var result = [];
                 for(var i = 0; i <= 10; i++){
                     var total = parseInt(numero*i);
                     //console.log(total);
-                    result.push(total);
-                    console.log(result[1]);
+                    this.resultados[i] = total;
+                    console.log(this.resultados[1]);
                 }
             }
         }
