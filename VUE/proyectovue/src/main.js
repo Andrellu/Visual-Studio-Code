@@ -1,8 +1,31 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import VueRouter from "vue-router";
+import Home from "./components/navegacion/Home.vue";
+import Musica from "./components/navegacion/Musica.vue";
+import Cine from "./components/navegacion/Cine.vue";
+import Television from "./components/navegacion/Television.vue";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+// DAMOS DE ALTA EL ROUTER
+Vue.use(VueRouter);
+// NECESITAMOS UN ARRAY CON LAS RUTAS
+const routes = [
+  { path: "/home", component: Home },
+  { path: "/cine", component: Cine },
+  { path: "/musica", component: Musica },
+  { path: "/television", component: Television },
+  { path: "/", component: Home },
+];
 
+// UNA VEZ CREADAS LAS RUTAS NOS CREAMOS UN OBJETO ROUTER
+const router = new VueRouter({
+  routes,
+  mode: "history",
+});
+
+//DEBEMOS DAR DE ALTA EL OBJETO ROUTER AL CREAR LA APP
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: (h) => h(App),
+}).$mount("#app");
