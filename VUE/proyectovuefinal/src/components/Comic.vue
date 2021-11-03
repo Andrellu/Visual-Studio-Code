@@ -26,7 +26,6 @@ export default {
             this.$emit("modificar", this.indice);
         }
     }
-
 }
 </script>
 
