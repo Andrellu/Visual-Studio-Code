@@ -4,7 +4,7 @@
        <img :src="comic.imagen"/>
        <h2>{{comic.descripcion}}</h2>
        <button @click="comicFavorito">Favorito</button>
-       <button>Modificar</button>
+       <button @click="modificarComic">Modificar</button>
        <button @click="eliminarComic">Eliminar</button>
    </div>
     
@@ -18,8 +18,12 @@ export default {
             this.$emit("favorito", this.comic);
         },
         eliminarComic(){
-            console.log(this.indice);
+            //console.log(this.indice);
             this.$emit("eliminar", this.indice);
+        },
+        modificarComic(){
+            //console.log(this.indice);
+            this.$emit("modificar", this.indice);
         }
     }
 

@@ -13,7 +13,10 @@
             <h2>{{comicFav.descripcion}}</h2><hr/>
         </div>
         <div v-for="(c, index) in comics" :key="index">
-            <Comic :comic="c" :indice="index" v-on:favorito="seleccionarFavorito" v-on:eliminar="eliminarComic"/>
+            <Comic :comic="c" :indice="index" 
+            v-on:favorito="seleccionarFavorito" 
+            v-on:eliminar="eliminarComic"
+            v-on:modificar="modificarComic"/>
         </div>
     </div>
 </template>
@@ -84,11 +87,14 @@ import Comic from "./Comic.vue";
                     descripcion : comic.descripcion
                 };
             },
-            modificarComic(){
-
+            modificarComic(index){
+                //console.log(index);
+                this.comics[index].titulo = this.titulo;
+                this.comics[index].imagen = this.imagen;
+                this.comics[index].descripcion = this.descripcion;
             },
             eliminarComic(index){
-                console.log(index);
+                //console.log(index);
                 this.comics.splice(index, 1);
             }
         }
