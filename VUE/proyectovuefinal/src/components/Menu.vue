@@ -13,3 +13,10 @@
         name : "Menu"
     }
 </script>
+
+<style scoped>
+    ul#menu li {
+        display: inline;
+        padding-right: 10px;
+    }
+</style>
