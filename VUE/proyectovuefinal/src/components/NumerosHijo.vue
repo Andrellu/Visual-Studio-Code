@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>El numero es : {{num}}</h1>
+        <h3>El numero es : {{num}}</h3>
         <button @click="Suma(num)">Sumar</button>
         <button @click="Restar(num)">Restar</button>
     </div>

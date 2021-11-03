@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import Tabla from "./components/TablaMultiplicar";
 import Deporte from "./components/Deportes";
 import Numeros from "./components/NumerosPadre";
+import Comic from "./components/Comics";
 
 Vue.config.productionTip = false;
 
@@ -13,6 +14,7 @@ const routes = [
   { path: "/tablaMultiplicar", component: Tabla },
   { path: "/deportes", component: Deporte },
   { path: "/numerosPadre", component: Numeros },
+  { path: "/comic", component: Comic },
   { path: "/", component: Tabla },
 ];
 

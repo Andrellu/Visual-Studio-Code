@@ -6,7 +6,7 @@
         <div v-for="i in numeros" :key="i">
             <NumerosHijo v-on:aumentarSuma="aumentarSuma" v-on:disminuirSuma="disminuirSuma"/>
         </div>
-        <h2>La suma es : {{suma}}</h2>
+        <h2>El total es : {{suma}}</h2>
     </div>
 </template>
 <script>
