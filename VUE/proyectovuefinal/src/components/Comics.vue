@@ -1,16 +1,19 @@
 <template>
     <div>
-        <h1>Soy el papa</h1>
         <label>Nombre : </label>
-        <input type="text"/> <br/>
+        <input type="text" v-model="titulo"/> <br/>
         <label>Imagen : </label>
-        <input type="text"/> <br/>
+        <input type="text" v-model="imagen"/> <br/>
         <label>Descripción : </label>
-        <input type="text"/> <br/>
-        <button>Insertar Comic</button><hr/>
-
+        <input type="text" v-model="descripcion"/> <br/>
+        <button @click="anadirComic">Insertar Comic</button><hr/>
+        <div>
+            <h1>{{comicFav.titulo}}</h1>
+            <img :src="comicFav.imagen"/>
+            <h2>{{comicFav.descripcion}}</h2><hr/>
+        </div>
         <div v-for="(c, index) in comics" :key="index">
-            <Comic :comic="c"/>
+            <Comic :comic="c" v-on:favorito="seleccionarFavorito"/>
         </div>
     </div>
 </template>
@@ -57,10 +60,38 @@ import Comic from "./Comic.vue";
                         "https://www.comicverso.com/wp-content/uploads/2020/06/The-Killing-Joke-657x1024.jpg",
                     descripcion: "Murcielago"
                     }
-                ]        
+                ],
+                titulo : "",
+                imagen : "",
+                descripcion : "",
+                comicFav : {}
             }
         }, components : {
             Comic
+        }, methods : {
+            anadirComic(){
+                var comic = {
+                    titulo : this.titulo,
+                    imagen : this.imagen,
+                    descripcion : this.descripcion
+                };
+                this.comics.push(comic);
+            },
+            seleccionarFavorito(comic){
+                this.comicFav = {
+                    titulo : comic.titulo,
+                    imagen : comic.imagen,
+                    descripcion : comic.descripcion
+                };
+            },
+            modificarComic(){
+                
+            }
         }
     }
 </script>
+<style scoped>
+    img{
+        width : 325px;
+    }
+</style>
