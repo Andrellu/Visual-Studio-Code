@@ -5,17 +5,21 @@
        <h2>{{comic.descripcion}}</h2>
        <button @click="comicFavorito">Favorito</button>
        <button>Modificar</button>
-       <button>Eliminar</button>
+       <button @click="eliminarComic">Eliminar</button>
    </div>
     
 </template>
 <script>
 export default {
     name : "Comic",
-    props : ["comic"],
+    props : ["comic", "indice"],
     methods : {
         comicFavorito(){
             this.$emit("favorito", this.comic);
+        },
+        eliminarComic(){
+            console.log(this.indice);
+            this.$emit("eliminar", this.indice);
         }
     }
 
