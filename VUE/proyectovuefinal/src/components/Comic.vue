@@ -4,8 +4,8 @@
        <img :src="comic.imagen"/>
        <h2>{{comic.descripcion}}</h2>
        <button @click="comicFavorito">Favorito</button>
-       <button @click="modificarComic">Modificar</button>
-       <button @click="eliminarComic">Eliminar</button>
+       <button @click="modificarComic" style="backgroundColor:blue;color:white">Modificar</button>
+       <button @click="eliminarComic" style="backgroundColor:red;color:white">Eliminar</button>
    </div>
     
 </template>
