@@ -7,7 +7,7 @@
         <label>Descripción : </label>
         <input type="text" v-model="descripcion"/> <br/>
         <button @click="anadirComic">Insertar Comic</button><hr/>
-        <div>
+        <div style="backgroundColor:orange">
             <h1>{{comicFav.titulo}}</h1>
             <img :src="comicFav.imagen"/>
             <h2>{{comicFav.descripcion}}</h2><hr/>
