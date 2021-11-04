@@ -3,15 +3,20 @@
     <Menu/>
     <hr/>
     <router-view></router-view>
+    <div>
+      <Aleatorios/>
+    </div>
   </div>
 </template>
 
 <script>
+import Aleatorios from "./components/Aleatorios.vue";
 import Menu from "./components/Menu.vue";
 export default {
   name: 'App',
   components: {
-    Menu
+    Menu,
+    Aleatorios
   }
 }
 </script>

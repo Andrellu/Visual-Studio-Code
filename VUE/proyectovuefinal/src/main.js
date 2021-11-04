@@ -6,6 +6,7 @@ import Deporte from "./components/Deportes";
 import Numeros from "./components/NumerosPadre";
 import Comic from "./components/Comics";
 import NumerosDobles from "./components/NumeroDoble";
+import NumerosTriples from "./components/NumeroTriple";
 
 Vue.config.productionTip = false;
 
@@ -17,6 +18,7 @@ const routes = [
   { path: "/numerosPadre", component: Numeros },
   { path: "/comic", component: Comic },
   { path: "/numerosdoble/:id?", component: NumerosDobles },
+  { path: "/numsTriple/:num?", component: NumerosTriples },
   { path: "/", component: Tabla },
 ];
 
