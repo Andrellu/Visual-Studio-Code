@@ -89,9 +89,11 @@ import Comic from "./Comic.vue";
             },
             modificarComic(index){
                 //console.log(index);
-                this.comics[index].titulo = this.titulo;
-                this.comics[index].imagen = this.imagen;
-                this.comics[index].descripcion = this.descripcion;
+                if(this.titulo != "" && this.imagen != "" && this.descripcion != ""){
+                    this.comics[index].titulo = this.titulo;
+                    this.comics[index].imagen = this.imagen;
+                    this.comics[index].descripcion = this.descripcion;
+                }
             },
             eliminarComic(index){
                 //console.log(index);
