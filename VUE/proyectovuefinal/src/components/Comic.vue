@@ -7,9 +7,9 @@
            verde:comic.year > 2000
            }">{{comic.year}}}</h2>
        <h2>{{comic.descripcion}}</h2>
-       <button @click="comicFavorito">Favorito</button>
-       <button @click="modificarComic" style="backgroundColor:blue;color:white">Modificar</button>
-       <button @click="eliminarComic" style="backgroundColor:red;color:white">Eliminar</button>
+       <button @click="comicFavorito()">Favorito</button>
+       <button @click="modificarComic()" style="backgroundColor:blue;color:white">Modificar</button>
+       <button @click="eliminarComic()" style="backgroundColor:red;color:white">Eliminar</button>
    </div>
     
 </template>
