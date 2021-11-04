@@ -14,7 +14,7 @@
         watch:{
             '$route.params.num'(valornuevo, valorviejo){
                 if(valornuevo != valorviejo){
-                    this.calcular()
+                    this.calcular();
                 }
             }
         },
