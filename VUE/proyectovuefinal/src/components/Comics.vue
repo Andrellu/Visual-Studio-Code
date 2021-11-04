@@ -6,7 +6,7 @@
         <input type="text" v-model="imagen"/> <br/>
         <label>Descripción : </label>
         <input type="text" v-model="descripcion"/> <br/>
-        <button @click="anadirComic">Insertar Comic</button><hr/>
+        <button @click="anadirComic()">Insertar Comic</button><hr/>
         <div style="backgroundColor:orange">
             <h1>{{comicFav.titulo}}</h1>
             <img :src="comicFav.imagen"/>
@@ -93,7 +93,7 @@ import Comic from "./Comic.vue";
                     this.comics[index].titulo = this.titulo;
                     this.comics[index].imagen = this.imagen;
                     this.comics[index].descripcion = this.descripcion;
-                }
+                } 
             },
             eliminarComic(index){
                 //console.log(index);
