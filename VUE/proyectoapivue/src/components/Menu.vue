@@ -37,12 +37,12 @@
               id="dropdown04"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              >Dropdown</a
+              >Empleados</a
             >
             <ul class="dropdown-menu" aria-labelledby="dropdown04">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Gomez</a></li>
+              <li><a class="dropdown-item" href="#">Otero</a></li>
+              <li><a class="dropdown-item" href="#">Ramos</a></li>
             </ul>
           </li>
         </ul>
@@ -50,8 +50,8 @@
           <input
             class="form-control"
             type="text"
-            placeholder="Search"
-            aria-label="Search"
+            placeholder="Buscar"
+            aria-label="Buscar"
           />
         </form>
       </div>
