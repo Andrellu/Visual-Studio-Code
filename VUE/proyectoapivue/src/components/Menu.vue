@@ -30,6 +30,12 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/empleadosoficios">Oficios Empleado</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/ejemploservicio">Ejemplo Servicio</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/empleadoservicios">Empleados Servicio</router-link>
+          </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
