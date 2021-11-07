@@ -10,14 +10,14 @@ export default class DetalleXbox extends Component {
         return (
             <div>
                 <h1>Soy detalles de la consola: {this.props.nomConsola}</h1>
-                {this.props.nomConsola == "Xbox"? (
-                    <img className="consola" src={xbox}/>
-                ) : this.props.nomConsola == "Xbox 360"?(
-                    <img className="consola" src={xbox360}/>
-                ) : this.props.nomConsola == "Xbox One"?(
-                    <img className="consola" src={xboxOne}/>
+                {this.props.nomConsola === "Xbox"? (
+                    <img className="consola" alt="xbox" src={xbox}/>
+                ) : this.props.nomConsola === "Xbox 360"?(
+                    <img className="consola" alt="xbox360" src={xbox360}/>
+                ) : this.props.nomConsola === "Xbox One"?(
+                    <img className="consola" alt="xboxone" src={xboxOne}/>
                 ) : (
-                    <img className="consola" src={xboxSeries}/>
+                    <img className="consola" alt="xboxseries" src={xboxSeries}/>
                 )}
             </div>
         )
