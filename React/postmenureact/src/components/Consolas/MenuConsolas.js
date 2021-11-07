@@ -1,0 +1,92 @@
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import logoXbox from '../../assets/images/logos/logo_xbox_lightgreen.png'
+
+export default class MenuConsolas extends Component {
+  state = {
+    consolasNintendo: [
+      "Game Advance",
+      "Nintendo DS",
+      "Nintendo 3DS",
+      "Nintendo 2DS",
+      "Nintendo Switch",
+    ],
+    consolasPS: [
+      "PlayStation 1",
+      "PlayStation 2",
+      "PSP 3000",
+      "PlayStation 3",
+      "PSP Vita",
+      "PlayStation 4",
+      "PlayStation 5",
+    ],
+    consolasXBOX: ["Xbox", "Xbox 360", "Xbox One", "Xbox Series X|S"],
+  };
+
+  render() {
+    return (
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <span className="navbar-brand" href="#">
+            MENU
+          </span>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  to="/mostrarNintendo"
+                  aria-current="page"
+                >
+                  Consola Nintendo
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/anadirDoctores">
+                  Consola PlayStation
+                </NavLink>
+              </li>
+              <li className="nav-item dropdown">
+                <span
+                  className="nav-link dropdown-toggle"
+                  id="dropdown03"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Consola Xbox
+                </span>
+                <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
+                  <li>
+                    <NavLink style={{backgroundColor: "darkgreen", color: "lightgray"}} to="/mostrarXbox" className="dropdown-item">
+                      <b>Historia de<img className="ms-2" src={logoXbox} alt="xbox" width="25px"/></b>
+                    </NavLink>
+                  </li>
+                  {this.state.consolasXBOX.map((consola, index) => {
+                      return (
+                          <li key={index} className="text-dark">
+                              <NavLink style={{backgroundColor:"lightgreen"}} to={"/mostrarConsola/" + consola} className="nav-link text-dark">
+                                  {consola}
+                              </NavLink>
+                        </li>
+                      );
+                  })}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
