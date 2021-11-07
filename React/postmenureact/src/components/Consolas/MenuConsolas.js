@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import logoXbox from '../../assets/images/logos/logo_xbox_lightgreen.png'
+import logoXbox from '../../assets/images/logos/logo_xbox_lightgreen.png';
+import logoPS from '../../assets/images/logos/logo_playstation.png';
+import logoNintendo from '../../assets/images/logos/logo_nintendo.png';
 
 export default class MenuConsolas extends Component {
   state = {
@@ -43,19 +45,57 @@ export default class MenuConsolas extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  to="/mostrarNintendo"
-                  aria-current="page"
+            <li className="nav-item dropdown">
+                <span
+                  className="nav-link dropdown-toggle"
+                  id="dropdown03"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
                   Consola Nintendo
-                </NavLink>
+                </span>
+                <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
+                  <li>
+                    <NavLink style={{backgroundColor: "lightcoral", color: "darkblue"}} to="/mostrarXbox" className="dropdown-item">
+                      <b>Historia de<img className="ms-2" src={logoNintendo} alt="xbox" width="25px"/></b>
+                    </NavLink>
+                  </li>
+                  {this.state.consolasNintendo.map((consola, index) => {
+                      return (
+                          <li key={index} className="text-dark">
+                              <NavLink style={{backgroundColor:"darksalmon"}} to={"/mostrarConsola/" + consola} className="nav-link text-dark">
+                                  {consola}
+                              </NavLink>
+                        </li>
+                      );
+                  })}
+                </ul>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/anadirDoctores">
+              <li className="nav-item dropdown">
+                <span
+                  className="nav-link dropdown-toggle"
+                  id="dropdown03"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Consola PlayStation
-                </NavLink>
+                </span>
+                <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
+                  <li>
+                    <NavLink style={{backgroundColor: "darkblue", color: "lightskyblue"}} to="/mostrarXbox" className="dropdown-item">
+                      <b>Historia de<img className="ms-2" src={logoPS} alt="xbox" width="25px"/></b>
+                    </NavLink>
+                  </li>
+                  {this.state.consolasPS.map((consola, index) => {
+                      return (
+                          <li key={index} className="text-dark">
+                              <NavLink style={{backgroundColor:"lightblue"}} to={"/mostrarConsola/" + consola} className="nav-link text-dark">
+                                  {consola}
+                              </NavLink>
+                        </li>
+                      );
+                  })}
+                </ul>
               </li>
               <li className="nav-item dropdown">
                 <span
