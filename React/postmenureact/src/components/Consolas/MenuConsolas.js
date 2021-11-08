@@ -29,9 +29,9 @@ export default class MenuConsolas extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <span className="navbar-brand" href="#">
-            MENU
-          </span>
+          <NavLink className="navbar-brand" to="/home">
+            Inicio
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"

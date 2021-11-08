@@ -22,7 +22,7 @@ export default class DetalleXbox extends Component {
     render() {
         return (
             <div>
-                <h1>Soy detalles de la consola: {this.props.nomConsola}</h1>
+                <h1>{this.props.nomConsola}</h1>
                 {this.props.nomConsola === "Xbox"? (
                     <img className="consola" alt="xbox" src={xbox}/>
                 ) : this.props.nomConsola === "Xbox 360"?(
