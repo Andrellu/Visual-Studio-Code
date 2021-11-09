@@ -25,82 +25,82 @@ export default class DetalleXbox extends Component {
                 <h1>{this.props.nomConsola}</h1>
                 {this.props.nomConsola === "Xbox"? (
                     <div>
-                        <img className="consola" alt="xbox" src={xbox}/>
+                        <img className="consola" alt="xbox" src={xbox}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox 360"?(
                     <div>
-                        <img className="consola" alt="xbox360" src={xbox360}/>
+                        <img className="consola" alt="xbox360" src={xbox360}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox One"?(
                     <div>
-                        <img className="consola" alt="xboxone" src={xboxOne}/>
+                        <img className="consola" alt="xboxone" src={xboxOne}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox Series X|S"?(
                     <div>
-                        <img className="consola" alt="xboxseries" src={xboxSeries}/>
+                        <img className="consola" alt="xboxseries" src={xboxSeries}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PlayStation 1"? (
                     <div>
-                        <img className="consola" alt="ps1" src={ps1}/>
+                        <img className="consola" alt="ps1" src={ps1}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PlayStation 2"?(
                     <div>
-                        <img className="consola" alt="ps2" src={ps2}/>
+                        <img className="consola" alt="ps2" src={ps2}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PlayStation 3"?(
                     <div>
-                        <img className="consola" alt="ps3" src={ps3}/>
+                        <img className="consola" alt="ps3" src={ps3}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PlayStation 4"?(
                     <div>
-                        <img className="consola" alt="ps4" src={ps4}/>
+                        <img className="consola" alt="ps4" src={ps4}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PlayStation 5" ?(
                     <div>
-                        <img className="consola" alt="psp" src={ps5}/>
+                        <img className="consola" alt="psp" src={ps5}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PSP 3000"? (
                     <div>
-                        <img className="consola" alt="vita" src={psp}/>
+                        <img className="consola" alt="vita" src={psp}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "PSP Vita"?(
                     <div>
-                        <img className="consola" alt="psVita" src={pspVita}/>
+                        <img className="consola" alt="psVita" src={pspVita}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Game Advance"?(
                     <div>
-                        <img className="consola" alt="gameBoy" src={gameBoy}/>
+                        <img className="consola" alt="gameBoy" src={gameBoy}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Nintendo DS" ? (
                     <div>
-                        <img className="consola" alt="nds" src={NDS}/>
+                        <img className="consola" alt="nds" src={NDS}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Nintendo 3DS" ? (
                     <div>
-                        <img className="consola" alt="3d" src={NDS3D}/>
+                        <img className="consola" alt="3d" src={NDS3D}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Nintendo 2DS" ? (
                     <div>
-                        <img className="consola" alt="2d" src={NDS2D}/>
+                        <img className="consola" alt="2d" src={NDS2D}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : (
                     <div>
-                        <img className="consola" alt="nsoled" src={NSOled}/>
+                        <img className="consola" alt="nsoled" src={NSOled}/><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 )}
