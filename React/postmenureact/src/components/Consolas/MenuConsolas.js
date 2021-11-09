@@ -31,7 +31,7 @@ export default class MenuConsolas extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
+        <div className="container-fluid" style={{backgroundColor:"darkgray", color:"chocolate"}}>
           <NavLink className="navbar-brand" to="/home">
             Inicio
           </NavLink>
