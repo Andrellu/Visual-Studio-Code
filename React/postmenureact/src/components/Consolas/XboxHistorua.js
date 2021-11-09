@@ -43,6 +43,20 @@ export default class XboxHistorua extends Component {
         return (
             <div>
                 <h1>Historia XBOX</h1><br/>
+                <di className="row justify-content-center">
+                    <div className="col-8 text-center">
+                        <p>
+                            La Xbox fue desarrollada por un pequeño equipo de desarrolladores de videojuegos contratados por Microsoft. Microsoft retrasó en varias ocasiones la noticia de su nueva consola, y finalmente fue revelado como proyecto a finales de 1999, a raíz de las entrevistas con Bill Gates. Gates dijo que un dispositivo de juego de entretenimiento era esencial para la convergencia multimedia en los nuevos tiempos del ocio digital. El 10 de marzo de 2000, fue confirmado el nuevo proyecto Xbox, mediante un comunicado oficial de Microsoft.
+
+                            Entonces, Microsoft lanzó en 2001 su Xbox, fue su primera consola de sobremesa (en colaboración con Intel) y compitió contra la PlayStation 2, la segunda consola de Sony, la Gamecube de Nintendo y el Dreamcast de Sega. Su principal característica es su procesador central basado en el procesador Intel Pentium III. El sistema también incorpora un lector de DVD, un disco duro interno, puerto ethernet y por último el sistema dispone de cuatro conectores para los mandos.
+
+                            La arquitectura de la Xbox está basada en la arquitectura x86 similar a la de un PC, lo que facilitó a los desarrolladores adaptar un gran número de títulos de PC para la Xbox, ayudando a ampliar el catálogo de juegos de la consola.
+
+                            Después de su lanzamiento, Microsoft comenzó a trabajar en su sucesor utilizando una arquitectura diferente. A finales de 2005, fue lanzada la Xbox 360 como sucesora de la Xbox. En 2008, Microsoft retira del mercado la Xbox para así dedicarse a la comercialización de la Xbox 360. Las unidades vendidas de este equipo fueron 24 millones de consolas, según las cifras oficiales.    
+                            <br/><a href="https://es.wikipedia.org/wiki/Xbox_(marca)#:~:text=La%20Xbox%20fue%20desarrollada%20por,las%20entrevistas%20con%20Bill%20Gates.">Mas Información</a>
+                        </p><br/>
+                    </div>
+                </di>
                 <div className="row justify-content-center">
                     <div className="col-8 text-center">
                         <table className="table table-striped">
