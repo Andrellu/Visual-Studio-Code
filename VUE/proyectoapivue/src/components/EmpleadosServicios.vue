@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             <div class="col-8 text-center" v-if="empleadosOficios.length != 0">
                 <table border="2" class="table table-striped">
-                    <thead>
+                    <thead border="2">
                         <tr>
                             <th>APELLIDO</th>
                             <th>OFICIO</th>
