@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MenuConsolas from "./Consolas/MenuConsolas";
 import NintendoHistoria from './Consolas/NintendoHistoria';
 import XboxHistorua from './Consolas/XboxHistorua';
+import PSHistoria from './Consolas/PSHistoria';
 import DetalleConsola from "./Consolas/DetalleConsola";
 import inicio from "./Consolas/Inicio";
 
@@ -15,6 +16,7 @@ export default class Router extends Component {
                     <Switch>
                     <Route exact path="/" component={inicio}/>
                         <Route exact path="/home" component={inicio}/>
+                        <Route exact path="/mostrarPlayStation" component={PSHistoria}/>
                         <Route exact path="/mostrarNintendo" component={NintendoHistoria}/>
                         <Route exact path="/mostrarXbox" component={XboxHistorua}/>
                         <Route exact path="/mostrarConsola/:consola" render={(props) => {

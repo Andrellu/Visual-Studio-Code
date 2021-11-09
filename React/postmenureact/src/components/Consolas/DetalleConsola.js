@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import "./imagenes.css";
 import xbox from "./../../assets/images/Consolas/Xbox_consola.png";
 import xbox360 from "./../../assets/images/Consolas/Consola_Xbox360.jpg";
@@ -16,7 +17,6 @@ import NDS from "./../../assets/images/Consolas/Consola_NDS.jpg";
 import NDS3D from "./../../assets/images/Consolas/Consola_NDS3d.jpg";
 import NDS2D from "./../../assets/images/Consolas/Consola_NDS2d.jpg";
 import NSOled from "./../../assets/images/Consolas/Consola_NintendoSwitch.jpg";
-import "./imagenes.css";
 
 export default class DetalleXbox extends Component {
     render() {
@@ -24,37 +24,85 @@ export default class DetalleXbox extends Component {
             <div>
                 <h1>{this.props.nomConsola}</h1>
                 {this.props.nomConsola === "Xbox"? (
-                    <img className="consola" alt="xbox" src={xbox}/>
+                    <div>
+                        <img className="consola" alt="xbox" src={xbox}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Xbox 360"?(
-                    <img className="consola" alt="xbox360" src={xbox360}/>
+                    <div>
+                        <img className="consola" alt="xbox360" src={xbox360}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Xbox One"?(
-                    <img className="consola" alt="xboxone" src={xboxOne}/>
+                    <div>
+                        <img className="consola" alt="xboxone" src={xboxOne}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Xbox Series X|S"?(
-                    <img className="consola" alt="xboxseries" src={xboxSeries}/>
+                    <div>
+                        <img className="consola" alt="xboxseries" src={xboxSeries}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PlayStation 1"? (
-                    <img className="consola" alt="ps1" src={ps1}/>
+                    <div>
+                        <img className="consola" alt="ps1" src={ps1}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PlayStation 2"?(
-                    <img className="consola" alt="ps2" src={ps2}/>
+                    <div>
+                        <img className="consola" alt="ps2" src={ps2}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PlayStation 3"?(
-                    <img className="consola" alt="ps3" src={ps3}/>
+                    <div>
+                        <img className="consola" alt="ps3" src={ps3}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PlayStation 4"?(
-                    <img className="consola" alt="ps4" src={ps4}/>
+                    <div>
+                        <img className="consola" alt="ps4" src={ps4}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PlayStation 5" ?(
-                    <img className="consola" alt="psp" src={ps5}/>
+                    <div>
+                        <img className="consola" alt="psp" src={ps5}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PSP 3000"? (
-                    <img className="consola" alt="vita" src={psp}/>
+                    <div>
+                        <img className="consola" alt="vita" src={psp}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "PSP Vita"?(
-                    <img className="consola" alt="psVita" src={pspVita}/>
+                    <div>
+                        <img className="consola" alt="psVita" src={pspVita}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Game Advance"?(
-                    <img className="consola" alt="gameBoy" src={gameBoy}/>
+                    <div>
+                        <img className="consola" alt="gameBoy" src={gameBoy}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Nintendo DS" ? (
-                    <img className="consola" alt="nds" src={NDS}/>
+                    <div>
+                        <img className="consola" alt="nds" src={NDS}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Nintendo 3DS" ? (
-                    <img className="consola" alt="3d" src={NDS3D}/>
+                    <div>
+                        <img className="consola" alt="3d" src={NDS3D}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : this.props.nomConsola === "Nintendo 2DS" ? (
-                    <img className="consola" alt="2d" src={NDS2D}/>
+                    <div>
+                        <img className="consola" alt="2d" src={NDS2D}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 ) : (
-                    <img className="consola" alt="nsoled" src={NSOled}/>
+                    <div>
+                        <img className="consola" alt="nsoled" src={NSOled}/>
+                        <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
+                    </div>
                 )}
             </div>
         )

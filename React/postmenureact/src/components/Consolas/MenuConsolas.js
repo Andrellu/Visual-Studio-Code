@@ -23,6 +23,9 @@ export default class MenuConsolas extends Component {
       "PlayStation 5",
     ],
     consolasXBOX: ["Xbox", "Xbox 360", "Xbox One", "Xbox Series X|S"],
+    nintendo : "Nintendo",
+    xbox : "xbox",
+    ps : "ps"
   };
 
   render() {
@@ -56,7 +59,7 @@ export default class MenuConsolas extends Component {
                 </span>
                 <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
                   <li>
-                    <NavLink style={{backgroundColor: "lightcoral", color: "darkblue"}} to="/mostrarXbox" className="dropdown-item">
+                    <NavLink style={{backgroundColor: "lightcoral", color: "darkblue"}} to="/mostrarNintendo" className="dropdown-item">
                       <b>Historia de<img className="ms-2" src={logoNintendo} alt="xbox" width="25px"/></b>
                     </NavLink>
                   </li>
@@ -82,7 +85,7 @@ export default class MenuConsolas extends Component {
                 </span>
                 <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
                   <li>
-                    <NavLink style={{backgroundColor: "darkblue", color: "lightskyblue"}} to="/mostrarXbox" className="dropdown-item">
+                    <NavLink style={{backgroundColor: "darkblue", color: "lightskyblue"}} to="/mostrarPlayStation" className="dropdown-item">
                       <b>Historia de<img className="ms-2" src={logoPS} alt="xbox" width="25px"/></b>
                     </NavLink>
                   </li>
