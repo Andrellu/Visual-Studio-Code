@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import "./imagenes.css";
 import { NavLink } from "react-router-dom";
 
-
-
-
 export default class NintendoSwitch extends Component {
 
     state = {
@@ -31,7 +28,7 @@ export default class NintendoSwitch extends Component {
                 nombre : "GameCube",
                 fecha : "14/9/2001",
                 precio : 199,
-                imagen : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Gamecube_Logo_vert.svg/256px-Gamecube_Logo_vert.svg.png"
+                imagen : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/GameCube-Console-Set.png/300px-GameCube-Console-Set.png"
             },
             {
                 nombre : "Game Boy Advance SP",
@@ -104,7 +101,7 @@ export default class NintendoSwitch extends Component {
                                     return (
                                         <tr key={index}>
                                             <td>{consola.nombre}</td>
-                                            <td>{consola.precio}</td>
+                                            <td>{consola.precio}€</td>
                                             <td>{consola.fecha}</td>
                                             <td><img alt="Imagen" src={consola.imagen} className="imgConsola"/></td>
                                             <td><NavLink to="/"><button type="button" className="btn btn-info">Más Detalles</button></NavLink></td>
