@@ -6,12 +6,14 @@ import EmpleadosDetalles from "./components/EmpleadosDetalles.vue";
 import EmpleadosOficios from "./components/EmpleadosOficios.vue";
 import EjemploServicio from "./components/EjemploServicio.vue";
 import EmpleadosServicios from "./components/EmpleadosServicios.vue";
+import Departamentos from "./components/Departamentos/Departamentos.vue";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const routes = [
   { path: "/coches", component: Coches },
+  { path: "/crudservicios", component: Departamentos },
   { path: "/empleadosdetalles", component: EmpleadosDetalles },
   { path: "/empleadosoficios", component: EmpleadosOficios },
   { path: "/ejemploservicio", component: EjemploServicio },
