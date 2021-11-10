@@ -22,4 +22,25 @@ export default class ServiciosEmpleados {
       });
     });
   }
+
+  buscarDepartamento(id) {
+    return new Promise(function (resolve) {
+      var request = "api/Departamentos/" + id;
+      var url = Global.urlAPIDepartamentos + request;
+      axios.get(url).then((res) => {
+        var departamento = res.data;
+        resolve(departamento);
+      });
+    });
+  }
+
+  modificarDepartamento(departamento) {
+    return new Promise(function (resolve) {
+      var request = "api/Departamentos";
+      var url = Global.urlAPIDepartamentos + request;
+      axios.put(url, departamento).then((res) => {
+        resolve(res);
+      });
+    });
+  }
 }

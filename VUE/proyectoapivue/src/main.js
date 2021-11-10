@@ -20,7 +20,10 @@ const routes = [
     path: "/detallesDepartamento/:iddepartamento/:nombre/:localidad",
     component: detallesDepartamento,
   },
-  { path: "/modificarDepartamento", component: modificarDepartamento },
+  {
+    path: "/modificarDepartamento/:iddepartamento",
+    component: modificarDepartamento,
+  },
   { path: "/insertarDepartamento", component: insertarDepartamento },
   { path: "/crudservicios", component: Departamentos },
   { path: "/empleadosdetalles", component: EmpleadosDetalles },
