@@ -1,8 +1,9 @@
 <template>
     <div>
         <h1>Soy Departamentos</h1>
+        <br/>
         <router-link class="btn btn-primary" to="/insertarDepartamento">Nuevo Departamento</router-link> {{" "}}
-        <br/><br/>
+        <br/>
         <div class="row justify-content-center">
             <div class="col-8 text-center">
                 <table  class="table table-striped" border="2" v-if="departamentos.length != 0">
@@ -10,8 +11,7 @@
                         <th>Numero</th>
                         <th>Nombre</th>
                         <th>Localidad</th>
-                        <th>Detalles</th>
-                        <th>Modificar</th>
+                        <th>Acciones</th>
                     </thead>
                     <tbody>
                         <tr v-for="(dept,index) in  departamentos" :key="index">
@@ -19,10 +19,9 @@
                             <td>{{dept.nombre}}</td>
                             <td>{{dept.localidad}}</td>
                             <td>
-                                <router-link class="btn btn-primary" :to="'/detallesDepartamento/' + dept.numero + '/'+ dept.nombre + '/' + dept.localidad">Detalles</router-link>
-                            </td>
-                            <td>
-                                <router-link class="btn btn-primary" :to="'/modificarDepartamento/' + dept.numero">Modificar</router-link>
+                                <router-link class="btn btn-success" :to="'/detallesDepartamento/' + dept.numero + '/'+ dept.nombre + '/' + dept.localidad">Detalles</router-link>{{" "}}
+                                <router-link class="btn btn-warning" :to="'/modificarDepartamento/' + dept.numero">Modificar</router-link>{{" "}}
+                                <router-link class="btn btn-danger" :to="'/eliminarDepartamento/' + dept.numero">Eliminar</router-link>
                             </td>
                         </tr>
                     </tbody>

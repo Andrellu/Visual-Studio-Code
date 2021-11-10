@@ -17,7 +17,7 @@
                         <label>Localidas : {{" "}}</label><br/>
                         <input type="text" v-model="departamento.localidad"/>
                     </div><br/>
-                    <button class="btn btn-success">Insertar</button>
+                    <button class="btn btn-success">Modificar</button>
                 </form>
             </div>
         </div>
@@ -38,6 +38,10 @@ export default{
     methods : {
         modificarDepartamento(){
             this.departamento.numero = parseInt(this.departamento.numero);
+            service.modificarDepartamento(this.departamento).then(res=>{
+                console.log(res);
+                this.$router.push("/crudservicios");
+            });
 
         },
         buscarDepartamento(){

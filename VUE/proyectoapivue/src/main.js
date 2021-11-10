@@ -10,6 +10,7 @@ import Departamentos from "./components/Departamentos/Departamentos.vue";
 import insertarDepartamento from "./components/Departamentos/InsertarDepartamento.vue";
 import modificarDepartamento from "./components/Departamentos/ModificarDepartamento.vue";
 import detallesDepartamento from "./components/Departamentos/DetallesDepartamento.vue";
+import eliminarDepartamento from "./components/Departamentos/EliminarDepartamento.vue";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/modificarDepartamento/:iddepartamento",
     component: modificarDepartamento,
+  },
+  {
+    path: "/eliminarDepartamento/:iddepartamento",
+    component: eliminarDepartamento,
   },
   { path: "/insertarDepartamento", component: insertarDepartamento },
   { path: "/crudservicios", component: Departamentos },

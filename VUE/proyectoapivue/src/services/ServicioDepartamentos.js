@@ -43,4 +43,14 @@ export default class ServiciosEmpleados {
       });
     });
   }
+
+  eliminarDepartamento(id) {
+    return new Promise(function (resolve) {
+      var request = "api/Departamentos/" + id;
+      var url = Global.urlAPIDepartamentos + request;
+      axios.delete(url).then((res) => {
+        resolve(res);
+      });
+    });
+  }
 }
