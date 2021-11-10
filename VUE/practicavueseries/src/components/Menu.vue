@@ -20,9 +20,9 @@
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/coches">Nuevo Personaje</router-link>
+            <router-link class="nav-link" to="/insertarPersonaje">Nuevo Personaje</router-link>
           <li class="nav-item">
-            <router-link class="nav-link" to="/empleadosdetalles">Modificar Personaje</router-link>
+            <router-link class="nav-link" to="/modificarPersonaje">Modificar Personaje</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
