@@ -12,4 +12,14 @@ export default class ServiciosEmpleados {
       });
     });
   }
+
+  insertarDepartamento(departamento) {
+    return new Promise(function (resolve) {
+      var request = "api/Departamentos";
+      var url = Global.urlAPIDepartamentos + request;
+      axios.post(url, departamento).then((res) => {
+        resolve(res);
+      });
+    });
+  }
 }

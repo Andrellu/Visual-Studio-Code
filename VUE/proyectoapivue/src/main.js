@@ -7,12 +7,21 @@ import EmpleadosOficios from "./components/EmpleadosOficios.vue";
 import EjemploServicio from "./components/EjemploServicio.vue";
 import EmpleadosServicios from "./components/EmpleadosServicios.vue";
 import Departamentos from "./components/Departamentos/Departamentos.vue";
+import insertarDepartamento from "./components/Departamentos/InsertarDepartamento.vue";
+import modificarDepartamento from "./components/Departamentos/ModificarDepartamento.vue";
+import detallesDepartamento from "./components/Departamentos/DetallesDepartamento.vue";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const routes = [
   { path: "/coches", component: Coches },
+  {
+    path: "/detallesDepartamento/:iddepartamento/:nombre/:localidad",
+    component: detallesDepartamento,
+  },
+  { path: "/modificarDepartamento", component: modificarDepartamento },
+  { path: "/insertarDepartamento", component: insertarDepartamento },
   { path: "/crudservicios", component: Departamentos },
   { path: "/empleadosdetalles", component: EmpleadosDetalles },
   { path: "/empleadosoficios", component: EmpleadosOficios },
