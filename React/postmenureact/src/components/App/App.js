@@ -1,5 +1,5 @@
-import logo from './../../assets/images/logo.svg';
-import './App.css';
+import logo from "./../../assets/images/logo.svg";
+import "./App.css";
 // import necesarios para Boostrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import $ from "jquery";
@@ -10,8 +10,8 @@ import Router from "./../Router";
 
 function App() {
   return (
-    <div className="App" style={{backgroundColor:'silver'}}>
-      <Router/>
+    <div className="App" style={{ backgroundColor: "silver" }}>
+      <Router />
     </div>
   );
 }

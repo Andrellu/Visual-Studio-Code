@@ -1,0 +1,12 @@
+<h1>Soy Deportes</h1>
+<h2>Numero de deportes {{sports.length}}</h2>
+<div *ngIf="sports.length < 7">
+    <p>Tienes menos de 7 deportes</p>
+</div>
+<h4 style="color: blueviolet">El primer deportes es {{sports[0]}}</h4>
+
+<ul>
+    <li *ngFor="let sport of sports; let i = index">
+        Posición: {{i}}, Deporte: {{sport}}
+    </li>
+</ul>
