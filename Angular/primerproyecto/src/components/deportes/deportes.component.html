@@ -23,7 +23,7 @@
 
 <h2>Estilos con ngStyle</h2>
 <ul>
-    <li *ngFor="let numero of numeros, let i = index" [style.color]="numero % 2 == 0 ? 'green' :'blue'">
+    <li *ngFor="let numero of numeros, let i = index" [class.estilopar] ="numero % 2 == 0" [class.estiloimpar]="numero % 2 != 0">
         {{numero}}
     </li>
 </ul>
