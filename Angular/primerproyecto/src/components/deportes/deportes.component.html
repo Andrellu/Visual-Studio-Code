@@ -1,12 +1,29 @@
 <h1>Soy Deportes</h1>
 <h2>Numero de deportes {{sports.length}}</h2>
-<div *ngIf="sports.length < 7">
-    <p>Tienes menos de 7 deportes</p>
+
+<div *ngIf="sports.length < 7; then condiciontrue; else condicionelse">
 </div>
+
+<ng-template #condicionelse>
+    <p style="color: darkblue;">Tienes mas de 7 deportes</p>
+</ng-template>
+
+<ng-template #condiciontrue>
+    <p style="color: brown;">Tienes menos de 7 deportes</p>
+</ng-template>
+
+
 <h4 style="color: blueviolet">El primer deportes es {{sports[0]}}</h4>
 
 <ul>
     <li *ngFor="let sport of sports; let i = index">
         Posición: {{i}}, Deporte: {{sport}}
+    </li>
+</ul>
+
+<h2>Estilos con ngStyle</h2>
+<ul>
+    <li *ngFor="let numero of numeros, let i = index" [style.color]="numero % 2 == 0 ? 'green' :'blue'">
+        {{numero}}
     </li>
 </ul>
