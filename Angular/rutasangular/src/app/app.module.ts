@@ -8,6 +8,7 @@ import { MusicaComponent } from './components/musica/musica.component';
 import { TelevisionComponent } from './components/television/television.component';
 import { routing, appRoutingProviders } from './app.routing';
 import { MenuComponent } from './components/menu/menu.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuComponent } from './components/menu/menu.component';
     CineComponent,
     MusicaComponent,
     TelevisionComponent,
-    MenuComponent
+    MenuComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
