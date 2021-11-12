@@ -1,0 +1,15 @@
+<h1>Ejemplo ritas con parámetros</h1>
+<div *ngIf="numero">
+    <h1 style="color: darkblue;">
+        {{numero}} el doble es {{doble}}
+    </h1>
+</div>
+<div *ngIf="!numero">
+    <h1 style="color: darkred;">
+        No hemos recibido párametros
+    </h1>
+</div>
+<hr/>
+<button (click)="redirect(66)">Enviar 66</button>
+<button (click)="redirect(88)">Enviar 88</button>
+<button (click)="redirect(99)">Enviar 99</button>
