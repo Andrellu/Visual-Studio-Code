@@ -1,0 +1,22 @@
+<h1>Soy la tabla</h1>
+
+<form #tabla="ngForm">
+    <label>Numero</label>
+    <input type="number" name="cajaNumero" #cajaNumero/>
+    <button (click)="setNumero()">CALCULAR</button>
+</form> <br/>
+
+<ul>
+    <li *ngFor="let nume of numros;let i = index">{{num}}x{{i}}={{nume}}</li>
+</ul>
+
+<table border="2">
+    <tr>
+        <td>Operación</td>
+        <td>Resultado</td>
+    </tr>
+    <tr *ngFor="let nume of numros;let i = index">
+        <td>{{num}}x{{i}}</td>
+        <td>{{nume}}</td>
+    </tr>
+</table>
