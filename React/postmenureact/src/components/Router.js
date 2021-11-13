@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+// ETIQUETAS QUE NECESITAMOS PARA NAVEGAR CON EL ROUTER
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+// COMPONENTES QUE QUEREMOS CARGAR CON SU RUTA
 import MenuConsolas from "./Consolas/MenuConsolas";
 import NintendoHistoria from './Consolas/NintendoHistoria';
 import XboxHistorua from './Consolas/XboxHistorua';
