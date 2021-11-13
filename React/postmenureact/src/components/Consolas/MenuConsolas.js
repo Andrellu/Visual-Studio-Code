@@ -48,6 +48,7 @@ export default class MenuConsolas extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {/*COMPONENTE DEL MENÚ*/}
             <li className="nav-item dropdown">
                 <span
                   className="nav-link dropdown-toggle"
@@ -74,6 +75,7 @@ export default class MenuConsolas extends Component {
                   })}
                 </ul>
               </li>
+              {/*COMPONENTE DEL MENÚ*/}
               <li className="nav-item dropdown">
                 <span
                   className="nav-link dropdown-toggle"
@@ -100,6 +102,7 @@ export default class MenuConsolas extends Component {
                   })}
                 </ul>
               </li>
+              {/*COMPONENTE DEL MENÚ*/}
               <li className="nav-item dropdown">
                 <span
                   className="nav-link dropdown-toggle"
