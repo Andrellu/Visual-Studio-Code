@@ -25,29 +25,83 @@ export default class DetalleXbox extends Component {
                 <h1>{this.props.nomConsola}</h1>
                 {this.props.nomConsola === "Xbox"? (
                     <div>
-                        <img className="consola" alt="xbox" src={xbox}/><br/>
-                        <h2>Precio Salida : 500€</h2>
-                        <h2>Número de ventas : 100 millones</h2>
-                        <h2>Descripción de {this.props.nomConsola}:</h2>
-                        <p>qweqweqwewqsdasdcxadcsascascs sdadxa asdadasdasdasdasda</p>
+                        <div className="row justify-content-center">
+                            <div className="col-8 text-center">
+                                <img className="consola" alt="xbox" src={xbox}/><br/>
+                                <h2>Precio Salida : 500€</h2>
+                                <h2>Número de ventas : 100 millones</h2><br/>
+                                <div className="card shadow-sm p-4" style={{ backgroundColor: "silver" }}>
+                                    <h2>Descripción de {this.props.nomConsola}:</h2><br/>
+                                    <p>
+                                        La Xbox posee una gran cantidad de accesorios, como son tarjetas de memorias, cables audio y vídeo.
+
+
+                                        Control de Xbox versión 2004.
+
+                                        Comparación de los controles de la sexta generación
+                                        Adaptador RF Xbox: Es un adaptador que permite conectar la Xbox a televisores que carezcan de conexión de audio y vídeo.
+                                        Cable estándar de conexión audio/video Xbox: Es un cable que permite conectar la consola a un televisor con terminal de entrada de audio y vídeo compuesto.
+                                        Memoria Xbox: Es una unidad de memoria portátil cuya capacidad es de 8, 16 y 32 MB, sirve para almacenar partidas y poder transportar los archivos hacia otras consolas Xbox. Esta unidad es para uso exclusivo con controladores compatibles con Xbox que tengan ranuras de expansión de memoria.
+                                        Auriculares: es un aparato que sirve para comunicarse mediante partidas multijugador en "XBOX LIVE"
+                                        Control DVD: mediante un accesorio conectado a las entradas principales de controles comunes, el mismo recibe señales del control en su lector infrarrojo, esto permite disfrutar las películas tal como se haría con un DVD común. Es obligatorio el conectar este dispositivo para la reproducción de un DVD.
+                                    </p>
+                                </div>
+                            </div>
+                        </div><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox 360"?(
                     <div>
-                        <img className="consola" alt="xbox360" src={xbox360}/><br/>
-                        <h2>Precio Salida : 400</h2>
-                        <h2>Número de ventas : 85 millones</h2>
-                        <h2>Descripción de {this.props.nomConsola}:</h2>
-                        <p>qweqweqwewqsdasdcxadcsascascs sdadxa asdadasdasdasdasda</p>
+                        <div className="row justify-content-center">
+                            <div className="col-8 text-center">
+                                <img className="consola" alt="xbox360" src={xbox360}/><br/>
+                                <h2>Precio Salida : 400</h2>
+                                <h2>Número de ventas : 85 millones</h2><br/>
+                                <div className="card shadow-sm p-4" style={{ backgroundColor: "silver" }}>
+                                    <h2>Descripción de {this.props.nomConsola}:</h2><br/>
+                                    <p>
+                                        La XBox 360 es la primera de las tres consolas de nueva generación en aparecer. Las otras dos, Playstation 3 y Nintendo Revolution lo harán (esperemos) durante el año que viene. Microsoft ha sabido anteponerse a sus competidores y ofrecer su consola justo a tiempo para el periodo navideño, lo cual le puede reportar importantes beneficios en forma de implantación masiva en el mercado.
+
+                                        Pero, ¿está la XBox 360 a la altura de los tiempos en lo que respecta a sus especificaciones técnicas? Vamos a darles un repaso para ver cuales son sus características, pero podemos adelantar que XBox 360 se pone por delante de todas las otras consolas que hay ahora mismo en el mercado. La XBox 360 está gobernada por una CPU basada en PowerPC y diseñada por IBM. Esta CPU funciona a a 3.2 GHz y consta de tres núcleos simétricos que pueden ejecutar dos hilos por hardware cada uno. Incorpora 512 MB de RAM de tipo GDDR3 a 700 Mhz, que le proporcionan un ancho de banda a memoria de 22.4 Gbps.
+
+                                        La tarjeta gráfica que incorpora es un desarrollo de ATI, basado en la familia ATI Radeon R500, y funciona a 500 MHz. Es capaz de mover 500 millones de triángulos por segundo y tiene una resolución de salida de 720p o 1080i, con formato panorámico 16:9. La XBox 360 está especialmente pensada para ser usada con televisores HDTV de alta resolución y, al parecer, Microsoft ha llegado a un acuerdo con muchas tiendas para que muestren sus consolas con este tipo de teles.
+
+                                        El audio tiene una frecuencia máxima de 48 KHz con una resolución de hasta 32 bits, pudiendo decodificar hasta 256 canales al mismo tiempo. Todos los juegos soportan Dolby Digital 5.1, lo que garantiza un sonido espectacular, especialmente si utilizamos un sistema de HomeTheater.
+
+                                        Los juegos de XBox 360 vendrán en discos DVD de doble capa, con una capacidad de hasta 8.5 GB. El lector que incorpora es de 12X y soporta los siguientes formatos: DVD-ROM, DVD-R/RW, DVD+R/RW, CD, CD-R y CD-RW. La consola también puede usar un disco duro interno de 20 GB, el cual será imprescindible si queremos usar la emulación de juegos de la XBox. Además, también incorpora dos ranuras para tarjetas de memoria de 64 MB, donde se podrán guardar las partidas, puntuaciones,...
+
+                                        La conectividad está asegurada a través de una tarjeta Ethernet Gigabit. También podemos usar una red inalámbrica, si disponemos de ella, mediante los accesorios que Microsoft pondrá a la venta.
+
+                                        Soporta hasta cuatro inalámbricos, además de tres controladores adicionales a través de USB. Estos controladores serán compatibles con PCs con Windows XP. El controlador inalámbrico tiene una autonomía de hasta 25 horas mediante el pack de baterías recargables NiMh.
+
+                                        Las posibilidades de expansión de la consola vienen dadas por la incorporación de tres puertos USB 2.0, a través de los cuales podremos conectar discos duros externos y otros reproductores y consolas, como el iPod o la PSP, desde los cuales podremos reproducir contenido multimedia.
+                                    </p>
+                                </div>
+                            </div>
+                        </div><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox One"?(
                     <div>
-                        <img className="consola" alt="xboxone" src={xboxOne}/><br/>
-                        <h2>Precio Salida : 500</h2>
-                        <h2>Número de ventas : 48 millones</h2>
-                        <h2>Descripción de {this.props.nomConsola}:</h2>
-                        <p>qweqweqwewqsdasdcxadcsascascs sdadxa asdadasdasdasdasda</p>
+                        <div className="row justify-content-center">
+                            <div className="col-8 text-center">
+                                <img className="consola" alt="xboxone" src={xboxOne}/><br/>
+                                <h2>Precio Salida : 500</h2>
+                                <h2>Número de ventas : 48 millones</h2><br/>
+                                <div className="card shadow-sm p-4" style={{ backgroundColor: "silver" }}>
+                                    <h2>Descripción de {this.props.nomConsola}:</h2><br/>
+                                    <p>
+                                        La consola está formada por un procesador AMD de 8 núcleos Custom de 64 bits basado en microarquitectura Jaguar y una velocidad estimada en 1,75 Ghz, 8 GB de memoria RAM DDR3 más 32 MB de ESRAM, con una velocidad de hasta 204 GB/s22​ 500 GB de disco duro y un lector Blu-ray 6x.6​ Los gráficos integrados también corren por parte de AMD siendo 8 veces más potentes que los de Xbox 360 y compuestos por 5 000 000 000 de transistores, diez veces más que Xbox 360. Incluye además conexiones USB 3.0, HDMI in-out y 802.11n Wireless. También el Kinect 2.0,23​ con una cámara de 1080p que procesa 2 GB de datos por segundo con un tiempo de respuesta de 13 milmillonésimas de segundo.6​ El sistema operativo está formado por un Kernel de Windows que tiene varias funciones multimedia y de Internet Explorer, otro dedicado en exclusiva a la consola y un tercero que gestiona ambos aspectos de forma simultánea. Cuenta con una unidad óptica Blu-ray Disc e incluye el sistema cloud de almacenamiento en línea.
+
+                                        Se confirmó que gracias a la nube, tendría soporte para contenido en resoluciones de 4K (Ultra HD) para contenidos de vídeo, imágenes y para juegos.24​ Xbox One también puede recibir señales televisivas vía cable coaxial de sistema de TV de pago por cable o satelital, desplazando los descodificadores de las empresas de televisión de pago. Sin embargo, es desconocido si Xbox puede funcionar con ciertos descodificadores que además requieren una Smart Card. También puede hacer de intermediario entre señales televisivas vía cable HDMI de los descodificadores de TV de pago, solo si estos incorporan HDMI; sin embargo Xbox o Kinect por sí mismos no pueden cambiar de canal por el mando u orden de voz, ya que no controlan el descodificador, solo reciben su imagen.
+
+                                        El puerto HDMI puede recibir una segunda señal de vídeo de otros dispositivos, como un PC, reproductor Blu-Ray o incluso de otras consolas.25​
+
+                                        Xbox One carece de un conector RCA y esto lo hace incompatible con los antiguos televisores de rayos catódicos (aunque se pueden conseguir adaptadores especiales de HDMI a Conector RCA relativamente económicos para poder usar la consola con este tipo de aparatos.)
+                                    </p>
+                                </div>
+                            </div>
+                        </div><br/>
                         <NavLink to="/home" className="btn-close"><button type="button" class="btn btn-danger">Close</button></NavLink>
                     </div>
                 ) : this.props.nomConsola === "Xbox Series X|S"?(
