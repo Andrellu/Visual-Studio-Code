@@ -15,6 +15,7 @@ export default class Router extends Component {
                 <BrowserRouter>
                     {/*Este es mi menú*/}
                     <MenuConsolas/>
+                    {/*Esto es lo que irá vairando en nuestra página*/}
                     <Switch>
                         {/*RUTAS CREADAS EN NUESTRO MENÚ*/}
                         <Route exact path="/" component={inicio}/>
