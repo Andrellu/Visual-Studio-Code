@@ -59,14 +59,14 @@ export default class MenuConsolas extends Component {
                 </span>
                 <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
                   <li>
-                    <NavLink style={{backgroundColor: "lightcoral", color: "darkblue"}} to="/mostrarNintendo" className="dropdown-item">
-                      <b>Historia de<img className="ms-2" src={logoNintendo} alt="xbox" width="25px"/></b>
+                    <NavLink style={{backgroundColor: "silver", color: "darkblue"}} to="/mostrarNintendo" className="dropdown-item">
+                      <b><img className="ms-2" src={logoNintendo} alt="xbox" width="100px"/></b>
                     </NavLink>
                   </li>
                   {this.state.consolasNintendo.map((consola, index) => {
                       return (
                           <li key={index} className="text-dark">
-                              <NavLink style={{backgroundColor:"darksalmon"}} to={"/mostrarConsola/" + consola} className="nav-link text-dark">
+                              <NavLink style={{backgroundColor:"darkred"}} to={"/mostrarConsola/" + consola} className="nav-link text-white">
                                   {consola}
                               </NavLink>
                         </li>
@@ -86,7 +86,7 @@ export default class MenuConsolas extends Component {
                 <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
                   <li>
                     <NavLink style={{backgroundColor: "darkblue", color: "lightskyblue"}} to="/mostrarPlayStation" className="dropdown-item">
-                      <b>Historia de<img className="ms-2" src={logoPS} alt="xbox" width="25px"/></b>
+                      <b><img className="ms-2" src={logoPS} alt="xbox" width="100px"/></b>
                     </NavLink>
                   </li>
                   {this.state.consolasPS.map((consola, index) => {
@@ -112,7 +112,7 @@ export default class MenuConsolas extends Component {
                 <ul className="dropdown-menu text-center" aria-labelledby="dropdown03">
                   <li>
                     <NavLink style={{backgroundColor: "darkgreen", color: "lightgray"}} to="/mostrarXbox" className="dropdown-item">
-                      <b>Historia de<img className="ms-2" src={logoXbox} alt="xbox" width="25px"/></b>
+                      <b><img className="ms-2" src={logoXbox} alt="xbox" width="100px"/></b>
                     </NavLink>
                   </li>
                   {this.state.consolasXBOX.map((consola, index) => {
