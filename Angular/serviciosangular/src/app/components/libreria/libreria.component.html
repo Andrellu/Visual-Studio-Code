@@ -6,13 +6,18 @@
         <input type="text" name="cajaImagen" #cajaImagen/><br/>
         <label>Descripcion : </label>
         <input type="text" name="cajaDescripcion" #cajaDescripcion/><br/><br/>
-        <button>Insertar</button> 
-        <button>Favorito</button><hr/>
+        <button (click)="insertarComic()">Insertar</button><hr/>
     </div>
 </div>
-<div>
-
+<div *ngIf="comicFav">
+    <div class="row justify-content-center" style="background-color: yellow;">
+        <div class="col-8 text-center">
+            <h1>{{comicFav.nombre}}</h1>
+            <img width="200px" src="{{comicFav.imagen}}"/>
+            <h2>Descripción : {{comicFav.descripcion}}</h2>
+        </div>
+    </div>
 </div>
-<div id="Hijos" style="background-color: darkseagreen;" *ngFor="let comic of comics">
-    <app-comics [comic] = "comic"></app-comics>
+<div id="Hijos" style="background-color: darkseagreen;" *ngFor="let comic of comics; let i = index">
+    <app-comics [index]="i" [comic] = "comic" (favorito)="favorito($event)" (modificar)="modificarComic($event)" (eliminar)="eliminarComic($event)"></app-comics>
 </div>

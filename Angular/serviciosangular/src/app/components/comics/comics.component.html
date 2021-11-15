@@ -1,7 +1,10 @@
 <div class="row justify-content-center">
     <div class="col-8 text-center">
         <h1>{{comic.nombre}}</h1>
-        <img src="comic.imagen" />
+        <img width="150px" src="{{comic.imagen}}" />
         <h2>{{comic.descripcion}}</h2>
     </div>
+    <button (click)="favoritoHijo()">Favorito</button>
+    <button (click)="modificarHijo()">Modificar</button>
+    <button (click)="eliminarHijo()">Eliminar</button>
 </div><hr/>
