@@ -9,6 +9,9 @@ import { Comic } from '../models/Comic';
 export class LibreriaComponent implements OnInit {
 
   public comics! : Array<Comic>;
+  @ViewChild("cajaNombre") cajaNombre! : ElementRef;
+  @ViewChild("cajaImagen") cajaImagen! : ElementRef;
+  @ViewChild("cajaDescripcion") cajaDescripcion! : ElementRef;
 
   constructor() {
     this.comics = [
@@ -37,7 +40,7 @@ export class LibreriaComponent implements OnInit {
       "https://i.pinimg.com/originals/e1/d8/ff/e1d8ff4aeab5e567798635008fe98ee1.png",
       "Todd MacFarlane"
       )
-    ]
+    ];
   }
 
   ngOnInit(): void {

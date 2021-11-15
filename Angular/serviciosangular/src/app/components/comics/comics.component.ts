@@ -17,4 +17,8 @@ export class ComicsComponent implements OnInit {
     console.log(this.comic);
   }
 
+  insertarComic(){
+    
+  }
+
 }
