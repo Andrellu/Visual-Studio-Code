@@ -1,1 +1,18 @@
-<p>libreria works!</p>
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <label>Nombre : </label>
+        <input type="text" name="cajaNombre" #cajaNombre/><br/>
+        <label>Imagen : </label>
+        <input type="text" name="cajaImagen" #cajaImagen/><br/>
+        <label>Descripcion : </label>
+        <input type="text" name="cajaDescripcion" #cajaDescripcion/><br/><br/>
+        <button>Insertar</button> 
+        <button>Favorito</button><hr/>
+    </div>
+</div>
+<div>
+
+</div>
+<div id="Hijos" style="background-color: darkseagreen;" *ngFor="let comic of comics">
+    <app-comics [comic] = "comic"></app-comics>
+</div>
