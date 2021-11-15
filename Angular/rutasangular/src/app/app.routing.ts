@@ -9,6 +9,8 @@ import { Error404Component } from "./components/error404/error404.component";
 import { NumerodobleComponent } from "./components/numerodoble/numerodoble.component";
 import { CollatzComponent } from "./components/collatz/collatz.component";
 import { ListaproductocomponentComponent } from "./components/listaproductocomponent/listaproductocomponent.component";
+import { CocheComponent } from "./components/coche/coche.component";
+import { ConcesionarioComponent } from "./components/concesionario/concesionario.component";
 
  const appRoutes : Routes = [
      {path:"", component : HomeComponent},
@@ -20,6 +22,7 @@ import { ListaproductocomponentComponent } from "./components/listaproductocompo
      {path:"numeroDoble/:numero", component : NumerodobleComponent},
      {path:"collatz/:numero", component : CollatzComponent},
      {path:"listaproductos", component : ListaproductocomponentComponent},
+     {path:"coche", component : ConcesionarioComponent},
      {path:"**", component : Error404Component},
  ];
 

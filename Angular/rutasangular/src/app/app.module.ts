@@ -13,6 +13,8 @@ import { NumerodobleComponent } from './components/numerodoble/numerodoble.compo
 import { MenucollatzComponent } from './components/menucollatz/menucollatz.component';
 import { CollatzComponent } from './components/collatz/collatz.component';
 import { ListaproductocomponentComponent } from './components/listaproductocomponent/listaproductocomponent.component';
+import { CocheComponent } from './components/coche/coche.component';
+import { ConcesionarioComponent } from './components/concesionario/concesionario.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ListaproductocomponentComponent } from './components/listaproductocompo
     NumerodobleComponent,
     MenucollatzComponent,
     CollatzComponent,
-    ListaproductocomponentComponent
+    ListaproductocomponentComponent,
+    CocheComponent,
+    ConcesionarioComponent
   ],
   imports: [
     BrowserModule,
