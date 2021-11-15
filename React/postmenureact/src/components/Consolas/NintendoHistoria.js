@@ -132,7 +132,6 @@ export default class NintendoSwitch extends Component {
                                 <th>Precio</th>
                                 <th>Fecha</th>
                                 <th>Imagen</th>
-                                <th>Acciones</th>
                             </thead>
                             <tbody>
                                 {this.state.consolas.map((consola, index) => {
@@ -142,7 +141,6 @@ export default class NintendoSwitch extends Component {
                                             <td>{consola.precio}€</td>
                                             <td>{consola.fecha}</td>
                                             <td><img alt="Imagen" src={consola.imagen} className="imgConsola"/></td>
-                                            <td><NavLink to="/"><button type="button" className="btn btn-info">Más Detalles</button></NavLink></td>
                                         </tr>
                                     );
                                 })}
