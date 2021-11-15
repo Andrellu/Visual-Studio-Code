@@ -8,6 +8,7 @@ import {TelevisionComponent} from "./components/television/television.component"
 import { Error404Component } from "./components/error404/error404.component";
 import { NumerodobleComponent } from "./components/numerodoble/numerodoble.component";
 import { CollatzComponent } from "./components/collatz/collatz.component";
+import { ListaproductocomponentComponent } from "./components/listaproductocomponent/listaproductocomponent.component";
 
  const appRoutes : Routes = [
      {path:"", component : HomeComponent},
@@ -18,6 +19,7 @@ import { CollatzComponent } from "./components/collatz/collatz.component";
      {path:"numeroDoble", component : NumerodobleComponent},
      {path:"numeroDoble/:numero", component : NumerodobleComponent},
      {path:"collatz/:numero", component : CollatzComponent},
+     {path:"listaproductos", component : ListaproductocomponentComponent},
      {path:"**", component : Error404Component},
  ];
 
