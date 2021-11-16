@@ -1,10 +1,10 @@
 <template>
   <div>
       <h1>Apuestas</h1>
-      <router-link class="btn btn-success" to="/insertar">Insertar Apuesta</router-link>
-      <div>
-          <div>
-              <table>
+      <router-link class="btn btn-success" to="/insertar">Insertar Apuesta</router-link><br/><br/>
+      <div class="row justify-content-center">
+          <div class="col-8 text-center">
+              <table class="table table-striped" border="2">
                   <thead>
                       <th>ID Apuesta</th>
                       <th>Usuario</th>
