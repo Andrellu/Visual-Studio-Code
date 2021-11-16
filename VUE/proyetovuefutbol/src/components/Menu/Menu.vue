@@ -1,5 +1,5 @@
 <template>
-    <nav
+  <nav
     class="navbar navbar-expand-md navbar-dark bg-dark"
     aria-label="Fourth navbar example"
     >
@@ -20,9 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/insertarPersonaje">Nuevo Personaje</router-link>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/modificarPersonaje">Modificar Personaje</router-link>
+            <router-link class="nav-link" to="/apuestas">Nuevo Apuesta</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -31,12 +29,10 @@
               id="dropdown04"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              >Series</a
+              >Equipos</a
             >
             <ul class="dropdown-menu" aria-labelledby="dropdown04" >
-              <li v-for="(serie,index) in series" :key="index">
-                   <router-link class="nav-link text-dark" :to="'/detallesSerie/'+serie.idSerie"> {{serie.nombre}}</router-link>
-             </li>
+              <li v-for="(equipo,index) in equipos" :key="index"><router-link class="nav-link" style="color:black" :to="'/detallesChampion/' + equipo.idEquipo">{{equipo.nombre}}</router-link></li>
             </ul>
           </li>
         </ul>
@@ -52,27 +48,33 @@
     </div>
   </nav>
 </template>
+
 <script>
-import ServiceSeries from './../services/Series';
+import ServiceChampions from './../../services/Champions';
 
-const service = new ServiceSeries();
+const service = new ServiceChampions();
 
-export default{
-    name : "Menu",
-    data(){
-        return {
-            series : []
-        }
-    },
-    mounted(){
-        this.cargarSeries();
-    },
-    methods : {
-        cargarSeries(){
-            service.getSeries().then(res => {
-                this.series = res;
-            });
-        }
+export default {
+  name : "Menu",
+  data(){
+    return {
+      equipos : []
     }
+  },
+  mounted(){
+    this.cargarEquipos();
+  },
+  methods : {
+    cargarEquipos(){
+      service.getEquipos().then(res => {
+        console.log(res);
+        this.equipos = res;
+      });
+    }
+  }
 }
 </script>
+
+<style>
+
+</style>
