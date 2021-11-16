@@ -7,6 +7,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { InsertarComponent } from './components/insertar/insertar.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { LibreriaComponent } from './components/libreria/libreria.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LibreriaComponent } from './components/libreria/libreria.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     routing
   ],
   providers: [appRoutingProviders],
