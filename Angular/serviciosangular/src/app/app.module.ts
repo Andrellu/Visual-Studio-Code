@@ -14,7 +14,7 @@ import { LibreriaComponent } from './components/libreria/libreria.component';
     MenuComponent,
     InsertarComponent,
     ComicsComponent,
-    LibreriaComponent
+    LibreriaComponent,
   ],
   imports: [
     BrowserModule,
