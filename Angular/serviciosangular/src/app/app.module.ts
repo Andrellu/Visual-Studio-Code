@@ -8,6 +8,7 @@ import { InsertarComponent } from './components/insertar/insertar.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { LibreriaComponent } from './components/libreria/libreria.component';
 import { FormsModule } from '@angular/forms';
+import { ComicsinyeccionComponent } from './Components/comicsinyeccion/comicsinyeccion.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     InsertarComponent,
     ComicsComponent,
     LibreriaComponent,
+    ComicsinyeccionComponent,
   ],
   imports: [
     BrowserModule,
