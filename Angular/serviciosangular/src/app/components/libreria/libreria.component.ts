@@ -68,14 +68,15 @@ export class LibreriaComponent implements OnInit {
     var titu = this.cajaNombre.nativeElement.value;
     var img = this.cajaImagen.nativeElement.value;
     var descrip = this.cajaDescripcion.nativeElement.value;
-    for(var i = 0; i < this.comics.length; i++){
-      if(event == i){
-        //console.log(this.comics[i].nombre + "==" +  event.nombre);
-        this.comics[i].nombre = titu;
-        this.comics[i].imagen = img;
-        this.comics[i].descripcion = descrip;
-      }
-    }
+    this.comics[event] = new Comic(titu,img, descrip);
+    // for(var i = 0; i < this.comics.length; i++){
+    //   if(event == i){
+    //     //console.log(this.comics[i].nombre + "==" +  event.nombre);
+    //     this.comics[i].nombre = titu;
+    //     this.comics[i].imagen = img;
+    //     this.comics[i].descripcion = descrip;
+    //   }
+    // }
   }
 
   eliminarComic(event : number):void{
