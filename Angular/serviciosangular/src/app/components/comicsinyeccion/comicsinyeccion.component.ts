@@ -6,7 +6,7 @@ import { Comic } from '../models/Comic';
   selector: 'app-comicsinyeccion',
   templateUrl: './comicsinyeccion.component.html',
   styleUrls: ['./comicsinyeccion.component.css'],
-  providers : [ComicService]
+  // providers : [ComicService]
 })
 export class ComicsinyeccionComponent implements OnInit {
 

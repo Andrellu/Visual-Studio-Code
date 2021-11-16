@@ -8,7 +8,11 @@ import { InsertarComponent } from './components/insertar/insertar.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { LibreriaComponent } from './components/libreria/libreria.component';
 import { FormsModule } from '@angular/forms';
-import { ComicsinyeccionComponent } from './Components/comicsinyeccion/comicsinyeccion.component';
+import { ComicsinyeccionComponent } from './components/comicsinyeccion/comicsinyeccion.component';
+import { ComicService } from './services/comics.service';
+import {HttpClientModule} from '@angular/common/http';
+import { PersonasapiComponent } from './components/personasapi/personasapi.component';
+import { ServicePersonas } from './services/personas.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,15 @@ import { ComicsinyeccionComponent } from './Components/comicsinyeccion/comicsiny
     ComicsComponent,
     LibreriaComponent,
     ComicsinyeccionComponent,
+    PersonasapiComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     routing
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, ComicService, ServicePersonas],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
