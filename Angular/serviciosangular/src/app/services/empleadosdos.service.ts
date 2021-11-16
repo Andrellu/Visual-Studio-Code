@@ -13,4 +13,10 @@ export class ServiceEmpleadosDos{
         var url = Global.urlAPIEmpleados + request;
         return this._http.get(url);
     }
+
+    getEmpleadosOficio(oficio:string): Observable<any>{
+        var request = "api/Empleados/EmpleadosOficio/" + oficio;
+        var url = Global.urlAPIEmpleados + request;
+        return this._http.get(url);
+    }
 }
