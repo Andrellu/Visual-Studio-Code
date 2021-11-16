@@ -1,15 +1,15 @@
 <div class="row justify-content-center">
     <div class="col-8 text-center"><br/>
-        
+
         <div class="card shadow-sm p-4" style="background-color:cyan;">
             <label>Nombre : </label>
             <input type="text" name="cajaNombre" #cajaNombre/><br/>
             <label>Imagen : </label>
             <input type="text" name="cajaImagen" #cajaImagen/><br/>
             <label>Descripcion : </label>
-            <input type="text" name="cajaDescripcion" #cajaDescripcion/><br/><br/>
+            <input type="text" name="cajaDescripcion" #cajaDescripcion/>
         </div><br/>
-        <button (click)="insertarComic()">Insertar</button><hr/>
+        <button (click)="insertarComic()" class="btn btn-success">Insertar</button><hr/>
     </div>
 </div>
 <div *ngIf="comicFav">
