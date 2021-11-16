@@ -15,6 +15,9 @@ import { PersonasapiComponent } from './components/personasapi/personasapi.compo
 import { ServicePersonas } from './services/personas.service';
 import { ServiceEmpleados } from './services/empleados.service';
 import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
+import { EmpleadoDos } from './components/models/EmpleadosDos';
+import { ServiceEmpleadosDos } from './services/empleadosdos.service';
+import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { EmpleadossalarioComponent } from './components/empleadossalario/emplead
     ComicsinyeccionComponent,
     PersonasapiComponent,
     EmpleadossalarioComponent,
+    EmpleadosoficioComponent,
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +37,7 @@ import { EmpleadossalarioComponent } from './components/empleadossalario/emplead
     FormsModule,
     routing
   ],
-  providers: [appRoutingProviders, ComicService, ServicePersonas, ServiceEmpleados],
+  providers: [appRoutingProviders, ComicService, ServicePersonas, ServiceEmpleados, ServiceEmpleadosDos],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
