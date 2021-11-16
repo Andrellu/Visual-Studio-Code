@@ -1,0 +1,22 @@
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <h1>API Empleados</h1><br/>
+        <form #formEmpleados="ngForm">
+            <label><b>Salario</b></label>{{" "}}
+            <input type="number" name="cajasalario" #cajasalario>{{" "}}
+            <button (click)="mostrarEmpleados()" class="btn btn-primary">Mostrar</button>
+        </form><hr/>
+        <table *ngIf="empleados" class="table table-striped">
+            <thead>
+                <th>Apellido</th>
+                <th>Salario</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados"> 
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.salario}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

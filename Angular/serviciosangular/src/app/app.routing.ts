@@ -4,12 +4,14 @@ import { InsertarComponent } from "./components/insertar/insertar.component";
 import { LibreriaComponent } from "./components/libreria/libreria.component";
 import { ComicsinyeccionComponent } from "./components/comicsinyeccion/comicsinyeccion.component";
 import { PersonasapiComponent } from "./components/personasapi/personasapi.component";
+import { EmpleadossalarioComponent } from "./components/empleadossalario/empleadossalario.component";
 
 const appRoutes : Routes = [
     {path:"home", component : InsertarComponent},
     {path:"libreria", component : LibreriaComponent},
     {path:"service", component : ComicsinyeccionComponent},
     {path:"servicepersona", component : PersonasapiComponent},
+    {path:"servicempleado", component : EmpleadossalarioComponent}
 ];
 
 export const appRoutingProviders : any[] = [];
