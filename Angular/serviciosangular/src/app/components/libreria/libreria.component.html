@@ -21,6 +21,6 @@
         </div>
     </div>
 </div>
-<div id="Hijos" style="background-color: darkseagreen;" *ngFor="let comic of comics; let i = index">
+<div id="Hijos" style="background-color: cornflowerblue;" *ngFor="let comic of comics; let i = index">
     <app-comics [index]="i" [comic] = "comic" (favorito)="favorito($event)" (modificar)="modificarComic($event)" (eliminar)="eliminarComic($event)"></app-comics>
 </div>

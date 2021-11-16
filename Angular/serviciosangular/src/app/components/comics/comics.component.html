@@ -4,7 +4,11 @@
         <img width="150px" src="{{comic.imagen}}" />
         <h2>{{comic.descripcion}}</h2>
     </div>
-    <button (click)="favoritoHijo()" style="background-color: darkorange;"><b>Favorito</b></button>
-    <button (click)="modificarHijo()" style="background-color: dodgerblue;"><b>Modificar</b></button>
-    <button (click)="eliminarHijo()" style="background-color: firebrick;"><b>Eliminar</b></button>
+    <div class="row justify-content-center">
+        <div class="col-8 text-center"> 
+            <button (click)="favoritoHijo()" style="background-color: darkorange; color: floralwhite;"><b>Favorito</b></button>{{" "}}
+            <button (click)="modificarHijo()" style="background-color: darkslategray; color: floralwhite;"><b>Modificar</b></button>{{" "}}
+            <button (click)="eliminarHijo()" style="background-color: firebrick; color: floralwhite;"><b>Eliminar</b></button>
+        </div>
+    </div>
 </div><hr/>
