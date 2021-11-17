@@ -33,7 +33,7 @@ export class ServiceDepartamentos{
     }
 
     deleteDepartamento(id:string): Observable<any>{
-        var request = "api/Departamentos" + id;
+        var request = "api/Departamentos/" + id;
         var url = Global.urlAPIDepartamentos + request;
         return this._http.delete(url);
     }
