@@ -1,0 +1,9 @@
+<div *ngIf="serie">
+    <div>
+        <h1>{{serie.nombre}}</h1>
+        <img width="200px" src="{{serie.imagen}}" alt="img"/>
+        <h2>Puntuación : {{serie.puntuacion}}</h2>
+        <h2>Año : {{serie.anyo}}</h2>
+        <a [routerLink]="['/tablapersonajes',serie.idSerie]">Cargar Personajes</a>
+    </div>
+</div>

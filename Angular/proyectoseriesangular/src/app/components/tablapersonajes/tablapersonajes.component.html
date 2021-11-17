@@ -1,0 +1,19 @@
+<div>
+    <div>
+        <a [routerLink]="['/detallesseries',idSerie]">Volver</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <td>Imagen</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let personaje of personajes">
+                    <td>{{personaje.nombre}}</td>
+                    <td><img width="150px" src="{{personaje.imagen}}" alt="img"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
