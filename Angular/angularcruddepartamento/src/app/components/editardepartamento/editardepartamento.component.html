@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+    <div class="col-8 text-center"><br/>
+        <a class="btn btn-danger" [routerLink]="['/home']">Volver al listado</a> <br/><br/>
+        <form #formDepartamento="ngForm">
+            <label>Numero: </label>
+            <input type="number" name="cajaNumero" #cajaNumero value="{{departamento.numero}}"/><br/>
+            <label>Nombre: </label>
+            <input type="text" name="cajaNombre" #cajaNombre value="{{departamento.nombre}}"/><br/>
+            <label>Localidad: </label>
+            <input type="text" name="cajaLocalidad" #cajaLocalidad value="{{departamento.localidad}}"/><br/><br/>
+            <button (click)="updateDepartamento()" class="btn btn-warning">Modificar</button>
+        </form>
+    </div>
+</div>

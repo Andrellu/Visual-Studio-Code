@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <h1>Nuevo Departamento</h1>
+        <form #formDepartamento="ngForm">
+            <label>Numero: </label>
+            <input type="number" name="cajaNumero" #cajaNumero/><br/>
+            <label>Nombre: </label>
+            <input type="text" name="cajaNombre" #cajaNombre/><br/>
+            <label>Localidad: </label>
+            <input type="text" name="cajaLocalidad" #cajaLocalidad/><br/>
+            <button (click)="insertarDepartamento()">Insertar</button>
+        </form>
+    </div>
+</div>

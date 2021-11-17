@@ -3,7 +3,7 @@
     aria-label="Fourth navbar example"
   >
     <div class="container-fluid">
-      <a class="navbar-brand">Home</a>
+      <a class="navbar-brand" [routerLink]="['/home']">Home</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,10 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" >Insertar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" >Servicios</a>
+            <a class="nav-link" [routerLink]="['/insertar']">Insertar</a>
           </li>
         </ul>
         <form>
