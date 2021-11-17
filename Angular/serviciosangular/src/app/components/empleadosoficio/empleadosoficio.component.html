@@ -1,23 +1,26 @@
-<h1>API Empleados</h1>
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <h1>API Empleados</h1>
+        <br/>
+        <select (change)="cargaEmpleadosOficio()" class="form-select" aria-label="Default select example" name="selectoficio" #selectoficio>
+            <option *ngFor="let oficio of oficios" value="{{oficio}}">{{oficio}}</option>
+        </select><br/>
+        <!-- <button class="btn btn-info" (click)="cargaEmpleadosOficio()">Mostrar</button> -->
+        <hr/>
+        <table class="table table-striped" border="2" *ngIf="empleados">
+            <thead>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Salario</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.oficio}}</td>
+                    <td>{{empleado.salario}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<select name="selectoficio" #selectoficio>
-    <option *ngFor="let oficio of oficios" value="{{oficio}}">{{oficio}}</option>
-</select>
-<button (click)="cargaEmpleadosOficio()">Mostrar</button>
-
-<hr/>
-
-<table *ngIf="empleados">
-    <thead>
-        <th>Apellido</th>
-        <th>Oficio</th>
-        <th>Salario</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let empleado of empleados">
-            <td>{{empleado.apellido}}</td>
-            <td>{{empleado.oficio}}</td>
-            <td>{{empleado.salario}}</td>
-        </tr>
-    </tbody>
-</table>

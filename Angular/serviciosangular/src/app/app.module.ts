@@ -18,6 +18,8 @@ import { EmpleadossalarioComponent } from './components/empleadossalario/emplead
 import { EmpleadoDos } from './components/models/EmpleadosDos';
 import { ServiceEmpleadosDos } from './services/empleadosdos.service';
 import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
+import { ListadoempleadosComponent } from './components/listadoempleados/listadoempleados.component';
+import { DetalleempleadoComponent } from './components/detalleempleado/detalleempleado.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { EmpleadosoficioComponent } from './components/empleadosoficio/empleados
     PersonasapiComponent,
     EmpleadossalarioComponent,
     EmpleadosoficioComponent,
+    ListadoempleadosComponent,
+    DetalleempleadoComponent,
   ],
   imports: [
     HttpClientModule,

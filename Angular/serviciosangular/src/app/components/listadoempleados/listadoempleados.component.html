@@ -1,0 +1,8 @@
+<div class="row justify-content-center" *ngIf="empleados">
+    <div class="col-8 text-center">
+        <h1>Maestro Detalle Empleado</h1>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let emp of empleados">{{emp.apellido}} | <a class="btn btn-info" [routerLink]="['/detalleempleado',emp.idEmpleado]">Detalles</a></li>
+        </ul>
+    </div>
+</div>
