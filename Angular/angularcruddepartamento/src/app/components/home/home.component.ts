@@ -10,8 +10,6 @@ import { Departamento } from 'src/app/model/Departamento';
 export class HomeComponent implements OnInit {
 
   public departamentos! : Array<Departamento>;
-  public id! : string;
-  @ViewChild("btnNumero") btnNumero! : ElementRef;
 
   constructor(private _service: ServiceDepartamentos) { }
 
@@ -26,9 +24,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  eliminarDepartamento():void{
-    this.id = this.btnNumero.nativeElement.value;
-    this._service.deleteDepartamento(this.id).subscribe(res =>{
+  eliminarDepartamento(id:number):void{
+    this._service.deleteDepartamento(id).subscribe(res =>{
       this.cargarDepartamentos();
     })
   }

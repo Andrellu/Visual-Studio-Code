@@ -32,9 +32,11 @@ export class ServiceDepartamentos{
         return this._http.put(url,json,{headers:header});
     }
 
-    deleteDepartamento(id:string): Observable<any>{
+    deleteDepartamento(id:number): Observable<any>{
+        console.log(id);
         var request = "api/Departamentos/" + id;
         var url = Global.urlAPIDepartamentos + request;
+        console.log(url);
         return this._http.delete(url);
     }
 }

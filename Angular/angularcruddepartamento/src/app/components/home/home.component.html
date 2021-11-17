@@ -17,7 +17,7 @@
                     <td>{{dept.localidad}}</td>
                     <td>
                         <a class="btn btn-secondary" [routerLink]="['/editar', dept.numero, dept.nombre, dept.localidad]">Editar</a>{{" "}}
-                        <button class="btn btn-danger" name="btnNumero" #btnNumero value="{{dept.numero}}" (click)="eliminarDepartamento()">Eliminar</button>
+                        <button class="btn btn-danger" (click)="eliminarDepartamento(dept.numero)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
