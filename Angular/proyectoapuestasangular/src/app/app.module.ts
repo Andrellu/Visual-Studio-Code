@@ -12,6 +12,7 @@ import { TablajugadoresComponent } from './components/tablajugadores/tablajugado
 import { DetallesjugadorComponent } from './components/detallesjugador/detallesjugador.component';
 import { ApuestasComponent } from './components/apuestas/apuestas.component';
 import { NuevaapuestaComponent } from './components/nuevaapuesta/nuevaapuesta.component';
+import { BuscarjugadoresComponent } from './components/buscarjugadores/buscarjugadores.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NuevaapuestaComponent } from './components/nuevaapuesta/nuevaapuesta.co
     TablajugadoresComponent,
     DetallesjugadorComponent,
     ApuestasComponent,
-    NuevaapuestaComponent
+    NuevaapuestaComponent,
+    BuscarjugadoresComponent
   ],
   imports: [
     BrowserModule,

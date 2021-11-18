@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ServiceApuestas } from 'src/app/services/apuestas.service';
 import { Equipos } from 'src/app/models/Equipo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,9 +10,10 @@ import { Equipos } from 'src/app/models/Equipo';
 })
 export class MenuComponent implements OnInit {
 
+  @ViewChild('cajaBuscar') cajaBuscar! : ElementRef;
   public equipos! : Array<Equipos>;
 
-  constructor(private _service : ServiceApuestas) { }
+  constructor(private _service : ServiceApuestas,  private _router : Router) { }
 
   ngOnInit(): void {
     this.cargarEquipos();
@@ -21,6 +23,12 @@ export class MenuComponent implements OnInit {
     this._service.getEquipos().subscribe(res => {
       this.equipos = res;
     });
+  }
+
+  buscarJugadores() {
+    var nom = this.cajaBuscar.nativeElement.value;
+    //console.log(nom);
+    this._router.navigate(['/buscarjugador',nom]);
   }
 
 }

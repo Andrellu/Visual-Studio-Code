@@ -1,18 +1,26 @@
-<div class="row justify-content-center">
-    <div  class="col-8 text-center" *ngIf="jugador">
-        <h1>Jugador : {{jugador.nombre}}</h1>
-        <div>
-            <img width="150px" src="jugador.imagen" alt="imagen"/>
-            <h2>{{jugador.posicion}}</h2>
-            <h3>Fecha de Nacimiento : {{jugador.fechaNacimiento}}</h3>
-            <h4>Pais : {{jugador.pais}}</h4><br/>
-            <a class="btn btn-danger" [routerLink]="['/tablajugadores',jugador.idEquipo]">Volver</a>
-        </div>
+<div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Posición</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let jugador of jugadores">
+                    <td>{{jugador.nombre}}</td>
+                    <td>{{jugador.posicion}}</td>
+                    <td><img width="150px" src="{{jugador.imagen}}" alt="imagen"/></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
 <div  class="row justify-content-center">
-    <div  class="col-8 text-center" *ngIf="!jugador">
+    <div  class="col-8 text-center" *ngIf="!jugadores">
         <div class="spinner-grow text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -33,3 +41,5 @@
           </div>
     </div>
 </div>
+
+

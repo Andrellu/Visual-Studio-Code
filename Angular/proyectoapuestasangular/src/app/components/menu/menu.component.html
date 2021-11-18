@@ -38,6 +38,10 @@ aria-label="Fourth navbar example"
           </li>
         </ul>
       </li>
+      <form class="d-flex" #formBuscar="ngForm">
+        <input class="form-control me-2" name="cajaBuscar" #cajaBuscar type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" (click)="buscarJugadores()">Search</button>
+      </form>
     </ul>
   </div>
 </div>

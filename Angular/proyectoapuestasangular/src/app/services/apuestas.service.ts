@@ -52,4 +52,9 @@ export class ServiceApuestas{
         return this._http.delete(url);
     }
 
+    buscarJugadores(nombreJugador:string):Observable<any>{
+        var request = "api/Jugadores/BuscarJugadores/"+nombreJugador;
+        var url = Global.urlAPIApuestasEquipos + request;
+        return this._http.get(url);
+    }
 }
