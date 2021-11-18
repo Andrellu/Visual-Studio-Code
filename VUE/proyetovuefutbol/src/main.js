@@ -6,6 +6,7 @@ import tablaJugadores from './components/Champions/tablaJugadores.vue';
 import detallesJugador from './components/Champions/detallesJugador.vue';
 import nuevaApuesta from './components/Champions/nuevaApuesta.vue';
 import insertarApuesta from './components/Champions/insertarApuesta.vue';
+import buscarJugador from './components/Champions/buscarJugador.vue';
 
 
 Vue.config.productionTip = false;
@@ -31,6 +32,10 @@ const routes = [
   {
     path: "/insertar",
     component: insertarApuesta,
+  },
+  {
+    path: "/buscar/:nombre",
+    component: buscarJugador,
   }
 ];
 

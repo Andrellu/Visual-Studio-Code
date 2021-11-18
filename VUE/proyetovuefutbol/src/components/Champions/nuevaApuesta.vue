@@ -10,6 +10,7 @@
                       <th>Usuario</th>
                       <th>Resultado</th>
                       <th>Fecha</th>
+                      <th>Borrar</th>
                   </thead>
                   <tbody>
                       <tr v-for="(apuesta, index) in apuestas" :key="index">
@@ -17,6 +18,7 @@
                           <td>{{apuesta.usuario}}</td>
                           <td>{{apuesta.resultado}}</td>
                           <td>{{apuesta.fecha}}</td>
+                          <td><button>Borrar</button></td>
                       </tr>
                   </tbody>
               </table>

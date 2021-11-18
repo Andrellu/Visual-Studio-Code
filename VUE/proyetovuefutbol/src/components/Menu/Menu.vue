@@ -36,13 +36,9 @@
             </ul>
           </li>
         </ul>
-        <form>
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Buscar"
-            aria-label="Buscar"
-          />
+        <form class="d-flex" v-on:submit.prevent="realizarBusqueda()">
+          <input v-model="cajaBuscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <router-link class="btn btn-outline-success" :to="'/buscar/'+cajaBuscar">Buscar</router-link>
         </form>
       </div>
     </div>
@@ -58,7 +54,8 @@ export default {
   name : "Menu",
   data(){
     return {
-      equipos : []
+      equipos : [],
+      cajaBuscar : ""
     }
   },
   mounted(){
@@ -70,6 +67,9 @@ export default {
         console.log(res);
         this.equipos = res;
       });
+    },
+    realizarBusqueda(){
+      console.log(this.cajaBuscar);
     }
   }
 }

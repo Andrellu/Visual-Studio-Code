@@ -6,7 +6,7 @@ export default class ServiciosChampions{
     getEquipos(){
         return new Promise(function(resolve){
             var request = "api/Equipos";
-            var url = Global.urlAPIChampions + request;
+            var url = Global.urlApiChampionsOkay + request;
             axios.get(url).then(res => {
                 resolve(res.data);
             })
@@ -15,8 +15,19 @@ export default class ServiciosChampions{
 
     getEquiposId(id){
         return new Promise(function(resolve){
-            var request = "api/Jugadores/JugadoresEquipo/"+ id;
-            var url = Global.urlAPIChampions + request;
+            var request = "api/Jugadores/JugadoresEquipos/"+ id;
+            var url = Global.urlApiChampionsOkay + request;
+            console.log(url);
+            axios.get(url).then(res => {
+                resolve(res.data);
+            });
+        });
+    }
+
+    getEquiposId2(id){
+        return new Promise(function(resolve){
+            var request = "api/Equipos/"+id;
+            var url = Global.urlApiChampionsOkay+request;
             axios.get(url).then(res => {
                 resolve(res.data);
             });
@@ -26,7 +37,7 @@ export default class ServiciosChampions{
     getJugadoresId(id){
         return new Promise(function(resolve){
             var request = "api/Jugadores/" + id;
-            var url = Global.urlAPIChampions + request;
+            var url = Global.urlApiChampionsOkay + request;
             axios.get(url).then(res => {
                 resolve(res.data);
             });
@@ -36,7 +47,7 @@ export default class ServiciosChampions{
     getApuestas(){
         return new Promise(function(resolve){
             var request = "api/Apuestas";
-            var url = Global.urlAPIChampions + request;
+            var url = Global.urlApiChampionsOkay + request;
             axios.get(url).then(res => {
                 resolve(res.data);
             });
@@ -49,6 +60,18 @@ export default class ServiciosChampions{
             var url = Global.urlAPIChampions + request;
             axios.post(url, apuesta).then(res => {
                 resolve(res);
+            });
+        });
+    }
+
+    cargarBusqueda(nombre){
+        return new Promise(function(resolve){
+            var request = "api/Jugadores/BuscarJugadores/"+nombre;
+            var url = Global.urlApiChampionsOkay + request;
+            console.log(url);
+            axios.get(url).then(res => {
+                // Necesita un data
+                resolve(res.data);
             });
         });
     }
