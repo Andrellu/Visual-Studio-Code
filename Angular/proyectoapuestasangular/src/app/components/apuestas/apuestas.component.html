@@ -1,0 +1,23 @@
+<div>
+    <div>
+        <a class="btn btn-primary" [routerLink]="['/nuevaapuesta']">Nueva Apuesta</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Resultado</th>
+                    <th>Fecha</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let apuesta of apuestas">
+                    <td>{{apuesta.usuario}}</td>
+                    <td>{{apuesta.resultado}}</td>
+                    <td>{{apuesta.fecha}}</td>
+                    <td><button (click)="eliminarApuesta(apuesta.idApuesta)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

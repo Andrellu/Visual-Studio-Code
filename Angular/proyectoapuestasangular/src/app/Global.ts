@@ -1,3 +1,3 @@
 export var Global = {
-    urlAPIApuestas : ""
+    urlAPIEquipos : "https://apichampions.azurewebsites.net/"
 }

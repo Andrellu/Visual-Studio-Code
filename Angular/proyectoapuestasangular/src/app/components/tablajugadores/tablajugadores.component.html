@@ -1,0 +1,21 @@
+<div  class="row justify-content-center">
+    <div  class="col-8 text-center">
+        <h1>Tabla equipos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let jugador of jugadores">
+                    <td>{{jugador.nombre}}</td>
+                    <td><img width="100px" src="{{jugador.imagen}}" alt="jugador"/></td>
+                    <td><a class="btn btn-info" [routerLink]="['/detallesjugador',jugador.idJugador]">Detalles</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

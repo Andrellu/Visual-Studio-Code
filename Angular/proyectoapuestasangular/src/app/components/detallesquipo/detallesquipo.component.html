@@ -1,0 +1,9 @@
+<div class="row justify-content-center">
+    <div class="col-8 text-center" *ngIf="equipo">
+        <h1>Equipo : {{equipo.nombre}}</h1>
+        <img width="200px" src="{{equipo.imagen}}" alt="imagen"/>
+        <h2>Champions : {{equipo.champions}}</h2>
+        <p>{{equipo.descripcion}}</p>
+        <a class="btn btn-info" [routerLink]="['/tablajugadores',equipo.idEquipo]">Cargar Jugadores</a>
+    </div>
+</div>

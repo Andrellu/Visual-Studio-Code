@@ -19,10 +19,7 @@ aria-label="Fourth navbar example"
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
       <li class="nav-item">
-        <a class="nav-link">Insertar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Modificar</a>
+        <a class="nav-link" [routerLink]="['/apuesta']">Apuestas</a>
       </li>
       <li class="nav-item dropdown">
         <a
@@ -34,7 +31,10 @@ aria-label="Fourth navbar example"
           >Deportes</a
         >
         <ul class="dropdown-menu" aria-labelledby="dropdown04" >
-          <li>
+          <li *ngFor="let equipo of equipos">
+            <a class="btn btn-light" [routerLink]="['/detallequipo',equipo.idEquipo]">
+              {{equipo.nombre}}
+            </a>
           </li>
         </ul>
       </li>

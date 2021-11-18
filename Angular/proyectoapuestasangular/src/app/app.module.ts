@@ -7,11 +7,21 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ServiceApuestas } from './services/apuestas.service';
+import { DetallesquipoComponent } from './components/detallesquipo/detallesquipo.component';
+import { TablajugadoresComponent } from './components/tablajugadores/tablajugadores.component';
+import { DetallesjugadorComponent } from './components/detallesjugador/detallesjugador.component';
+import { ApuestasComponent } from './components/apuestas/apuestas.component';
+import { NuevaapuestaComponent } from './components/nuevaapuesta/nuevaapuesta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DetallesquipoComponent,
+    TablajugadoresComponent,
+    DetallesjugadorComponent,
+    ApuestasComponent,
+    NuevaapuestaComponent
   ],
   imports: [
     BrowserModule,
