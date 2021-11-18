@@ -10,25 +10,25 @@ export class ServiceApuestas{
 
     getEquipos() :Observable<any> {
         var request = "api/Equipos";
-        var url = Global.urlAPIEquipos+request;
+        var url = Global.urlAPIApuestasEquipos+request;
         return this._http.get(url);
     }
 
     getEquipoId(idEquipo:string) :Observable<any>{
         var request ="api/Equipos/"+idEquipo;
-        var url = Global.urlAPIEquipos+request;
+        var url = Global.urlAPIApuestasEquipos+request;
         return this._http.get(url);
     }
 
     getJugadorId(idJugador : string) :Observable<any>{
         var request = "api/jugadores/"+idJugador;
-        var url = Global.urlAPIEquipos + request;
+        var url = Global.urlAPIApuestasEquipos + request;
         return this._http.get(url);
     }
 
     getJuagdoresEquipoId(idEquipo:string) :Observable<any>{
-        var request = "api/jugadores/jugadoresequipo/"+idEquipo;
-        var url = Global.urlAPIEquipos+request;
+        var request = "api/jugadores/jugadoresequipos/"+idEquipo;
+        var url = Global.urlAPIApuestasEquipos+request;
         return this._http.get(url);
     }
 
