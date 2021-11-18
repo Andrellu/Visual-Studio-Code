@@ -18,10 +18,25 @@
                           <td>{{apuesta.usuario}}</td>
                           <td>{{apuesta.resultado}}</td>
                           <td>{{apuesta.fecha}}</td>
-                          <td><button>Borrar</button></td>
+                          <td><button data-bs-toggle="modal" data-bs-target="#myModal" @click="recogerId(apuesta.idApuesta)">Borrar</button></td>
                       </tr>
                   </tbody>
               </table>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">ELIMINAR</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div> 
+                    <div class="modal-body">¿Desea Elimnar la Apuesta?</div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="eliminarApuesta()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
           </div>
       </div>
   </div>
@@ -34,7 +49,8 @@ export default {
     name : "NuevaApuesta",
     data(){
         return{
-            apuestas : []
+            apuestas : [],
+            idApuesta : 0
         }
     },
     mounted(){
@@ -44,6 +60,17 @@ export default {
         cargarApuestas(){
             service.getApuestas().then(res => {
                 this.apuestas = res;
+            });
+        },
+        recogerId(id){
+            console.log("aui");
+            this.idApuesta = id;
+
+        },
+        eliminarApuesta(){
+            service.eliminaApuesta(this.idApuesta).then(res => {
+                console.log(res);
+                this.cargarApuestas();
             });
         }
     }

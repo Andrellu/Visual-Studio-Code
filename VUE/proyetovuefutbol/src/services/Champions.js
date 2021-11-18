@@ -75,4 +75,14 @@ export default class ServiciosChampions{
             });
         });
     }
+
+    eliminaApuesta(idApuesta){
+        return new Promise(function(resolve){
+            var request = "api/Apuestas/" + idApuesta;
+            var url = Global.urlApiChampionsOkay + request;
+            axios.delete(url).then(res => {
+                resolve(res);
+            });
+        });
+    }
 }
