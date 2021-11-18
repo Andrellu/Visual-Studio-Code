@@ -1,0 +1,14 @@
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <br/>
+        <a [routerLink]="['/home']" class="btn btn-danger">Volver</a>
+        <br/><br/>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let empleado of empleados">
+                {{empleado.apellido}} 
+                Salario : <span>{{empleado.salario}}</span>
+                <a [routerLink]="['/incrementar/',empleado.idEmpleado]">Incrementar Salario</a>
+            </li>
+        </ul>
+    </div>
+</div>
