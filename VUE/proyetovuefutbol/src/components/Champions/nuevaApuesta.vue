@@ -24,20 +24,20 @@
               </table>
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h4 class="modal-title">ELIMINAR</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div> 
-                    <div class="modal-body">¿Desea Elimnar la Apuesta?</div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="eliminarApuesta()">Aceptar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">ELIMINAR</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div> 
+                            <div class="modal-body">¿Desea Elimnar la Apuesta?</div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal" @click="eliminarApuesta()">Aceptar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
             </div>
-          </div>
       </div>
   </div>
 </template>
