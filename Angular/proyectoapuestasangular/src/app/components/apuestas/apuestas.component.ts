@@ -10,6 +10,7 @@ import { Apuestas } from 'src/app/models/Apuesta';
 export class ApuestasComponent implements OnInit {
 
   public apuestas! : Array<Apuestas>;
+  public apuesta! : Apuestas;
 
   constructor(private _service : ServiceApuestas) { }
 
@@ -23,10 +24,15 @@ export class ApuestasComponent implements OnInit {
     });
   }
 
-  eliminarApuesta(id:number){
+  eliminarApuesta(){
+    var id = this.apuesta.idApuesta;
     this._service.deleteApuesta(id).subscribe(res =>{
       this.cargarApuestas();
     });
+  }
+
+  recogerApuesta(apuestaEliminar: Apuestas){
+    this.apuesta = apuestaEliminar;
   }
 
 }

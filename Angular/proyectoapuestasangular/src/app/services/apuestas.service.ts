@@ -34,13 +34,13 @@ export class ServiceApuestas{
 
     getApuestas() :Observable<any>{
         var request = "api/apuestas";
-        var url = Global.urlAPIEquipos+request;
+        var url = Global.urlAPIApuestasEquipos+request;
         return this._http.get(url);
     }
 
     insertApuesta(apuesta:Apuestas) :Observable<any>{
         var request = "api/apuestas";
-        var url = Global.urlAPIEquipos + request;
+        var url = Global.urlAPIApuestasEquipos + request;
         var json = JSON.stringify(apuesta);
         var header = new HttpHeaders().set("Content-Type", "application/json");
         return this._http.post(url, json, {headers:header});
@@ -48,7 +48,7 @@ export class ServiceApuestas{
 
     deleteApuesta(idApuesta:number) :Observable<any>{
         var request = "api/apuestas/" + idApuesta;
-        var url = Global.urlAPIEquipos+request;
+        var url = Global.urlAPIApuestasEquipos+request;
         return this._http.delete(url);
     }
 
