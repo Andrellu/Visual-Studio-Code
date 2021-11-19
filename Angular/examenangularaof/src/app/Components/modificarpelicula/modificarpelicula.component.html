@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <form #formModificar="ngForm">
+            <h1>¿A que genero desea cambiarlo?</h1>
+            <select name="selectPelis" #selectPelis>
+                <option *ngFor="let genero of generos" value="{{genero.idGenero}}">{{genero.nombre}}</option>
+            </select><br/>
+            <button (click)="modificarPelicula()">Cambiar de género</button>
+        </form>
+    </div>
+</div>

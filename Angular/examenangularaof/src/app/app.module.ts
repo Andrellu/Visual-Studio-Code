@@ -10,6 +10,7 @@ import { ServicePeliculas } from './services/peliculas.service';
 import { DetallesComponent } from './Components/detalles/detalles.component';
 import { DetallespeliculasComponent } from './Components/detallespeliculas/detallespeliculas.component';
 import { BuscadorPeliculasComponent } from './Components/buscador-peliculas/buscador-peliculas.component';
+import { ModificarpeliculaComponent } from './Components/modificarpelicula/modificarpelicula.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BuscadorPeliculasComponent } from './Components/buscador-peliculas/busc
     MenuComponent,
     DetallesComponent,
     DetallespeliculasComponent,
-    BuscadorPeliculasComponent
+    BuscadorPeliculasComponent,
+    ModificarpeliculaComponent
   ],
   imports: [
     BrowserModule,

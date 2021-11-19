@@ -14,6 +14,8 @@ export class DetallesComponent implements OnInit {
   public idNacionalidad! : string;
   public validar! : boolean;
   public peliculas! : Array<Pelicula>;
+  public nacionalidad! : string;
+  public genero! : string;
 
   constructor(private _route :ActivatedRoute, private _service:ServicePeliculas) { }
 
@@ -47,6 +49,14 @@ export class DetallesComponent implements OnInit {
     this._service.getPeliculasNacionalidadId(id).subscribe(res =>{
       this.peliculas = res;
     });
+  }
+
+  cargarNacionalidad(){
+
+  }
+
+  cargarGenero(){
+    
   }
 
   eliminarPelicula(event : number):void{
