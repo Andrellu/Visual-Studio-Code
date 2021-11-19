@@ -3,6 +3,7 @@ import { Pelicula } from 'src/app/model/Peliculas';
 import {Nacionalidad} from 'src/app/model/Nacionalidades';
 import {Genero} from 'src/app/model/Genero';
 import { ServicePeliculas } from 'src/app/services/peliculas.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detallespeliculas',
@@ -16,7 +17,7 @@ export class DetallespeliculasComponent implements OnInit {
   public nacionalidad! :Nacionalidad;
   public genero! : Genero;
 
-  constructor( private _service:ServicePeliculas) { }
+  constructor( private _service:ServicePeliculas, private _sanitizer : DomSanitizer) { }
 
   ngOnInit(): void {
     this.cargarNacionalidad();
@@ -38,4 +39,15 @@ export class DetallespeliculasComponent implements OnInit {
         this.genero = res;
       });
   }
+/*
+  getVideoIframe(url:string) {
+    var video, results:
+    if(url === null){
+      return '';
+    }
+    results =  url.match('[\\?&]v=([&#]*)');
+    results[1]
+    return this._sanitizer.bypassSecurityTrustHtml + video;
+  }
+  */
 }

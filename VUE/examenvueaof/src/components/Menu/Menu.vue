@@ -29,7 +29,7 @@
               >Género</a
             >
             <ul class="dropdown-menu" aria-labelledby="dropdown04" >
-              <li ><router-link class="nav-link" style="color:black" to="/"></router-link></li>
+              <li v-for="(genero,index) in generos" :key="index"><router-link class="nav-link" style="color:black" to="/">{{genero.nombre}}</router-link></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -42,13 +42,13 @@
               >Nacionalidad</a
             >
             <ul class="dropdown-menu" aria-labelledby="dropdown04" >
-              <li ><router-link class="nav-link" style="color:black" to="/"></router-link></li>
+              <li v-for="(nacion,index) in nacionalidades" :key="index"><router-link class="nav-link" style="color:black" to="/">{{nacion.nombre}}</router-link></li>
             </ul>
           </li>
         </ul>
         <form class="d-flex" v-on:submit.prevent="realizarBusqueda()">
           <input v-model="cajaBuscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <router-link class="btn btn-outline-success" to="/">Buscar</router-link>
+          <router-link class="btn btn-outline-success" :to="'/buscar/'+cajaBuscar">Buscar</router-link>
         </form>
       </div>
     </div>
@@ -56,7 +56,37 @@
 </template>
 
 <script>
+import ServicePeliculas from './../../components/Services/Peliculas';
+const service = new ServicePeliculas();
 export default {
+  name :"Menu",
+  mounted(){
+    this.getGeneros();
+    this.getNacionalidades();
+  },
+  methods : {
+    getGeneros(){
+      service.getGeneros().then(res => {
+        this.generos = res;
+      });
+
+    },
+    getNacionalidades(){
+      service.getNacionalidad().then(res => {
+        this.nacionalidades = res;
+      });
+    },
+    realizarBusqueda(){
+      console.log(this.cajaBuscar);
+    }
+  },
+  data(){
+    return{
+      nacionalidades : [],
+      generos : [],
+      cajaBuscar : ""
+    }
+  }
 
 }
 </script>
