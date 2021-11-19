@@ -1,0 +1,58 @@
+<nav
+class="navbar navbar-expand-md navbar-dark bg-dark"
+aria-label="Fourth navbar example"
+>
+<div class="container-fluid">
+  <a class="navbar-brand">Home</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarsExample04"
+    aria-controls="navbarsExample04"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="dropdown04"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >Géneros</a
+        >
+        <ul class="dropdown-menu" aria-labelledby="dropdown04" >
+          <li *ngFor="let genero of generos">
+            <a a class="btn btn-light" [routerLink]="['/detalleGen',genero.idGenero]">{{genero.nombre}}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="dropdown04"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >Nacionalidad</a
+        >
+        <ul class="dropdown-menu" aria-labelledby="dropdown04" >
+          <li *ngFor="let nacionalidad of nacionalidades">
+            <a class="btn btn-light" [routerLink]="['/detalleNac',nacionalidad.idNacionalidad]"> {{nacionalidad.nombre}}</a>
+          </li>
+        </ul>
+      </li>
+      <form class="d-flex" #formBuscar="ngForm">
+        <input class="form-control me-2" name="cajaBuscar" #cajaBuscar type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" (click)="buscarJugadores()">Search</button>
+      </form>
+    </ul>
+  </div>
+</div>
+</nav>
